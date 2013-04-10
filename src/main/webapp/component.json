@@ -1,0 +1,10 @@
+{
+    "name": "marketplace",
+    "description": "A social local search service",
+    "dependencies": {
+        "bootstrap": "*",
+        "font-awesome" : "*",
+        "jquery": "*",
+        "jquery-ui": "*"
+    }
+}
