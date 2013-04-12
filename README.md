@@ -2,6 +2,7 @@ odds
 ====
 Orphanage Donation Distribution System
 
+[![Build Status](https://secure.travis-ci.org/odds/odds.png?branch=master)](http://travis-ci.org/odds/odds)
 
 ## Getting Started
 
