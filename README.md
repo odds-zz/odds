@@ -1,5 +1,5 @@
-odds
-====
+# ODDS 0.1.0-dev
+
 Orphanage Donation Distribution System
 
 [![Build Status](https://api.travis-ci.org/odds/odds.png?branch=master)](http://travis-ci.org/odds/odds)
