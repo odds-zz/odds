@@ -10,11 +10,11 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
-    <mapping resource="org/odds/hibernate/User.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/Record.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/Orphanage.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/Donation.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/Feedback.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/Location.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Location.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Record.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Donation.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Orphanage.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Feedback.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/User.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
