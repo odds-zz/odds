@@ -9,7 +9,7 @@ package org.odds.mvc;
  * @author kenkataiwa
  */
 import org.hibernate.Session;
-import org.odds.hibernate.User;
+import org.odds.hibernate.entities.User;
 import org.odds.hibernate.dao.UserDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,9 +26,9 @@ public class IndexController {
     @RequestMapping(value = "/")
     public String home(Model model) {
 
-//        UserDAO userDAO = new UserDAO();
-//        User user = userDAO.getUser(1);
-//        model.addAttribute("user", user);
+        UserDAO userDAO = new UserDAO();
+        User user = userDAO.getUser(1);
+        model.addAttribute("user", user);
 
         return "index";
     }

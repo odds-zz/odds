@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.odds.hibernate.HibernateUtil;
-import org.odds.hibernate.User;
+import org.odds.hibernate.entities.User;
 import org.hibernate.Session;
 
 /**
@@ -35,7 +35,7 @@ public class StatisticsController {
 
         return "statistics/index";
     }
-    
-    
+
+
 
 }

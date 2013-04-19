@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.odds.hibernate.User;
+import org.odds.hibernate.entities.User;
 import org.odds.hibernate.dao.UserDAO;
 import org.odds.mvc.extensions.ajax.AjaxUtils;
 import org.springframework.validation.BindingResult;
