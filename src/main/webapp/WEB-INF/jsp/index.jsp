@@ -6,7 +6,7 @@
     <div class="row-fluid">
         <div class="span12">
             <h1>ODDS</h1>
-            <p class="lead">Orphanage Donation ${user} Distribution System</p>
+            <p class="lead">Orphanage Donation Distribution System</p>
         </div>
     </div>
     <div class="row-fluid">

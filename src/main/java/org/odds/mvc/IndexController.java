@@ -28,7 +28,9 @@ public class IndexController {
 
         UserDAO userDAO = new UserDAO();
         User user = userDAO.getUser(1);
+        String still = "name";
         model.addAttribute("user", user);
+        model.addAttribute("color", still);
 
         return "index";
     }

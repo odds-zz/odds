@@ -8,21 +8,20 @@ package org.odds.hibernate.dao;
  *
  * @author UserDAO
  */
-
 import java.sql.Connection;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.odds.hibernate.HibernateUtil;
 import org.odds.hibernate.entities.User;
+
 public class UserDAO {
 
-    public List listUser(){
+    public List listUser() {
 
         List<User> users = null;
 
-        try
-        {
+        try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Query query;
@@ -32,18 +31,16 @@ public class UserDAO {
             session.getTransaction().commit();//end of transaction
             Connection close; //end of  session
             close = session.close();
-        }
-        catch(Exception ex)
-        {
+        } catch (Exception ex) {
             System.out.println(ex.toString());
         }
 
         return users;
     }
 
-    public void createUser(){
+    public void createUser() {
 
-     Session session;
+        Session session;
         session = HibernateUtil.getSessionFactory().getCurrentSession();
 
         session.beginTransaction();
@@ -53,9 +50,9 @@ public class UserDAO {
 
     }
 
-    public User createUser(User u){
+    public User createUser(User u) {
 
-        try{
+        try {
             Session session;
             session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
@@ -64,53 +61,48 @@ public class UserDAO {
             Connection close; //end of  session
             close = session.close();
 
-        }
-        catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println(ex.toString());
         }
         return u;
     }
 
-    public User getUser(Integer uID){
+    public User getUser(Integer uID) {
 
         User u = null;
-        try{
+        try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-            Query q = session.createQuery("from User where User.id = :uID");
+            session.beginTransaction();
+            Query q = session.createQuery("from User u where id = :uID");
             q.setString("uID", uID.toString());
             u = (User) q.uniqueResult();
             session.close();
-        }
-
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
         return u;
     }
 
-    public void deleteUser(Integer uID){
+    public void deleteUser(Integer uID) {
 
         Session s = HibernateUtil.getSessionFactory().getCurrentSession();
         s.beginTransaction();
-        Query q = s.createQuery("delete from User where User.id = :uID").setString("uID",uID.toString());
+        Query q = s.createQuery("delete from User where User.id = :uID").setString("uID", uID.toString());
         q.executeUpdate();
         s.getTransaction().commit();
         s.close();
     }
 
     public void save(User u) {
-		try {
-                        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-			session.beginTransaction();
-			session.update(u);
-			session.getTransaction().commit();
-		}
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            session.update(u);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            //rollback();
+            System.out.println(e.toString());
+        }
 
-                catch (Exception e) {
-			//rollback();
-                        System.out.println(e.toString());
-		}
-
-	}
-
+    }
 }
