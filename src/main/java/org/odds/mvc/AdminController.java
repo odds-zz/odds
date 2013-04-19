@@ -26,11 +26,6 @@ public class AdminController {
 
     @RequestMapping(value = "/admin")
     public String home(Model model) {
-
-        UserDAO userDAO = new UserDAO();
-        User user = userDAO.getUser(1);
-        model.addAttribute("user", user);
-
         return "admin/index";
     }
 
