@@ -221,6 +221,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
     </dependencies>
     <repositories>
         <!-- For testing against latest Spring snapshots -->
