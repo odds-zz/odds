@@ -7,11 +7,11 @@ package org.odds.hibernate.dao;
 import java.sql.Connection;
 import java.util.List;
 import org.hibernate.Query;
-import org.odds.hibernate.Feedback;
+import org.odds.hibernate.entities.Feedback;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.odds.hibernate.HibernateUtil;
-import org.odds.hibernate.Donation;
+import org.odds.hibernate.entities.Donation;
 import org.hibernate.Transaction;
 
 

@@ -14,7 +14,7 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.odds.hibernate.HibernateUtil;
-import org.odds.hibernate.User;
+import org.odds.hibernate.entities.User;
 public class UserDAO {
 
     public List listUser(){

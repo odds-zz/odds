@@ -1,5 +1,5 @@
-package org.odds.hibernate;
-// Generated Mar 27, 2013 12:58:53 PM by Hibernate Tools 3.2.1.GA
+package org.odds.hibernate.entities;
+// Generated Apr 19, 2013 6:11:16 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -10,14 +10,14 @@ public class OrphanageId  implements java.io.Serializable {
 
 
      private int id;
-     private int userId;
+     private int usersId;
 
     public OrphanageId() {
     }
 
-    public OrphanageId(int id, int userId) {
+    public OrphanageId(int id, int usersId) {
        this.id = id;
-       this.userId = userId;
+       this.usersId = usersId;
     }
    
     public int getId() {
@@ -27,12 +27,12 @@ public class OrphanageId  implements java.io.Serializable {
     public void setId(int id) {
         this.id = id;
     }
-    public int getUserId() {
-        return this.userId;
+    public int getUsersId() {
+        return this.usersId;
     }
     
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUsersId(int usersId) {
+        this.usersId = usersId;
     }
 
 
@@ -43,14 +43,14 @@ public class OrphanageId  implements java.io.Serializable {
 		 OrphanageId castOther = ( OrphanageId ) other; 
          
 		 return (this.getId()==castOther.getId())
- && (this.getUserId()==castOther.getUserId());
+ && (this.getUsersId()==castOther.getUsersId());
    }
    
    public int hashCode() {
          int result = 17;
          
          result = 37 * result + this.getId();
-         result = 37 * result + this.getUserId();
+         result = 37 * result + this.getUsersId();
          return result;
    }   
 

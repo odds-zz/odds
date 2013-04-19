@@ -11,7 +11,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.odds.hibernate.HibernateUtil;
-import org.odds.hibernate.Record;
+import org.odds.hibernate.entities.Record;
 /**
  *Helper Class that wraps database operations safely in transactions
  * @author User

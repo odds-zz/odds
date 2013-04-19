@@ -11,7 +11,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.odds.hibernate.HibernateUtil;
-import org.odds.hibernate.Feedback;
+import org.odds.hibernate.entities.Feedback;
 /**
  *
  * @author User
