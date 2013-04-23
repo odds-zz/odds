@@ -29,51 +29,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  */
 @Controller
 @RequestMapping(value = "/auth/signin")
-@SessionAttributes("signinFormBean")
 public class SigninController {
 
-    @ModelAttribute
-    public void ajaxAttribute(WebRequest request, Model model) {
-        model.addAttribute("ajaxRequest", AjaxUtils.isAjaxRequest(request));
-    }
-
-    // Invoked initially to create the "form" attribute
-    // Once created the "form" attribute comes from the HTTP session (see @SessionAttributes)
-    @ModelAttribute("signinFormBean")
-    public SigninFormBean createFormBean() {
-        return new SigninFormBean();
-    }
 
     @RequestMapping(method = RequestMethod.GET)
     public void signin() {
     }
 
-
-	@RequestMapping(method=RequestMethod.POST)
-	public String processSubmit(@Valid SigninFormBean signinFormBean, BindingResult result,
-								@ModelAttribute("ajaxRequest") boolean ajaxRequest,
-								Model model, RedirectAttributes redirectAttrs) {
-		if (result.hasErrors()) {
-
-            /**
-             * Process errors
-             */
-			return null;
-		}
-
-		// Typically you would save to a db and clear the "form" attribute from the session
-		// via SessionStatus.setCompleted(). For the demo we leave it in the session.
-		String message = "Form submitted successfully.  Bound " + signinFormBean;
-		// Success response handling
-		if (ajaxRequest) {
-			// prepare model for rendering success message in this request
-			model.addAttribute("message", message);
-			return null;
-		} else {
-			// store a success message for rendering on the next request after redirect
-			// redirect back to the form to render the success message along with newly bound values
-			redirectAttrs.addFlashAttribute("message", message);
-			return "redirect:/form";
-		}
-	}
 }

@@ -10,26 +10,33 @@
 
     <div class="content clearfix">
 
-        <form:form id="form" method="post" modelAttribute="signinFormBean" cssClass="cleanform">
+        <form name="f" action="<c:url value='/auth/check' />" method="POST">
             <h1>Sign In</h1>
 
             <div class="login-fields">
 
                 <p>Sign in using your registered account:</p>
 
+                <c:if test="${not empty error}">
+                    <div class="errorblock">
+                        Your login attempt was not successful, try again.<br /> Caused :
+                        ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+                    </div>
+                </c:if>
+
                 <div class="field">
-                    <form:label path="email">
-                        Email Address: <form:errors path="email" cssClass="error" />
-                    </form:label>
-                    <form:input path="email" placeholder="Email" cssClass="login username-field" />
+                    <label for="email">
+                        Email Address:
+                    </label>
+                    <input id="email" name="j_username" type="text" placeholder="Username" class="login username-field" />
                 </div> <!-- /field -->
 
                 <div class="field">
-                    <form:label path="password">
-                        Password: <form:errors path="password" cssClass="error" />
-                    </form:label>
-                    <form:input path="password" type="password" placeholder="Password" cssClass="login password-field" />
-                </div> <!-- /password -->
+                    <label for="password">
+                        Password:
+                    </label>
+                    <input id="password" name="j_password" type="password" placeholder="Password" class="login password-field" />
+                </div>  <!-- /password -->
 
             </div> <!-- /login-fields -->
 
@@ -40,7 +47,7 @@
                     <label class="choice" for="Field">Keep me signed in</label>
                 </span>
 
-                <button class="button btn btn-warning btn-large">Sign In</button>
+                <button name="submit" class="button btn btn-warning btn-large">Sign In</button>
 
             </div> <!-- .actions -->
 
@@ -55,7 +62,7 @@
                     <a href="#" class="btn_2">Login with Facebook</a>
                 </div>
             </div>
-        </form:form>
+        </form>
     </div> <!-- /content -->
 
 </div>
