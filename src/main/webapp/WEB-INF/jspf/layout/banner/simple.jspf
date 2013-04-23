@@ -22,9 +22,7 @@
                             <li><a href="/odds/orphanage">Orphanages</a></li>
                             <li><a href="/odds/children">Street Children</a></li>
                             <li><a href="/odds/government">Government Support</a></li>
-                            <li><a href="/odds/partners">Partner Organizations</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/odds/more">More</a></li>
+                            <li><a href="/odds/partners">Partners</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

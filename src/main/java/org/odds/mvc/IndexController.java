@@ -65,10 +65,4 @@ public class IndexController {
         return "odds/partners";
     }
 
-    @RequestMapping(value = "/more")
-    public String more(Model model) {
-
-        return "odds/more";
-    }
-
 }
