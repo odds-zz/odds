@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
@@ -45,7 +47,7 @@
                             <li><a href="/odds/user/history"><i class="icon-calendar"></i> History</a></li>
                             <li class="divider"></li>
                             <li><a href="/odds/help"><i class=" icon-info-sign"></i> Help</a></li>
-                            <li><a href="/odds/logout"><i class="icon-arrow-right"></i> Logout</a></li>
+                            <li><a href="<c:url value="/logout" />"><i class="icon-arrow-right"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
