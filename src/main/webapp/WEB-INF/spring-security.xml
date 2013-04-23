@@ -13,7 +13,7 @@ and open the template in the editor.
 	http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/user/account*" access="ROLE_USER" />
+        <intercept-url pattern="/user/*" access="ROLE_USER" />
         <form-login login-page="/auth/signin" login-processing-url="/auth/check" />
         <logout logout-url="/logout"  logout-success-url="/" />
         <remember-me />
@@ -21,6 +21,7 @@ and open the template in the editor.
 
     <authentication-manager>
         <authentication-provider>
+            <password-encoder hash="md5" />
             <jdbc-user-service data-source-ref="dataSource"
 
                                users-by-username-query="

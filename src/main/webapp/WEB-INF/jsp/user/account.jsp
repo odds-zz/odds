@@ -38,7 +38,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="firstname">First Name</label>
                                             <div class="controls">
-                                                <input type="text" class="input-medium" id="firstname" value="Rod">
+                                                <input type="text" class="input-medium" id="firstname" value="${user.getFirstname()}">
                                             </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 
@@ -46,7 +46,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="lastname">Last Name</label>
                                             <div class="controls">
-                                                <input type="text" class="input-medium" id="lastname" value="Howard">
+                                                <input type="text" class="input-medium" id="lastname" value="${user.getLastname()}">
                                             </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 
