@@ -16,13 +16,22 @@ and open the template in the editor.
         <intercept-url pattern="/user/account*" access="ROLE_USER" />
         <form-login login-page="/auth/signin" login-processing-url="/auth/check" />
         <logout logout-url="/logout"  logout-success-url="/" />
+        <remember-me />
     </http>
 
     <authentication-manager>
         <authentication-provider>
-            <user-service>
-                <user name="kenkataiwa" password="123456" authorities="ROLE_USER" />
-            </user-service>
+            <jdbc-user-service data-source-ref="dataSource"
+
+                               users-by-username-query="
+		      select username,password, enabled
+		      from user where username=?"
+
+                               authorities-by-username-query="
+		      select u.username, ur.authority from user u, user_roles ur
+		      where u.id = ur.user_id and u.username =?  "
+
+            />
         </authentication-provider>
     </authentication-manager>
 
