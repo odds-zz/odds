@@ -67,6 +67,22 @@ public class UserDAO {
         return u;
     }
 
+    public User getUserByUsername(String username) {
+
+        User u = null;
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            Query q = session.createQuery("from User u where username = :username");
+            q.setString("username", username);
+            u = (User) q.uniqueResult();
+            session.close();
+        } catch (Exception e) {
+            System.out.println(e.toString());
+        }
+        return u;
+    }
+
     public User getUser(Integer uID) {
 
         User u = null;
