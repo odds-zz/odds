@@ -17,7 +17,7 @@ import org.odds.hibernate.entities.User;
 
 public class UserDAO {
 
-    public List listUser() {
+    public static List listUser() {
 
         List<User> users = null;
 
@@ -38,7 +38,7 @@ public class UserDAO {
         return users;
     }
 
-    public void createUser() {
+    public static void createUser() {
 
         Session session;
         session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -50,7 +50,7 @@ public class UserDAO {
 
     }
 
-    public User createUser(User u) {
+    public static User createUser(User u) {
 
         try {
             Session session;
@@ -67,7 +67,7 @@ public class UserDAO {
         return u;
     }
 
-    public User getUserByUsername(String username) {
+    public static User getUserByUsername(String username) {
 
         User u = null;
         try {
@@ -83,7 +83,7 @@ public class UserDAO {
         return u;
     }
 
-    public User getUser(Integer uID) {
+    public static User getUser(Integer uID) {
 
         User u = null;
         try {
@@ -99,7 +99,7 @@ public class UserDAO {
         return u;
     }
 
-    public void deleteUser(Integer uID) {
+    public static void deleteUser(Integer uID) {
 
         Session s = HibernateUtil.getSessionFactory().getCurrentSession();
         s.beginTransaction();
@@ -109,7 +109,7 @@ public class UserDAO {
         s.close();
     }
 
-    public void save(User u) {
+    public static void save(User u) {
         try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();

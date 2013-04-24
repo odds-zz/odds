@@ -29,7 +29,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="username">Username</label>
                                             <div class="controls">
-                                                <input type="text" class="input-medium disabled" id="username" value="goideate" disabled="">
+                                                <input type="text" class="input-medium disabled" id="username" value="${user.getUsername()}" disabled="">
                                                 <p class="help-block">Your username is for logging in and cannot be changed.</p>
                                             </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
@@ -54,7 +54,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="email">Email Address</label>
                                             <div class="controls">
-                                                <input type="text" class="input-large" id="email" value="rod.howard@example.com">
+                                                <input type="text" class="input-large" id="email" value="${contact.getEmail()}">
                                             </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 
@@ -64,7 +64,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="password1">Password</label>
                                             <div class="controls">
-                                                <input type="password" class="input-medium" id="password1" value="password">
+                                                <input type="password" placeholder="New Password" class="input-medium" id="password1" value="">
                                             </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 
@@ -72,7 +72,7 @@
                                         <div class="control-group">
                                             <label class="control-label" for="password2">Confirm</label>
                                             <div class="controls">
-                                                <input type="password" class="input-medium" id="password2" value="password">
+                                                <input type="password" placeholder="Confirm Password" class="input-medium" id="password2" value="">
                                             </div> <!-- /controls -->
                                         </div> <!-- /control-group -->
 

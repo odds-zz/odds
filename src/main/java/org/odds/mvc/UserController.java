@@ -16,6 +16,8 @@ import org.springframework.security.core.userdetails.User;
 
 import org.hibernate.Session;
 import org.odds.hibernate.dao.UserDAO;
+import org.odds.hibernate.dao.UserContactDAO;
+import org.odds.hibernate.entities.UserContact;
 
 /**
  * Handles requests for the application home page.
@@ -30,10 +32,12 @@ public class UserController {
 
         User currentUser = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        UserDAO userDAO = new UserDAO();
-        org.odds.hibernate.entities.User user = userDAO.getUserByUsername( currentUser.getUsername() );
+        org.odds.hibernate.entities.User user = UserDAO.getUserByUsername( currentUser.getUsername() );
+
+        UserContact uc = UserContactDAO.getByUser(user.getId());
 
         model.addAttribute("user", user);
+        model.addAttribute("contact", uc );
 
         return "user/account";
     }
@@ -43,10 +47,12 @@ public class UserController {
 
         User currentUser = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        UserDAO userDAO = new UserDAO();
-        org.odds.hibernate.entities.User user = userDAO.getUserByUsername( currentUser.getUsername() );
+        org.odds.hibernate.entities.User user = UserDAO.getUserByUsername( currentUser.getUsername() );
+
+        UserContact uc = UserContactDAO.getByUser(user.getId());
 
         model.addAttribute("user", user);
+        model.addAttribute("contact", uc );
 
         return "user/history";
     }
