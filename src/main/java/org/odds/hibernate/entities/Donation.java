@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 19, 2013 6:28:17 PM by Hibernate Tools 3.2.1.GA
+// Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -10,6 +10,8 @@ public class Donation  implements java.io.Serializable {
 
 
      private Integer id;
+     private User user;
+     private DonationCategory donationCategory;
      private String name;
      private String details;
      private String status;
@@ -18,7 +20,14 @@ public class Donation  implements java.io.Serializable {
     public Donation() {
     }
 
-    public Donation(String name, String details, String status, String donor) {
+	
+    public Donation(User user, DonationCategory donationCategory) {
+        this.user = user;
+        this.donationCategory = donationCategory;
+    }
+    public Donation(User user, DonationCategory donationCategory, String name, String details, String status, String donor) {
+       this.user = user;
+       this.donationCategory = donationCategory;
        this.name = name;
        this.details = details;
        this.status = status;
@@ -31,6 +40,20 @@ public class Donation  implements java.io.Serializable {
     
     public void setId(Integer id) {
         this.id = id;
+    }
+    public User getUser() {
+        return this.user;
+    }
+    
+    public void setUser(User user) {
+        this.user = user;
+    }
+    public DonationCategory getDonationCategory() {
+        return this.donationCategory;
+    }
+    
+    public void setDonationCategory(DonationCategory donationCategory) {
+        this.donationCategory = donationCategory;
     }
     public String getName() {
         return this.name;

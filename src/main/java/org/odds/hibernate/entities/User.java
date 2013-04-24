@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 19, 2013 6:28:17 PM by Hibernate Tools 3.2.1.GA
+// Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -14,15 +14,27 @@ public class User  implements java.io.Serializable {
      private Integer id;
      private String firstname;
      private String lastname;
-     private Set orphanages = new HashSet(0);
+     private String username;
+     private String password;
+     private Integer enabled;
+     private Set feedbacks = new HashSet(0);
+     private Set userContacts = new HashSet(0);
+     private Set userRoleses = new HashSet(0);
+     private Set donations = new HashSet(0);
 
     public User() {
     }
 
-    public User(String firstname, String lastname, Set orphanages) {
+    public User(String firstname, String lastname, String username, String password, Integer enabled, Set feedbacks, Set userContacts, Set userRoleses, Set donations) {
        this.firstname = firstname;
        this.lastname = lastname;
-       this.orphanages = orphanages;
+       this.username = username;
+       this.password = password;
+       this.enabled = enabled;
+       this.feedbacks = feedbacks;
+       this.userContacts = userContacts;
+       this.userRoleses = userRoleses;
+       this.donations = donations;
     }
    
     public Integer getId() {
@@ -46,12 +58,54 @@ public class User  implements java.io.Serializable {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-    public Set getOrphanages() {
-        return this.orphanages;
+    public String getUsername() {
+        return this.username;
     }
     
-    public void setOrphanages(Set orphanages) {
-        this.orphanages = orphanages;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getPassword() {
+        return this.password;
+    }
+    
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    public Integer getEnabled() {
+        return this.enabled;
+    }
+    
+    public void setEnabled(Integer enabled) {
+        this.enabled = enabled;
+    }
+    public Set getFeedbacks() {
+        return this.feedbacks;
+    }
+    
+    public void setFeedbacks(Set feedbacks) {
+        this.feedbacks = feedbacks;
+    }
+    public Set getUserContacts() {
+        return this.userContacts;
+    }
+    
+    public void setUserContacts(Set userContacts) {
+        this.userContacts = userContacts;
+    }
+    public Set getUserRoleses() {
+        return this.userRoleses;
+    }
+    
+    public void setUserRoleses(Set userRoleses) {
+        this.userRoleses = userRoleses;
+    }
+    public Set getDonations() {
+        return this.donations;
+    }
+    
+    public void setDonations(Set donations) {
+        this.donations = donations;
     }
 
 

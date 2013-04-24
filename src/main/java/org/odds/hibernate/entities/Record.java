@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 19, 2013 6:28:17 PM by Hibernate Tools 3.2.1.GA
+// Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -10,13 +10,19 @@ public class Record  implements java.io.Serializable {
 
 
      private Integer id;
+     private Orphanage orphanage;
      private Boolean status;
      private String details;
 
     public Record() {
     }
 
-    public Record(Boolean status, String details) {
+	
+    public Record(Orphanage orphanage) {
+        this.orphanage = orphanage;
+    }
+    public Record(Orphanage orphanage, Boolean status, String details) {
+       this.orphanage = orphanage;
        this.status = status;
        this.details = details;
     }
@@ -27,6 +33,13 @@ public class Record  implements java.io.Serializable {
     
     public void setId(Integer id) {
         this.id = id;
+    }
+    public Orphanage getOrphanage() {
+        return this.orphanage;
+    }
+    
+    public void setOrphanage(Orphanage orphanage) {
+        this.orphanage = orphanage;
     }
     public Boolean getStatus() {
         return this.status;

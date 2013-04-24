@@ -16,5 +16,10 @@
     <mapping resource="org/odds/hibernate/entities/Orphanage.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Feedback.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/User.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/News.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/OrphanageContact.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/DonationCategory.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/UserRoles.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/UserContact.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

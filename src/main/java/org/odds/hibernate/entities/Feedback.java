@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 19, 2013 6:28:17 PM by Hibernate Tools 3.2.1.GA
+// Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -11,15 +11,19 @@ public class Feedback  implements java.io.Serializable {
 
 
      private Integer id;
-     private String userId;
+     private User user;
      private String details;
      private Date date;
 
     public Feedback() {
     }
 
-    public Feedback(String userId, String details, Date date) {
-       this.userId = userId;
+	
+    public Feedback(User user) {
+        this.user = user;
+    }
+    public Feedback(User user, String details, Date date) {
+       this.user = user;
        this.details = details;
        this.date = date;
     }
@@ -31,12 +35,12 @@ public class Feedback  implements java.io.Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public String getUserId() {
-        return this.userId;
+    public User getUser() {
+        return this.user;
     }
     
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
     public String getDetails() {
         return this.details;

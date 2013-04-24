@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="org.odds.hibernate.entities.Donation" table="donation" catalog="odds_db">
+    <class name="org.odds.hibernate.entities.UserContact" table="user_contact" catalog="odds_db">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
             <generator class="identity" />
@@ -11,20 +11,20 @@
         <many-to-one name="user" class="org.odds.hibernate.entities.User" fetch="select">
             <column name="user_id" not-null="true" />
         </many-to-one>
-        <many-to-one name="donationCategory" class="org.odds.hibernate.entities.DonationCategory" fetch="select">
-            <column name="category_id" not-null="true" />
-        </many-to-one>
-        <property name="name" type="string">
-            <column name="name" length="45" />
+        <property name="email" type="string">
+            <column name="email" length="45" />
         </property>
-        <property name="details" type="string">
-            <column name="details" length="45" />
+        <property name="altEmail" type="string">
+            <column name="alt_email" length="45" />
         </property>
-        <property name="status" type="string">
-            <column name="status" length="45" />
+        <property name="phone" type="string">
+            <column name="phone" length="45" />
         </property>
-        <property name="donor" type="string">
-            <column name="donor" length="45" />
+        <property name="altPhone" type="string">
+            <column name="alt_phone" length="45" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="45" />
         </property>
     </class>
 </hibernate-mapping>

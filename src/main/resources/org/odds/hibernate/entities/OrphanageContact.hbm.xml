@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.odds.hibernate.entities.OrphanageContact" table="orphanage_contact" catalog="odds_db">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orphanage" class="org.odds.hibernate.entities.Orphanage" fetch="select">
+            <column name="orphanage_id" not-null="true" />
+        </many-to-one>
+        <property name="phone" type="string">
+            <column name="phone" length="45" />
+        </property>
+        <property name="altPhone" type="string">
+            <column name="alt_phone" length="45" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        <property name="altEmail" type="string">
+            <column name="alt_email" length="45" />
+        </property>
+        <property name="fax" type="string">
+            <column name="fax" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

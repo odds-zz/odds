@@ -1,20 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 19, 2013 6:28:17 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="org.odds.hibernate.entities.Orphanage" table="orphanage" catalog="odds_db">
-        <composite-id name="id" class="org.odds.hibernate.entities.OrphanageId">
-            <key-property name="id" type="int">
-                <column name="id" />
-            </key-property>
-            <key-property name="usersId" type="int">
-                <column name="users_id" />
-            </key-property>
-        </composite-id>
-        <many-to-one name="user" class="org.odds.hibernate.entities.User" update="false" insert="false" fetch="select">
-            <column name="users_id" not-null="true" />
-        </many-to-one>
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
         <property name="name" type="string">
             <column name="name" length="128" />
         </property>
@@ -27,5 +20,17 @@
         <property name="details" type="string">
             <column name="details" length="128" />
         </property>
+        <set name="records" inverse="true">
+            <key>
+                <column name="orphanage_id" not-null="true" />
+            </key>
+            <one-to-many class="org.odds.hibernate.entities.Record" />
+        </set>
+        <set name="orphanageContacts" inverse="true">
+            <key>
+                <column name="orphanage_id" not-null="true" />
+            </key>
+            <one-to-many class="org.odds.hibernate.entities.OrphanageContact" />
+        </set>
     </class>
 </hibernate-mapping>
