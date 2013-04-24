@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA
+// Generated Apr 24, 2013 3:49:45 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -19,13 +19,13 @@ public class User  implements java.io.Serializable {
      private Integer enabled;
      private Set feedbacks = new HashSet(0);
      private Set userContacts = new HashSet(0);
-     private Set userRoleses = new HashSet(0);
+     private Set userRoles = new HashSet(0);
      private Set donations = new HashSet(0);
 
     public User() {
     }
 
-    public User(String firstname, String lastname, String username, String password, Integer enabled, Set feedbacks, Set userContacts, Set userRoleses, Set donations) {
+    public User(String firstname, String lastname, String username, String password, Integer enabled, Set feedbacks, Set userContacts, Set userRoles, Set donations) {
        this.firstname = firstname;
        this.lastname = lastname;
        this.username = username;
@@ -33,7 +33,7 @@ public class User  implements java.io.Serializable {
        this.enabled = enabled;
        this.feedbacks = feedbacks;
        this.userContacts = userContacts;
-       this.userRoleses = userRoleses;
+       this.userRoles = userRoles;
        this.donations = donations;
     }
    
@@ -93,12 +93,12 @@ public class User  implements java.io.Serializable {
     public void setUserContacts(Set userContacts) {
         this.userContacts = userContacts;
     }
-    public Set getUserRoleses() {
-        return this.userRoleses;
+    public Set getUserRoles() {
+        return this.userRoles;
     }
     
-    public void setUserRoleses(Set userRoleses) {
-        this.userRoleses = userRoleses;
+    public void setUserRoles(Set userRoles) {
+        this.userRoles = userRoles;
     }
     public Set getDonations() {
         return this.donations;

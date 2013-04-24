@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 24, 2013 2:19:10 PM by Hibernate Tools 3.2.1.GA
+// Generated Apr 24, 2013 3:49:45 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
