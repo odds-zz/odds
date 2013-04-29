@@ -6,12 +6,12 @@
         <link href="/odds/assets/ico/favicon.ico" rel="shortcut icon" >
         <link href="/odds/assets/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/base-admin.css" media="screen" rel="stylesheet" type="text/css">
-        <link href="/odds/assets/css/font-awesome.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/odds/components/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/dashboard.css" media="screen" rel="stylesheet" type="text/css">
-        <link href="/odds/assets/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/odds/components/bootstrap/docs/assets/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/style.css" media="screen" rel="stylesheet" type="text/css">
-        <script type="text/javascript" src="/odds/assets/js/jquery.js"></script>
-        <script type="text/javascript" src="/odds/assets/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/odds/components/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="/odds/components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/odds/assets/js/application.js"></script>
         <title>ODDS</title>
     </head>

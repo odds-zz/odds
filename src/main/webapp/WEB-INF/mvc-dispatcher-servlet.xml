@@ -16,6 +16,7 @@
 
     <!-- Handles HTTP GET requests for /assets/** by efficiently serving up static resources in the ${webappRoot}/assets/ directory -->
     <mvc:resources mapping="/assets/**" location="/assets/" />
+    <mvc:resources mapping="/components/**" location="/components/" />
 
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven />
