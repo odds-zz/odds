@@ -36,6 +36,12 @@ public class OrphanageController {
         return "orphanage/admin";
     }
 
+    @RequestMapping(value = "/orphanage/admin/children")
+    public String adminChildren(Model model) {
+
+        return "orphanage/admin";
+    }
+
     @RequestMapping(value = "/orphanage/records")
     public String records(Model model) {
 
