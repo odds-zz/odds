@@ -18,48 +18,31 @@
                 </li>
 
                 <li>
-                    <a href="./faq.html">
-                        <i class="icon-pushpin"></i>
-                        <span>FAQ</span>
+                    <a href="/odds/admin/users">
+                        <i class="icon-group"></i>
+                        <span>Users</span>
                     </a>
                 </li>
 
                 <li class="subnavbar-open-right">
-                    <a href="./pricing.html" class="dropdown-toggle">
-                        <i class="icon-th-large"></i>
-                        <span>Pricing Plans</span>
+                    <a href="/odds/admin/orphanages" class="dropdown-toggle">
+                        <i class="icon-building"></i>
+                        <span>Orphanages</span>
+                    </a>
+                </li>
+
+                <li class="subnavbar-open-right">
+                    <a href="/odds/admin/donations" class="dropdown-toggle">
+                        <i class="icon-money"></i>
+                        <span>Donations</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="./reports.html">
+                    <a href="/odds/admin/reports">
                         <i class="icon-bar-chart"></i>
                         <span>Reports</span>
                     </a>
-                </li>
-
-                <li>
-                    <a href="./guidely.html">
-                        <i class="icon-facetime-video"></i>
-                        <span>Guided Tour</span>
-                    </a>
-                </li>
-
-                <li class="dropdown subnavbar-open-right">
-                    <a href="/odds/admin/" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="icon-share-alt"></i>
-                        <span>More Pages</span>
-                        <b class="caret"></b>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li><a href="./charts.html">Charts</a></li>
-                        <li><a href="./account.html">User Account</a></li>
-                        <li class="divider subnavbar-open-right"></li>
-                        <li><a href="./login.html">Login</a></li>
-                        <li><a href="./signup.html">Signup</a></li>
-                        <li class="subnavbar-open-right"><a href="./error.html">Error</a></li>
-                    </ul>
                 </li>
 
             </ul>
@@ -220,11 +203,11 @@
                                     <span class="shortcut-label">Users</span>
                                 </a>
                                 <a href="/odds/admin/orphanages" class="shortcut">
-                                    <i class="shortcut-icon icon-file"></i>
+                                    <i class="shortcut-icon icon-building"></i>
                                     <span class="shortcut-label">Orphanages</span>
                                 </a>
                                 <a href="/odds/admin/donations" class="shortcut">
-                                    <i class="shortcut-icon icon-bookmark"></i>
+                                    <i class="shortcut-icon icon-money"></i>
                                     <span class="shortcut-label">Donations</span>
                                 </a>
                                 <a href="/odds/admin/news" class="shortcut">
