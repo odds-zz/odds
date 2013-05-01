@@ -8,7 +8,6 @@ package org.odds.mvc;
  *
  * @author kenkataiwa
  */
-import org.hibernate.Session;
 import org.odds.hibernate.entities.User;
 import org.odds.hibernate.dao.UserDAO;
 import org.springframework.stereotype.Controller;
@@ -20,8 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class IndexController {
-
-    Session session = null;
 
     @RequestMapping(value = "/")
     public String home(Model model) {

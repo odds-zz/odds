@@ -13,8 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
-
-import org.hibernate.Session;
 import org.odds.hibernate.dao.UserDAO;
 import org.odds.hibernate.dao.UserContactDAO;
 import org.odds.hibernate.entities.UserContact;
@@ -24,8 +22,6 @@ import org.odds.hibernate.entities.UserContact;
  */
 @Controller
 public class UserController {
-
-    Session session = null;
 
     @RequestMapping(value = "/user/account")
     public String account(Model model) {
