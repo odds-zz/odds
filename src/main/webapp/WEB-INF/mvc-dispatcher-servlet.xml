@@ -10,6 +10,7 @@
 
 
     <!-- Registering beans -->
+    <bean class="org.odds.mvc.auth.validator.RegisterValidator" />
     <bean class="org.odds.mvc.orphanage.validator.OrphanageValidator" />
 
     <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
