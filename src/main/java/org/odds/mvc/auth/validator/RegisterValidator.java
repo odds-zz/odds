@@ -24,6 +24,8 @@ public class RegisterValidator implements Validator {
                 "required.firstname", "Field name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastname",
                 "required.lastname", "Field name is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username",
+                "required.username", "Field name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
                 "required.email", "Field name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password",

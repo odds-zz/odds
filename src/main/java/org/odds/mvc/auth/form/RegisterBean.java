@@ -8,6 +8,7 @@ public class RegisterBean {
 
     private String firstname;
     private String lastname;
+    private String username;
     private String email;
     private Integer age;
     private String password;
@@ -27,6 +28,14 @@ public class RegisterBean {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getAge() {

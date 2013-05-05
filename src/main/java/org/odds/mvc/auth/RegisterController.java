@@ -15,6 +15,10 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import org.odds.mvc.auth.validator.RegisterValidator;
 import org.odds.mvc.auth.form.RegisterBean;
+import org.odds.hibernate.dao.UserDAO;
+import org.odds.hibernate.entities.User;
+import org.odds.hibernate.entities.UserContact;
+import org.odds.hibernate.entities.UserRole;
 
 /**
  * Handles requests for the application home page.
@@ -42,19 +46,35 @@ public class RegisterController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
-            @ModelAttribute("user") RegisterBean user,
+            @ModelAttribute("user") RegisterBean form,
             BindingResult result, SessionStatus status) {
 
 
-        registerValidator.validate(user, result);
+        registerValidator.validate(form, result);
 
         if (result.hasErrors()) {
             //if validator failed
+            System.out.println(form.getFirstname() + " " + form.getLastname());
             return "auth/register";
         } else {
             status.setComplete();
+
+            User newUser = new User();
+            UserContact contact = new UserContact();
+            UserRole role = new UserRole();
+
+            contact.setEmail(form.getEmail());
+            contact.setUser(newUser);
+            role.setAuthority("ROLE_USER");
+            newUser.setFirstname(form.getFirstname());
+            newUser.setLastname(form.getLastname());
+            newUser.setUsername(form.getUsername());
+            newUser.setPassword(form.getPassword());
+
+//            newUser.setUserContacts(contact);
             //form success
-            return "auth/register";
+            UserDAO.createUser(newUser);
+            return "redirect:/auth/signin";
         }
     }
 }
