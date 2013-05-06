@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 24, 2013 4:28:18 PM by Hibernate Tools 3.2.1.GA
+// Generated May 6, 2013 2:07:43 PM by Hibernate Tools 3.2.1.GA
 
 
 
@@ -9,25 +9,25 @@ package org.odds.hibernate.entities;
 public class UserRole  implements java.io.Serializable {
 
 
-     private int userRoleId;
+     private int id;
      private User user;
      private String authority;
 
     public UserRole() {
     }
 
-    public UserRole(int userRoleId, User user, String authority) {
-       this.userRoleId = userRoleId;
+    public UserRole(int id, User user, String authority) {
+       this.id = id;
        this.user = user;
        this.authority = authority;
     }
    
-    public int getUserRoleId() {
-        return this.userRoleId;
+    public int getId() {
+        return this.id;
     }
     
-    public void setUserRoleId(int userRoleId) {
-        this.userRoleId = userRoleId;
+    public void setId(int id) {
+        this.id = id;
     }
     public User getUser() {
         return this.user;
