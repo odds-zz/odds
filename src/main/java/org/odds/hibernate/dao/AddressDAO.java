@@ -11,27 +11,27 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.odds.hibernate.HibernateUtil;
-import org.odds.hibernate.entities.Location;
+import org.odds.hibernate.entities.Address;
 
 /**
  *Helper Class that wraps database operations safely in transactions
  * @author User
  */
-public class LocationDAO {
-    
-    public LocationDAO(){
-        
+public class AddressDAO {
+
+    public AddressDAO(){
+
     }
-    
-    public void createLocation (Location l){
-        
+
+    public void createAddress (Address a){
+
       Transaction tx;
         tx = null;
         Session session;
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         try{
             tx = session.beginTransaction();
-            session.save(l);
+            session.save(a);
             tx.commit();
         }
         catch(RuntimeException e){
@@ -40,16 +40,16 @@ public class LocationDAO {
                 tx.rollback();
                 }
                 catch(HibernateException he){
-                System.out.println("Error rolling back this Transaction " + 
+                System.out.println("Error rolling back this Transaction " +
                         he.toString());
                 }
             }
             throw e;
-        }  
+        }
     }
-    
-    public void deleteLocation(Location l){
-        
+
+    public void deleteAddress(Address l){
+
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try{
@@ -69,9 +69,9 @@ public class LocationDAO {
             throw e;
         }
     }
-    
-    public void updateLocation (Location l){
-        
+
+    public void updateAddress (Address l){
+
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try{
@@ -89,19 +89,19 @@ public class LocationDAO {
                 }
             }
             throw e;
-        } 
+        }
     }
-    
-    public Location getLocation(Integer id){
-        
-        Location l = null;
+
+    public Address getAddress(Integer id){
+
+        Address l = null;
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try{
             tx = session.beginTransaction();
-            Query q = session.createQuery("from Location where Location.id = :id");
+            Query q = session.createQuery("from Address where Address.id = :id");
             q.setString("id", id.toString());
-            l = (Location) q.uniqueResult();
+            l = (Address) q.uniqueResult();
             tx.commit();
             Connection close;
             close = session.close();
@@ -120,20 +120,20 @@ public class LocationDAO {
         }
         return l;
     }
-    
-    public List listLocations(){
-        
-        List<Location> lList = null;
+
+    public List listAddresss(){
+
+        List<Address> lList = null;
         Transaction tx = null;
         Session session;
         session = HibernateUtil.getSessionFactory().getCurrentSession();
-        
+
         try
-        {            
+        {
             tx = session.beginTransaction();
             Query q;
-            q = session.createQuery("from Location");
-            lList = (List<Location>) q.list();
+            q = session.createQuery("from Address");
+            lList = (List<Address>) q.list();
             tx.commit();//end of transaction
             Connection close; //end of  session
             close = session.close();
@@ -144,10 +144,10 @@ public class LocationDAO {
                 tx.rollback();
                 }
                 catch(HibernateException he){
-                System.out.println("Error rolling back the Transaction " + he.toString());     
+                System.out.println("Error rolling back the Transaction " + he.toString());
                 }
             }
-            
+
         }
         return lList;
     }
