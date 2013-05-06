@@ -75,6 +75,7 @@ public class RegisterController {
             newUser.setLastname(form.getLastname());
             newUser.setUsername(form.getUsername());
             newUser.setPassword(hashPassword);
+            newUser.setEnabled(1);
             User user = UserDAO.createUser(newUser);
 
             // Save contact
