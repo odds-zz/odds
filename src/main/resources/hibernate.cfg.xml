@@ -10,16 +10,17 @@
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.current_session_context_class">thread</property>
     <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
-    <mapping resource="org/odds/hibernate/entities/News.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/UserSettings.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/UserRole.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Address.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/UserContact.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Feedback.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/News.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/OrphanageContact.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/entities/Location.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/DonationCategory.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Record.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/entities/UserContact.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Donation.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Orphanage.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/entities/Feedback.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/User.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

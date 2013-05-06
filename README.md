@@ -30,4 +30,4 @@ For more information on semantic versioning, please visit http://semver.org/.
 
 * **Kenneth Kataiwa** ([Twitter](https://twitter.com/kenkataiwa) / [GitHub](https://github.com/kenkataiwa))
 * **Matei Mgani** ([GitHub](https://github.com/mateimgani))
-* **Faines Mwaituka** ([GitHub](https://github.com/dangiodaniel))
+* **Faines Mwaituka** ([GitHub](https://github.com/dangio247))
