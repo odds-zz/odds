@@ -15,6 +15,13 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import org.odds.mvc.auth.validator.RegisterValidator;
 import org.odds.mvc.auth.form.RegisterBean;
+import org.odds.hibernate.dao.UserDAO;
+import org.odds.hibernate.dao.UserContactDAO;
+import org.odds.hibernate.dao.UserRoleDAO;
+import org.odds.hibernate.entities.User;
+import org.odds.hibernate.entities.UserContact;
+import org.odds.hibernate.entities.UserRole;
+import java.security.MessageDigest;
 
 /**
  * Handles requests for the application home page.
@@ -42,19 +49,63 @@ public class RegisterController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
-            @ModelAttribute("user") RegisterBean user,
+            @ModelAttribute("user") RegisterBean form,
             BindingResult result, SessionStatus status) {
 
 
-        registerValidator.validate(user, result);
+        registerValidator.validate(form, result);
 
         if (result.hasErrors()) {
             //if validator failed
+            System.out.println(form.getFirstname() + " " + form.getLastname());
             return "auth/register";
         } else {
             status.setComplete();
+
+            String hashPassword;
+            try {
+                hashPassword = this.hash(form.getPassword());
+            } catch (Exception e) {
+                return "auth/register";
+            }
+
+            // Save user
+            User newUser = new User();
+            newUser.setFirstname(form.getFirstname());
+            newUser.setLastname(form.getLastname());
+            newUser.setUsername(form.getUsername());
+            newUser.setPassword(hashPassword);
+            newUser.setEnabled(1);
+            User user = UserDAO.createUser(newUser);
+
+            // Save contact
+            UserContact userContact = new UserContact();
+            userContact.setEmail(form.getEmail());
+            userContact.setUser(user);
+            UserContactDAO.create(userContact);
+
+            UserRole userRole = new UserRole();
+            userRole.setAuthority("ROLE_USER");
+            userRole.setUser(user);
+            UserRoleDAO.create(userRole);
+
             //form success
-            return "auth/register";
+            return "redirect:/auth/signin";
         }
+    }
+
+    public String hash(String phrase) throws Exception {
+
+        String original = phrase;
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(original.getBytes());
+        byte[] digest = md.digest();
+        StringBuffer sb = new StringBuffer();
+        for (byte b : digest) {
+            sb.append(Integer.toHexString((int) (b & 0xff)));
+        }
+
+        return sb.toString();
+
     }
 }

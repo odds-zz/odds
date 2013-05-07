@@ -33,7 +33,7 @@
                         <div class="alert alert-error">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             Form has been submitted with errors
-                        </div>                        
+                        </div>
                     </c:if>
                 </s:bind>
                 <div class="field">
@@ -50,6 +50,14 @@
                     </form:label>
                     <form:input path="lastname" placeholder="Last Name" cssClass="login" />
                     <form:errors path="lastname" cssClass="error" />
+                </div> <!-- /field -->
+
+                <div class="field">
+                    <form:label path="username">
+                        Username:
+                    </form:label>
+                    <form:input path="username" placeholder="Username" cssClass="login" />
+                    <form:errors path="username" cssClass="error" />
                 </div> <!-- /field -->
 
                 <div class="field">

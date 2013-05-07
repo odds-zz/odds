@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row-fluid">
         <div class="span12">
-            <h1>ODDS Orphanages Administration</h1>
+            <h1>ODDS Admin Statistics</h1>
         </div>
     </div>
 </div>

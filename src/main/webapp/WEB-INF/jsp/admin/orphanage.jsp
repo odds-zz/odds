@@ -2,6 +2,8 @@
 
 <%@include file="../../jspf/layout/banner/simple.jspf" %>
 
+<%@include file="jspf/subnav.jsp" %>
+
 <div class="container">
     <div class="row-fluid">
         <div class="span12">

@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated Apr 24, 2013 4:28:18 PM by Hibernate Tools 3.2.1.GA
+// Generated May 6, 2013 2:07:43 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -17,23 +17,27 @@ public class User  implements java.io.Serializable {
      private String username;
      private String password;
      private Integer enabled;
+     private Set orphanages = new HashSet(0);
      private Set feedbacks = new HashSet(0);
      private Set userRoles = new HashSet(0);
      private Set userContacts = new HashSet(0);
+     private Set userSettingses = new HashSet(0);
      private Set donations = new HashSet(0);
 
     public User() {
     }
 
-    public User(String firstname, String lastname, String username, String password, Integer enabled, Set feedbacks, Set userRoles, Set userContacts, Set donations) {
+    public User(String firstname, String lastname, String username, String password, Integer enabled, Set orphanages, Set feedbacks, Set userRoles, Set userContacts, Set userSettingses, Set donations) {
        this.firstname = firstname;
        this.lastname = lastname;
        this.username = username;
        this.password = password;
        this.enabled = enabled;
+       this.orphanages = orphanages;
        this.feedbacks = feedbacks;
        this.userRoles = userRoles;
        this.userContacts = userContacts;
+       this.userSettingses = userSettingses;
        this.donations = donations;
     }
    
@@ -79,6 +83,13 @@ public class User  implements java.io.Serializable {
     public void setEnabled(Integer enabled) {
         this.enabled = enabled;
     }
+    public Set getOrphanages() {
+        return this.orphanages;
+    }
+    
+    public void setOrphanages(Set orphanages) {
+        this.orphanages = orphanages;
+    }
     public Set getFeedbacks() {
         return this.feedbacks;
     }
@@ -99,6 +110,13 @@ public class User  implements java.io.Serializable {
     
     public void setUserContacts(Set userContacts) {
         this.userContacts = userContacts;
+    }
+    public Set getUserSettingses() {
+        return this.userSettingses;
+    }
+    
+    public void setUserSettingses(Set userSettingses) {
+        this.userSettingses = userSettingses;
     }
     public Set getDonations() {
         return this.donations;
