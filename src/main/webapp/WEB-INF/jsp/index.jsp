@@ -14,18 +14,28 @@
             <a href="/odds/about">
                 <h3>About ODDS</h3>
             </a>
-            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+            <p>Welcome to Orphanages Donation and Distribution System. 
+               This application is developed to create awareness of orphans in our community and 
+               enable donors to give what they have to orphans.
+               
+            </p>
+            <p> 
+               To join the development team, use our contact information at the bottom of the page.</p>
         </div>
         <div class="span4">
             <h3>Start helping!</h3>
-            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+            <p>Orphans are around us and they need our care, friendship, love, our humanity. . .<br />
+               To donate to ODDS for distribution to orphanages, visit any sub-menu of the donation menu.</p>
+            <p>To help a particular orphanage, visit it through the information menu at the top of the page.
+               ODDS is not another scheme to pickpocket you. We care about orphans.
+               
+            </p>
         </div>
         <div class="span4">
             <h3>Join the Conversation</h3>
-            <p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec sed odio dui.</p>
+            <p>Lets share our stories, and create solutions to pressing problems in our communities. 
+            </p>
+            <p>Lets join our hands in building our society.</p>
         </div>
     </div>
 </div>
