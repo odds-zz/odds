@@ -32,5 +32,15 @@ public class RegisterValidator implements Validator {
                 "required.password", "Field name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword",
                 "required.confirmPassword", "Field name is required.");
+
+        RegisterBean form = (RegisterBean) target;
+
+        if (!(form.getPassword().equals(form.getConfirmPassword()))) {
+            System.out.println("Checking password equality");
+            errors.rejectValue("password", "notmatch.password", "Passwords didn't match");
+            errors.rejectValue("confirmPassword", "notmatch.password", "Passwords didn't match");
+        }
+
+        // Check if username exists
     }
 }
