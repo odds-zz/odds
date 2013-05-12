@@ -130,6 +130,20 @@
             </exclusions>
         </dependency>
 
+        <!-- Paypal -->
+
+        <dependency>
+            <groupId>com.paypal.sdk</groupId>
+            <artifactId>rest-api-sdk</artifactId>
+            <version>0.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.paypal.sdk</groupId>
+            <artifactId>adaptivepaymentssdk</artifactId>
+            <version>2.3.101</version>
+        </dependency>
+
         <!-- Jackson JSON Processor -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
