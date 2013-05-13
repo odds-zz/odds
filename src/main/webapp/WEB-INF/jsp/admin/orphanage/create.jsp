@@ -26,18 +26,22 @@
                                     <form:errors path="name" cssClass="error" />
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <label class="control-label" for="email">Email Address</label>
+                            <div class="form-element control-group">
+                                <form:label path="email" class="control-label">
+                                    Email Address
+                                </form:label>
                                 <div class="controls">
-                                    <input type="text" class="input-large" placeholder="Orphanage email" id="email" value="" />
-                                </div> <!-- /controls -->
-                            </div> <!-- /control-group -->
+                                    <form:input path="email" placeholder="Orphanage email" />
+                                    <form:errors path="email" cssClass="error" />
+                                </div>
+                            </div>
                             <div class="form-element control-group">
                                 <form:label path="details" class="control-label">
                                     Orphanage details
                                 </form:label>
                                 <div class="controls">
                                     <form:textarea path="details" placeholder="Orphanage details" />
+                                    <form:errors path="details" cssClass="error" />
                                 </div>
                             </div>
                             <br/>
