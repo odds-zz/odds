@@ -21,17 +21,17 @@ public class RegisterValidator implements Validator {
     public void validate(Object target, Errors errors) {
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstname",
-                "required.firstname", "Field name is required.");
+                "required.firstname", "Field first name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastname",
-                "required.lastname", "Field name is required.");
+                "required.lastname", "Field last name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username",
-                "required.username", "Field name is required.");
+                "required.username", "Field username is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
-                "required.email", "Field name is required.");
+                "required.email", "Field email is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password",
-                "required.password", "Field name is required.");
+                "required.password", "Field password is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword",
-                "required.confirmPassword", "Field name is required.");
+                "required.confirmPassword", "Field password is required.");
 
         RegisterBean form = (RegisterBean) target;
 

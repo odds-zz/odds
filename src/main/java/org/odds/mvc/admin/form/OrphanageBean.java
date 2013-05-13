@@ -8,6 +8,7 @@ public class OrphanageBean {
 
     private Integer id;
     private String name;
+    private String email;
     private String details;
 
     public Integer getId() {
@@ -25,6 +26,16 @@ public class OrphanageBean {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
     public String getDetails() {
         return this.details;
     }
