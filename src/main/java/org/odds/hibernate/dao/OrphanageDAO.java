@@ -12,91 +12,87 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.odds.hibernate.HibernateUtil;
 import org.odds.hibernate.entities.Orphanage;
+
 /**
- *Helper Class that wraps database operations safely in transactions
+ * Helper Class that wraps database operations safely in transactions
+ *
  * @author User
  */
 public class OrphanageDAO {
-    
-    public OrphanageDAO(){
-        
+
+    public OrphanageDAO() {
     }
-    
-    public void createOrphanage (Orphanage o){
-        
-      Transaction tx;
+
+    public static Orphanage createOrphanage(Orphanage o) {
+
+        Transaction tx;
         tx = null;
         Session session;
         session = HibernateUtil.getSessionFactory().getCurrentSession();
-        try{
+        try {
             tx = session.beginTransaction();
             session.save(o);
             tx.commit();
-        }
-        catch(RuntimeException e){
-            if (tx != null && tx.isActive()){
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
                 try {
-                tx.rollback();
-                }
-                catch(HibernateException he){
-                System.out.println("Error rolling back this Transaction " + 
-                        he.toString());
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back this Transaction "
+                            + he.toString());
                 }
             }
             throw e;
-        }  
-        
+        }
+        return o;
+
     }
-    
-    public void updateOrphanage (Orphanage o){
-        
+
+    public void updateOrphanage(Orphanage o) {
+
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        try{
+        try {
             tx = session.beginTransaction();
             session.update(o);
             tx.commit();
-        }
-        catch(RuntimeException e){
-            if(tx != null && tx.isActive()){
-                try{
-                tx.rollback();
-                }
-                catch(HibernateException he){
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
                     System.out.println("Error rolling back this Transaction " + he.toString());
                 }
             }
             throw e;
-        }        
+        }
     }
-    
-    public void deleteOrphanage (Orphanage o){
+
+    public void deleteOrphanage(Orphanage o) {
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        try{
+        try {
             tx = session.beginTransaction();
             session.delete(o);
             tx.commit();
-        }
-        catch(RuntimeException e){
-            if(tx != null && tx.isActive()){
-                try{
-                tx.rollback();
-                }
-                catch(HibernateException he){
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
                     System.out.println("Error rolling back this Transaction " + he.toString());
                 }
             }
             throw e;
         }
-    }        
-    
-    public Orphanage getOrphanage (Integer id){
-        
+    }
+
+    public Orphanage getOrphanage(Integer id) {
+
         Orphanage o = null;
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        try{
+        try {
             tx = session.beginTransaction();
             Query q = session.createQuery("from Orphanage where Orphanage.id = :id");
             q.setString("id", id.toString());
@@ -104,32 +100,28 @@ public class OrphanageDAO {
             tx.commit();
             Connection close;
             close = session.close();
-        }
-
-        catch(RuntimeException e){
-            if( tx != null && tx.isActive()){
-                try{
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
                     tx.rollback();
-                }
-                catch(HibernateException he){
+                } catch (HibernateException he) {
                     System.out.println("Error rolling back the Transaction " + he.toString());
                 }
             }
             throw e;
         }
         return o;
-  
+
     }
-    
-    public List listOrphanages (){
-        
+
+    public List listOrphanages() {
+
         List<Orphanage> oList = null;
         Transaction tx = null;
         Session session;
         session = HibernateUtil.getSessionFactory().getCurrentSession();
-        
-        try
-        {            
+
+        try {
             tx = session.beginTransaction();
             Query q;
             q = session.createQuery("from Orphanage");
@@ -137,17 +129,15 @@ public class OrphanageDAO {
             tx.commit();//end of transaction
             Connection close; //end of  session
             close = session.close();
-        }
-        catch(RuntimeException e){
-            if (tx != null && tx.isActive()){
-                try{
-                tx.rollback();
-                }
-                catch(HibernateException he){
-                System.out.println("Error rolling back the Transaction " + he.toString());     
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
                 }
             }
-            
+
         }
         return oList;
     }
