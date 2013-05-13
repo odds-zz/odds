@@ -23,8 +23,10 @@ public class OrphanageValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name",
                 "required.name", "Field name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
-                "required.email", "Field name is required.");
+                "required.email", "Field email is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone",
+                "required.phone", "Field phone is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "details",
-                "required.details", "Field name is required.");
+                "required.details", "Field details is required.");
     }
 }

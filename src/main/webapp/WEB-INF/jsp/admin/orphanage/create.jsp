@@ -36,6 +36,15 @@
                                 </div>
                             </div>
                             <div class="form-element control-group">
+                                <form:label path="phone" class="control-label">
+                                    Phone
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="phone" placeholder="Orphanage phone" />
+                                    <form:errors path="phone" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
                                 <form:label path="details" class="control-label">
                                     Orphanage details
                                 </form:label>

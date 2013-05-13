@@ -9,6 +9,7 @@ public class OrphanageBean {
     private Integer id;
     private String name;
     private String email;
+    private String phone;
     private String details;
 
     public Integer getId() {
@@ -27,6 +28,14 @@ public class OrphanageBean {
         this.name = name;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -34,7 +43,6 @@ public class OrphanageBean {
     public void setEmail(String email) {
         this.email = email;
     }
-
 
     public String getDetails() {
         return this.details;
