@@ -1,9 +1,9 @@
-package org.odds.mvc.orphanage.validator;
+package org.odds.mvc.admin.form;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import org.odds.mvc.orphanage.form.OrphanageBean;
+import org.odds.mvc.admin.form.OrphanageBean;
 
 /**
  *

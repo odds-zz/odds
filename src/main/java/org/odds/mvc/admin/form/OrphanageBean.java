@@ -1,4 +1,4 @@
-package org.odds.mvc.orphanage.form;
+package org.odds.mvc.admin.form;
 
 /**
  *

@@ -1,4 +1,4 @@
-package org.odds.mvc.orphanage;
+package org.odds.mvc.admin.orphanage;
 
 /**
  *
@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
-import org.odds.mvc.orphanage.validator.OrphanageValidator;
-import org.odds.mvc.orphanage.form.OrphanageBean;
+import org.odds.mvc.admin.form.OrphanageValidator;
+import org.odds.mvc.admin.form.OrphanageBean;
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping("/orphanage/create")
+@RequestMapping("/admin/orphanage/create")
 public class CreateController {
 
     OrphanageValidator orphanageValidator;
@@ -37,7 +37,7 @@ public class CreateController {
 
         model.addAttribute("orphanage", orphanage);
 
-        return "orphanage/create";
+        return "/admin/orphanage/create";
     }
 
     @RequestMapping(method = RequestMethod.POST)
