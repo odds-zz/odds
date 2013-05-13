@@ -50,11 +50,11 @@ public class CreateController {
 
         if (result.hasErrors()) {
             //if validator failed
-            return "orphanage/create";
+            return "/admin/orphanage/create";
         } else {
             status.setComplete();
             //form success
-            return "orphanage/create";
+            return "/admin/orphanage/create";
         }
     }
 }

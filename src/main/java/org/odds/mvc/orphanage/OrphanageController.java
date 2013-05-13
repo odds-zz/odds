@@ -24,18 +24,6 @@ public class OrphanageController {
         return "orphanage/index";
     }
 
-    @RequestMapping(value = "/orphanage/admin")
-    public String admin(Model model) {
-
-        return "orphanage/admin";
-    }
-
-    @RequestMapping(value = "/orphanage/admin/children")
-    public String adminChildren(Model model) {
-
-        return "orphanage/admin";
-    }
-
     @RequestMapping(value = "/orphanage/records")
     public String records(Model model) {
 
@@ -47,6 +35,4 @@ public class OrphanageController {
 
         return "orphanage/children";
     }
-
-
 }

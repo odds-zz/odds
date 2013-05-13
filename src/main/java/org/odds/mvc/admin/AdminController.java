@@ -47,18 +47,6 @@ public class AdminController {
         return "admin/news";
     }
 
-    @RequestMapping(value = "/admin/orphanage")
-    public String orphanage(Model model) {
-
-        return "admin/orphanage";
-    }
-
-    @RequestMapping(value = "/admin/orphanages")
-    public String orphanages(Model model) {
-
-        return "admin/orphanages";
-    }
-
     @RequestMapping(value = "/admin/reports")
     public String reports(Model model) {
 
@@ -77,4 +65,22 @@ public class AdminController {
         return "admin/users";
     }
 
+    @RequestMapping(value = "/admin/orphanage")
+    public String orphanage(Model model) {
+
+        return "admin/orphanage";
+    }
+
+    @RequestMapping(value = "/admin/orphanages")
+    public String orphanages(Model model) {
+
+        return "admin/orphanages";
+    }
+
+    @RequestMapping(value = "/admin/orphanage/edit")
+    public String orphanageEdit(Model model) {
+
+        return "admin/orphanage/edit";
+    }
+    
 }
