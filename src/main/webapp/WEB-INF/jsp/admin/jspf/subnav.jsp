@@ -7,9 +7,9 @@
             <ul class="mainnav">
 
                 <li class="active">
-                    <a href="./">
+                    <a href="/odds/admin">
                         <i class="icon-home"></i>
-                        <span>Admin</span>
+                        <span>Admin <%= request.getAttribute("javax.servlet.forward.request_uri") %></span>
                     </a>
                 </li>
 

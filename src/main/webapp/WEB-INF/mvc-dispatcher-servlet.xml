@@ -12,6 +12,7 @@
     <!-- Registering beans -->
     <bean class="org.odds.mvc.auth.validator.RegisterValidator" />
     <bean class="org.odds.mvc.admin.form.OrphanageValidator" />
+    <bean class="org.odds.mvc.donations.form.DonationValidator" />
 
     <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 
