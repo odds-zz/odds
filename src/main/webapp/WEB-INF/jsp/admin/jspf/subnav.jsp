@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="subnavbar">
 
     <div class="subnavbar-inner">
@@ -6,35 +7,36 @@
 
             <ul class="mainnav">
 
-                <li class="active">
+                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin")) {%>active<% }%>">
                     <a href="/odds/admin">
                         <i class="icon-home"></i>
-                        <span>Admin <%= request.getAttribute("javax.servlet.forward.request_uri") %></span>
+                        <span>Admin</span>
+
                     </a>
                 </li>
 
-                <li>
+                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/users")) {%>active<% }%>">
                     <a href="/odds/admin/users">
                         <i class="icon-group"></i>
                         <span>Users</span>
                     </a>
                 </li>
 
-                <li class="subnavbar-open-right">
+                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/orphanages")) {%>active<% }%> subnavbar-open-right">
                     <a href="/odds/admin/orphanages" class="dropdown-toggle">
                         <i class="icon-building"></i>
                         <span>Orphanages</span>
                     </a>
                 </li>
 
-                <li class="subnavbar-open-right">
+                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/donations")) {%>active<% }%> subnavbar-open-right">
                     <a href="/odds/admin/donations" class="dropdown-toggle">
                         <i class="icon-money"></i>
                         <span>Donations</span>
                     </a>
                 </li>
 
-                <li>
+                <li class="<% if(request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/reports")) { %>active<% } %> subnavbar-open-right">
                     <a href="/odds/admin/reports">
                         <i class="icon-bar-chart"></i>
                         <span>Reports</span>
