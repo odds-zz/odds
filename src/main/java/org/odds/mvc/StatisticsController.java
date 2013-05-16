@@ -19,17 +19,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class StatisticsController {
 
     @RequestMapping(value = "/statistics")
-    public String home(Model model) {
+    public String index(Model model) {
 
         return "statistics/index";
     }
 
     @RequestMapping(value = "/statistics/orphanages")
-    public String help(Model model) {
+    public String orphanages(Model model) {
 
         return "statistics/index";
     }
 
+    @RequestMapping(value = "/statistics/children")
+    public String children(Model model) {
+
+        return "statistics/index";
+    }
 
 
 }
