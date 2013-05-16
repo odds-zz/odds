@@ -15,12 +15,20 @@
                     </a>
                 </li>
 
-                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/users")) {%>active<% }%>">
-                    <a href="/odds/admin/users">
+                <li class="dropdown <% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/users")) {%>active<% }%>">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-group"></i>
                         <span>Users</span>
+                        <b class="caret"></b>
                     </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="/odds/admin/users">System Administrators</a></li>
+                        <li><a href="/odds/admin/users">Orphanage Administrators</a></li>
+                        <li><a href="/odds/admin/users">All Users</a></li>
+                    </ul>
                 </li>
+
 
                 <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/orphanages")) {%>active<% }%> subnavbar-open-right">
                     <a href="/odds/admin/orphanages" class="dropdown-toggle">
@@ -36,7 +44,7 @@
                     </a>
                 </li>
 
-                <li class="<% if(request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/reports")) { %>active<% } %> subnavbar-open-right">
+                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/reports")) {%>active<% }%> subnavbar-open-right">
                     <a href="/odds/admin/reports">
                         <i class="icon-bar-chart"></i>
                         <span>Reports</span>

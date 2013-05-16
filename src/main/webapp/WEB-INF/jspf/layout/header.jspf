@@ -6,7 +6,7 @@
         <link href="/odds/assets/ico/favicon.ico" rel="shortcut icon" >
         <link href="/odds/assets/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/base-admin.css" media="screen" rel="stylesheet" type="text/css">
-        <link href="/odds/components/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/odds/components/font-awesome/build/assets/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/dashboard.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/components/bootstrap/docs/assets/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/style.css" media="screen" rel="stylesheet" type="text/css">

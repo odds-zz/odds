@@ -13,7 +13,48 @@
                     <h3>Administrator Users</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    List of Users
+                    <table class="table table-bordered table-striped table-highlight">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Michael</td>
+                                <td>Jordan</td>
+                                <td>@mjordan</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Magic</td>
+                                <td>Johnson</td>
+                                <td>@mjohnson</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Charles</td>
+                                <td>Barkley</td>
+                                <td>@cbark</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Karl</td>
+                                <td>Malone</td>
+                                <td>@kmalone</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <!-- /widget-content -->
             </div> <!-- /widget -->
