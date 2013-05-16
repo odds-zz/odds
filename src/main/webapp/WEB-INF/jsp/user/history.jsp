@@ -2,8 +2,6 @@
 
 <%@include file="../../jspf/layout/banner/simple.jspf" %>
 
-<link href="/odds/assets/css/reports.css" media="screen" rel="stylesheet" type="text/css">
-
 <div class="main" style="margin-top: 2.5em">
 
     <div class="main-inner">

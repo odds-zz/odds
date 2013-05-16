@@ -329,17 +329,11 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/odds/assets/js/flot/excanvas.min.js"></script>
-<script src="/odds/assets/js/flot/jquery.flot.js"></script>
-<script src="/odds/assets/js/flot/jquery.flot.pie.js"></script>
-<script src="/odds/assets/js/flot/jquery.flot.orderBars.js"></script>
-<script src="/odds/assets/js/flot/jquery.flot.resize.js"></script>
-
-
-<script src="/odds/assets/js/charts/base.js"></script>
-
-<script src="/odds/assets/js/charts/area.js"></script>
-<script src="/odds/assets/js/charts/donut.js"></script>
+<script type="text/javascript" src="/odds/components/flot/jquery.flot.js"></script>
+<script type="text/javascript" src="/odds/components/flot/jquery.flot.pie.js"></script>
+<script type="text/javascript" src="/odds/components/flot/jquery.flot.resize.js"></script>
+<script type="text/javascript" src="/odds/assets/js/charts/area.js"></script>
+<script type="text/javascript" src="/odds/assets/js/charts/donut.js"></script>
 
 
 
