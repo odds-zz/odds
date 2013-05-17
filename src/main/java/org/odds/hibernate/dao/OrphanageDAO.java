@@ -87,19 +87,19 @@ public class OrphanageDAO {
         }
     }
 
-    public Orphanage getOrphanage(Integer id) {
+    public static Orphanage getOrphanage(Integer id) {
 
         Orphanage o = null;
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
             tx = session.beginTransaction();
-            Query q = session.createQuery("from Orphanage where Orphanage.id = :id");
+            Query q = session.createQuery("from Orphanage where id = :id");
             q.setString("id", id.toString());
             o = (Orphanage) q.uniqueResult();
             tx.commit();
-            Connection close;
-            close = session.close();
+            // Say session already closed, look into this
+            // session.close();
         } catch (RuntimeException e) {
             if (tx != null && tx.isActive()) {
                 try {

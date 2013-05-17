@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import org.odds.hibernate.dao.OrphanageDAO;
 import org.odds.hibernate.entities.Orphanage;
@@ -36,6 +37,15 @@ public class OrphanageController {
 
         return "orphanage/list";
     }
+
+    @RequestMapping(value = "/orphanage/view/{id}")
+    public String view(Model model, @PathVariable("id") int id) {
+
+        Orphanage o = OrphanageDAO.getOrphanage(id);
+        model.addAttribute("orphanage", o);
+        return "orphanage/view";
+    }
+
 
     @RequestMapping(value = "/orphanage/records")
     public String records(Model model) {
