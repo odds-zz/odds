@@ -114,7 +114,7 @@ public class OrphanageDAO {
 
     }
 
-    public List listOrphanages() {
+    public static List listOrphanages() {
 
         List<Orphanage> oList = null;
         Transaction tx = null;

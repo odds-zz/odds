@@ -8,9 +8,13 @@ package org.odds.mvc.orphanage;
  *
  * @author kenkataiwa
  */
+import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.odds.hibernate.dao.OrphanageDAO;
+import org.odds.hibernate.entities.Orphanage;
 
 /**
  * Handles requests for the application home page.
@@ -22,6 +26,15 @@ public class OrphanageController {
     public String index(Model model) {
 
         return "orphanage/index";
+    }
+
+    @RequestMapping(value = "/orphanage/list")
+    public String list(Model model) {
+
+        List<Orphanage> oList = OrphanageDAO.listOrphanages();
+        model.addAttribute("orphanages", oList);
+
+        return "orphanage/list";
     }
 
     @RequestMapping(value = "/orphanage/records")

@@ -25,7 +25,7 @@
                         <ul class="dropdown-menu" id="swatch-menu">
                             <li><a href="/odds/help">Help</a></li>
                             <li class="divider"></li>
-                            <li><a href="/odds/orphanage">Orphanages</a></li>
+                            <li><a href="/odds/orphanage/list">Orphanages</a></li>
                             <li><a href="/odds/children">Street Children</a></li>
                             <li><a href="/odds/government">Government Support</a></li>
                             <li><a href="/odds/partners">Partners</a></li>
