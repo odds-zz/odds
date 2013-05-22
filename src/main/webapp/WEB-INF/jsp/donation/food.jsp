@@ -7,6 +7,9 @@
         <div class="span12">
             <h1>ODDS Donation Food</h1>
             </div>
+        <div>
+            <img src="">
+        </div>
         </div>
     </div>
             
