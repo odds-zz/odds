@@ -10,6 +10,7 @@ public class OrphanageBean {
     private String name;
     private String email;
     private String phone;
+    private String region;
     private String details;
 
     public Integer getId() {
@@ -42,6 +43,14 @@ public class OrphanageBean {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public String getDetails() {

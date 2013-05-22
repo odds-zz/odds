@@ -6,6 +6,7 @@
         <link href="/odds/assets/ico/favicon.ico" rel="shortcut icon" >
         <link href="/odds/assets/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/base-admin.css" media="screen" rel="stylesheet" type="text/css">
+        <link href="/odds/components/chosen/chosen/chosen.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/pages/dashboard.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/assets/css/pages/reports.css" media="screen" rel="stylesheet" type="text/css">
         <link href="/odds/components/font-awesome/build/assets/font-awesome/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css">
@@ -14,6 +15,7 @@
         <script type="text/javascript" src="/odds/components/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="/odds/components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/odds/components/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/odds/components/chosen/chosen/chosen.jquery.min.js"></script>
         <script type="text/javascript" src="/odds/assets/js/application.js"></script>
 
         <title>ODDS</title>

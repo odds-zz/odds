@@ -4,10 +4,14 @@ package org.odds.mvc.admin.orphanage;
  *
  * @author kenkataiwa
  */
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.odds.hibernate.dao.OrphanageContactDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,12 +38,35 @@ public class CreateController {
         this.orphanageValidator = orphanageValidator;
     }
 
+    /**
+     *
+     * @return @throws Exception
+     */
+    protected Map referenceData() throws Exception {
+
+        Map referenceData = new HashMap();
+
+        Map<String, String> country = new LinkedHashMap<String, String>();
+        country.put("US", "United Stated");
+        country.put("CHINA", "China");
+        country.put("SG", "Singapore");
+        country.put("MY", "Malaysia");
+        referenceData.put("countryList", country);
+
+        return referenceData;
+    }
+
     @RequestMapping(method = RequestMethod.GET)
-    public String initForm(Model model) {
+    public String initForm(ModelMap model) {
 
         OrphanageBean orphanage = new OrphanageBean();
-
-        model.addAttribute("orphanage", orphanage);
+        Map<String, String> region = new LinkedHashMap<String, String>();
+        region.put("DSM", "Dar es Salaam");
+        region.put("DOM", "Dodoma");
+        region.put("MWZ", "Mwanza");
+        region.put("ARUSHA", "Arusha");
+        model.put("regionList", region);
+        model.put("orphanage", orphanage);
 
         return "/admin/orphanage/create";
     }
@@ -47,7 +74,7 @@ public class CreateController {
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
             @ModelAttribute("orphanage") OrphanageBean form,
-            BindingResult result, SessionStatus status) {
+            BindingResult result, SessionStatus status, ModelMap model) {
 
 
         orphanageValidator.validate(form, result);

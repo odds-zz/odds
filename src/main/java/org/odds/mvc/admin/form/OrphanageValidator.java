@@ -20,6 +20,7 @@ public class OrphanageValidator implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
 
+        OrphanageBean o = (OrphanageBean) target;
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name",
                 "required.name", "Field name is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
@@ -28,5 +29,8 @@ public class OrphanageValidator implements Validator {
                 "required.phone", "Field phone is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "details",
                 "required.details", "Field details is required.");
+        if (o.getRegion().isEmpty()) {
+            errors.rejectValue("region", "required.region", "Field region is required.");
+        }
     }
 }
