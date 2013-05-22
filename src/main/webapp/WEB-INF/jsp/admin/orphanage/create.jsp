@@ -51,7 +51,7 @@
                                 <div class="controls">
                                     <form:select path="region"  class="chosen">
                                         <form:option value="" label="Pick a Region"/>
-                                        <form:options items="${regionList}" />
+                                        <form:options items="${regions}" />
                                     </form:select>
                                     <form:errors path="region" cssClass="error" />
                                 </div>
@@ -70,11 +70,11 @@
                                     Administrator
                                 </form:label>
                                 <div class="controls">
-                                    <form:select path="region" class="chosen">
+                                    <form:select path="admin" class="chosen">
                                         <form:option value="" label="Choose an Admin"/>
-                                        <form:options items="${regionList}" />
+                                        <form:options items="${users}" itemValue="id" itemLabel="fullname" />
                                     </form:select>
-                                    <form:errors path="region" cssClass="error" />
+                                    <form:errors path="admin" cssClass="error" />
                                 </div>
                             </div>
                             <br/>

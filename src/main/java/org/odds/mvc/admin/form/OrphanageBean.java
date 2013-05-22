@@ -11,6 +11,7 @@ public class OrphanageBean {
     private String email;
     private String phone;
     private String region;
+    private Integer admin;
     private String details;
 
     public Integer getId() {
@@ -51,6 +52,14 @@ public class OrphanageBean {
 
     public void setRegion(String region) {
         this.region = region;
+    }
+
+    public Integer getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Integer admin) {
+        this.admin = admin;
     }
 
     public String getDetails() {

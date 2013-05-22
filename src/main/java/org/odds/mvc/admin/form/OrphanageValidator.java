@@ -32,5 +32,8 @@ public class OrphanageValidator implements Validator {
         if (o.getRegion().isEmpty()) {
             errors.rejectValue("region", "required.region", "Field region is required.");
         }
+        if (o.getAdmin() == null) {
+            errors.rejectValue("admin", "required.admin", "Field administrator is required.");
+        }
     }
 }

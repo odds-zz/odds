@@ -4,10 +4,9 @@ package org.odds.mvc.admin.orphanage;
  *
  * @author kenkataiwa
  */
-import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
-import javax.servlet.http.HttpServletRequest;
 import org.odds.hibernate.dao.OrphanageContactDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +22,8 @@ import org.odds.mvc.admin.form.OrphanageBean;
 import org.odds.hibernate.entities.Orphanage;
 import org.odds.hibernate.entities.OrphanageContact;
 import org.odds.hibernate.dao.OrphanageDAO;
+import org.odds.hibernate.dao.UserDAO;
+import org.odds.hibernate.entities.User;
 
 /**
  * Handles requests for the application home page.
@@ -38,36 +39,28 @@ public class CreateController {
         this.orphanageValidator = orphanageValidator;
     }
 
-    /**
-     *
-     * @return @throws Exception
-     */
-    protected Map referenceData() throws Exception {
+    @ModelAttribute("regions")
+    public Map<String, String> populateRegions() {
+        Map<String, String> region = new LinkedHashMap<String, String>();
+        region.put("Dar es Salaam", "Dar es Salaam");
+        region.put("Dodoma", "Dodoma");
+        region.put("Mwanza", "Mwanza");
+        region.put("Arusha", "Arusha");
+        return region;
+    }
 
-        Map referenceData = new HashMap();
-
-        Map<String, String> country = new LinkedHashMap<String, String>();
-        country.put("US", "United Stated");
-        country.put("CHINA", "China");
-        country.put("SG", "Singapore");
-        country.put("MY", "Malaysia");
-        referenceData.put("countryList", country);
-
-        return referenceData;
+    @ModelAttribute("users")
+    public List<User> populateUsers() {
+        List<User> users = UserDAO.listUser();
+        return users;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(ModelMap model) {
 
         OrphanageBean orphanage = new OrphanageBean();
-        Map<String, String> region = new LinkedHashMap<String, String>();
-        region.put("DSM", "Dar es Salaam");
-        region.put("DOM", "Dodoma");
-        region.put("MWZ", "Mwanza");
-        region.put("ARUSHA", "Arusha");
-        model.put("regionList", region);
+        orphanage.setRegion("DSM");
         model.put("orphanage", orphanage);
-
         return "/admin/orphanage/create";
     }
 
@@ -85,10 +78,17 @@ public class CreateController {
         } else {
             status.setComplete();
 
+            User user = UserDAO.getUser(form.getAdmin());
+
             Orphanage newOrphanage = new Orphanage();
             newOrphanage.setName(form.getName());
             newOrphanage.setDetails(form.getDetails());
+            newOrphanage.getUsers().add(user);
             Orphanage orphanage = OrphanageDAO.createOrphanage(newOrphanage);
+
+            // Todo:
+            // Save address as well
+            // OrphanageAddress oa = new OrphanageAddress();
 
             OrphanageContact oc = new OrphanageContact();
             oc.setEmail(form.getEmail());
