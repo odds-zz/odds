@@ -23,36 +23,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Michael</td>
-                                <td>Jordan</td>
-                                <td>@mjordan</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Magic</td>
-                                <td>Johnson</td>
-                                <td>@mjohnson</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Charles</td>
-                                <td>Barkley</td>
-                                <td>@cbark</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Karl</td>
-                                <td>Malone</td>
-                                <td>@kmalone</td>
-                            </tr>
+                            <c:forEach var="user" items="${users}" varStatus="status">
+                                <tr>
+                                    <td>${status.count}</td>
+                                    <td>${user.firstname}</td>
+                                    <td>${user.lastname}</td>
+                                    <td>@${user.username}</td>
+                                </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>
