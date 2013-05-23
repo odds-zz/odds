@@ -11,7 +11,9 @@
                     <h3>Make a Donation</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    Making money donations
+                    <p>Donate by Phone</p>
+                    <p>Credit Card / Paypal</p>
+                    <p>Direct Deposit</p>
                 </div>
                 <!-- /widget-content -->
             </div> <!-- /widget -->
