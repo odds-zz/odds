@@ -77,7 +77,20 @@
                         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div> <!-- /widget-content -->
                 </div> <!-- /widget-box -->
-
+                <% if (request.isUserInRole("ROLE_ADMIN")) {%>
+                <div class="widget widget-box">
+                    <div class="widget-header">
+                        <h3>Access</h3>
+                    </div> <!-- /widget-header -->
+                    <div class="widget-content">
+                        <a href="/odds/admin/orphanages">
+                            <button class="btn btn-large btn-primary">
+                                Admin Orphanages
+                            </button>
+                        </a>
+                    </div> <!-- /widget-content -->
+                </div> <!-- /widget-box -->
+                <% } %>
             </div>
         </div> <!-- /row -->
     </div> <!-- /container -->

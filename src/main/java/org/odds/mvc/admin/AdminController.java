@@ -8,8 +8,14 @@ package org.odds.mvc.admin;
  *
  * @author kenkataiwa
  */
+import java.util.List;
+import org.odds.hibernate.dao.OrphanageDAO;
+import org.odds.hibernate.dao.UserDAO;
+import org.odds.hibernate.entities.User;
+import org.odds.hibernate.entities.Orphanage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -62,25 +68,33 @@ public class AdminController {
     @RequestMapping(value = "/admin/users")
     public String user(Model model) {
 
+        List<User> uList;
+        uList = UserDAO.listUser();
+        model.addAttribute("users", uList);
         return "admin/users";
     }
 
-    @RequestMapping(value = "/admin/orphanage")
-    public String orphanage(Model model) {
-
+    @RequestMapping(value = "/admin/orphanage/{id}")
+    public String orphanage(Model model, @PathVariable("id") int id) {
+        Orphanage o = OrphanageDAO.getOrphanage(id);
+        model.addAttribute("orphanage", o);
         return "admin/orphanage";
+    }
+
+
+    @RequestMapping(value = "/admin/orphanage/edit/{id}")
+    public String orphanageEdit(Model model, @PathVariable("id") int id) {
+        Orphanage o = OrphanageDAO.getOrphanage(id);
+        model.addAttribute("orphanage", o);
+        return "admin/orphanage/edit";
     }
 
     @RequestMapping(value = "/admin/orphanages")
     public String orphanages(Model model) {
 
+        List<Orphanage> oList = OrphanageDAO.listOrphanages();
+        model.addAttribute("orphanages", oList);
+
         return "admin/orphanages";
     }
-
-    @RequestMapping(value = "/admin/orphanage/edit")
-    public String orphanageEdit(Model model) {
-
-        return "admin/orphanage/edit";
-    }
-    
 }

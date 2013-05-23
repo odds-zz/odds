@@ -45,12 +45,36 @@
                                 </div>
                             </div>
                             <div class="form-element control-group">
+                                <form:label path="region" class="control-label">
+                                    Region
+                                </form:label>
+                                <div class="controls">
+                                    <form:select path="region"  class="chosen">
+                                        <form:option value="" label="Pick a Region"/>
+                                        <form:options items="${regions}" />
+                                    </form:select>
+                                    <form:errors path="region" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
                                 <form:label path="details" class="control-label">
                                     Orphanage details
                                 </form:label>
                                 <div class="controls">
                                     <form:textarea path="details" placeholder="Orphanage details" />
                                     <form:errors path="details" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="region" class="control-label">
+                                    Administrator
+                                </form:label>
+                                <div class="controls">
+                                    <form:select path="admin" class="chosen">
+                                        <form:option value="" label="Choose an Admin"/>
+                                        <form:options items="${users}" itemValue="id" itemLabel="fullname" />
+                                    </form:select>
+                                    <form:errors path="admin" cssClass="error" />
                                 </div>
                             </div>
                             <br/>
@@ -91,5 +115,10 @@
         </div> <!-- /span4 -->
     </div>
 </div>
+<script>
+    $(function() {
+        $(".chosen").chosen();
+    });
+</script>
 
 <%@include file="../../../jspf/layout/footer.jspf" %>

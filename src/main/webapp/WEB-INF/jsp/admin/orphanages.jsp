@@ -1,8 +1,7 @@
 <%@include file="../../jspf/layout/header.jspf" %>
-
 <%@include file="../../jspf/layout/banner/simple.jspf" %>
-
 <%@include file="jspf/subnav.jsp" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="container">
     <div class="row-fluid">
@@ -20,21 +19,27 @@
                                 <th>Orphanage name</th>
                                 <th>Administrator</th>
                                 <th>Username</th>
+                                <th>Operations</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Michael</td>
-                                <td>Jordan</td>
-                                <td>@mjordan</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Magic</td>
-                                <td>Johnson</td>
-                                <td>@mjohnson</td>
-                            </tr>
+                            <c:forEach var="orphanage" items="${orphanages}" varStatus="status">
+                                <tr>
+                                    <td>${status.count}</td>
+                                    <td>${orphanage.name}</td>
+                                    <td>Jordan</td>
+                                    <td>@mjordan</td>
+                                    <td class="text-center">
+                                        <a href="/odds/admin/orphanage/${orphanage.id}">
+                                            <i class="icon-edit"></i> Edit
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="/odds/admin/orphanages/${orphanage.id}">
+                                            <i class="icon-remove"></i> Delete
+                                        </a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>

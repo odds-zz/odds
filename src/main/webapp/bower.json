@@ -3,6 +3,7 @@
     "description": "A social local search service",
     "dependencies": {
         "bootstrap": "*",
+        "chosen": "*",
         "font-awesome" : "*",
         "flot" : "*",
         "jquery": "*",
