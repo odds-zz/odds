@@ -11,6 +11,26 @@
                         <i class="icon-building"></i>
                         <h3>Orphanages</h3>
                     </div> <!-- /widget-header -->
+                    <div class="media-object">
+                        <span class="span2">
+                            <br>
+                            <img src="../assets/img/orphanage/orphanage-inside.jpg" />
+                        </span>
+                        <span class="span5">
+                            <br>
+                            Orphanages...  One would think that those words would mean a safe place 
+                            for children that have met with hardships,
+                            or perhaps a warm dry place to sleep and have a hot meal until they can return to a functional family.  
+                            Unfortunately, it usually means a shower that consists of a rusty sink running cold water, 
+                            and toilets that are no more than a broken bowl requiring a bucket of water to flush. Many of the orphanages 
+                            rely on their own resources and ingenuity to survive.  
+                            Most of the buildings that house orphans require major changes to keep the roof from falling in on the 
+                            heads of the poor children.
+                            Your contribution gives these orphanages appliances, cooking stoves, washing machines, 
+                            windows, doors, flooring, sinks, toilets, showers, just to name a few!! 
+                            <a href="../news/orphanages">Please help now!</a>
+                        </span>
+                    </div>
                     <div class="widget-content">
 
                         <div class="orphanages-list">
