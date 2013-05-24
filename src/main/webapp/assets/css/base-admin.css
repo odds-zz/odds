@@ -681,13 +681,13 @@ h3 {
     -webkit-background-clip: padding-box;
 }
 .widget .widget-header h3 {
+    font-size: 18px;
     top: 2px;
     position: relative;
     left: 10px;
     display: inline-block;
     margin-right: 3em;
-    font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     color: #555;
     line-height: 18px;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
