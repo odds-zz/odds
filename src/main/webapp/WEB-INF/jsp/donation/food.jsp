@@ -19,7 +19,7 @@
                 </p>
                 <p>
                     Donating money is much more convenient. You can support orphans through online
-                    donations <a href="../donation/money"><strong>here</strong></a>
+                    donations <a href="../orphanage/list"><strong>here</strong></a>
                 </p>
                 
             </span>
