@@ -22,7 +22,8 @@
                         <br>
                     </div>
 
-                    <div class="">Why donate to us?
+                    <div class="">
+                        <i class="icon-location-arrow" style=""></i> Why donate to us?
                         <ul>
                             <li>We guarantee than every penny of your contribution goes directly to  the orphans you support. </li>
                             <li>You choose where your money goes and see the difference that you make
@@ -32,7 +33,7 @@
                     </div>
 
                     <div class="">
-                        Our Mission
+                        <i class="icon-location-arrow" style=""></i> Our Mission
                         <ul>
                             <li>Provide basic necessities such as food, clothing and shelter to  orphans and homeless  children living in Tanzania Orphanages.</li>
                             <li>Assist them in gaining necessary skills to become self-supporting functional members of our society.</li>
@@ -41,7 +42,7 @@
                     </div>
 
                     <div class="">
-                        Who we Help.
+                        <i class="icon-location-arrow" style=""></i> Who we Help.
                         <ul>
                             <li>All orphanages and shelters that receive our help are registered non-profit organizations that have at least
                                 a 5-year track record.
