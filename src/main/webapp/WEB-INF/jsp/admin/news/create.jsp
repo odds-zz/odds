@@ -1,8 +1,10 @@
-<%@include file="../../jspf/layout/header.jspf" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="../../../jspf/layout/header.jspf" %>
 
-<%@include file="../../jspf/layout/banner/simple.jspf" %>
+<%@include file="../../../jspf/layout/banner/simple.jspf" %>
 
-<%@include file="jspf/subnav.jsp" %>
+<%@include file="../jspf/subnav.jsp" %>
 
 <div class="container">
     <div class="row-fluid">
@@ -10,7 +12,7 @@
             <div class="widget ">
                 <div class="widget-header">
                     <i class="icon-list-alt"></i>
-                    <h3>Manage News</h3>
+                    <h3>Post news</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
                 </div>
@@ -33,9 +35,9 @@
                     <h3>Admin options</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    <a href="/odds/admin/news/create">
+                    <a href="/odds/admin/news">
                         <button class="btn btn-large btn-primary">
-                            <i class="icon-list-alt"></i> Post news
+                            All news
                         </button>
                     </a>
                 </div> <!-- /widget-content -->
@@ -44,5 +46,10 @@
         </div> <!-- /span4 -->
     </div>
 </div>
+<script>
+    $(function() {
+        $(".chosen").chosen();
+    });
+</script>
 
-<%@include file="../../jspf/layout/footer.jspf" %>
+<%@include file="../../../jspf/layout/footer.jspf" %>
