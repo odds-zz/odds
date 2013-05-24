@@ -25,7 +25,7 @@
                     <div class="">
                         <i class="icon-location-arrow" style=""></i> Why donate to us?
                         <ul>
-                            <li>We guarantee than every penny of your contribution goes directly to  the orphans you support. </li>
+                            <li>We guarantee that every penny of your contribution goes directly to  the orphans you support. </li>
                             <li>You choose where your money goes and see the difference that you make
                                 for the lives of children that really need your help.</li>
                             <li>We report to you all the details and the progress of the projects that you are sponsoring.</li>
