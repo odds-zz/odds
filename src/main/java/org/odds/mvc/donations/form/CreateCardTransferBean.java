@@ -8,6 +8,9 @@ public class CreateCardTransferBean {
 
     private Integer id;
     private String amount;
+    private String service;
+    private String account;
+    private String message;
 
     public Integer getId() {
         return this.id;
@@ -23,5 +26,29 @@ public class CreateCardTransferBean {
 
     public void setAmount(String amount) {
         this.amount = amount;
+    }
+
+    public String getAccount() {
+        return this.account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getService() {
+        return this.service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
+    }
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String message) {
+        this.service = message;
     }
 }

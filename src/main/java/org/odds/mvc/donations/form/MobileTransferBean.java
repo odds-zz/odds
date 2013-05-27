@@ -8,6 +8,9 @@ public class MobileTransferBean {
 
     private Integer id;
     private String amount;
+    private String phone;
+    private String service;
+    private String message;
 
     public Integer getId() {
         return this.id;
@@ -23,5 +26,29 @@ public class MobileTransferBean {
 
     public void setAmount(String amount) {
         this.amount = amount;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getService() {
+        return this.service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
+    }
+    
+    public String getMessage() {
+        return this.message;
+    }
+
+    public void setMessage(String message) {
+        this.service = message;
     }
 }
