@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
 import org.odds.mvc.donations.form.DonationValidator;
-import org.odds.mvc.donations.form.DonationBean;
+import org.odds.mvc.donations.form.CreateCardTransferBean;
 
 /**
  * Handles requests for the application home page.
@@ -33,7 +33,7 @@ public class TransferCreditCardController {
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(Model model) {
 
-        DonationBean donation = new DonationBean();
+        CreateCardTransferBean donation = new CreateCardTransferBean();
 
         model.addAttribute("donation", donation);
 
@@ -42,7 +42,7 @@ public class TransferCreditCardController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
-            @ModelAttribute("donation") DonationBean form,
+            @ModelAttribute("donation") CreateCardTransferBean form,
             BindingResult result, SessionStatus status) {
 
 
