@@ -5,7 +5,7 @@
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
         <div class="item active">
-            <img src="/odds/assets/img/carousel/slide-01.jpg" alt="">
+            <img src="/odds/assets/img/carousel/orphanage2.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>ODDS</h1>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="/odds/assets/img/carousel/slide-02.jpg" alt="">
+            <img src="/odds/assets/img/carousel/orphanage4.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Start helping</h1>
@@ -24,16 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="item">
-            <img src="/odds/assets/img/carousel/slide-03.jpg" alt="">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Join the Conversation</h1>
-                    <p class="lead">Lets share our stories, and create solutions to pressing problems in our communities.</p>
-                    <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <i class="icon-arrow-left"></i>
