@@ -10,6 +10,7 @@
 
 
     <!-- Registering beans -->
+    <bean class="org.odds.mvc.admin.form.NewsValidator" />    
     <bean class="org.odds.mvc.auth.validator.RegisterValidator" />
     <bean class="org.odds.mvc.admin.form.OrphanageValidator" />
     <bean class="org.odds.mvc.donations.form.DonationValidator" />
