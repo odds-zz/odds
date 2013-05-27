@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="../../../jspf/layout/header.jspf" %>
 
 <%@include file="../../../jspf/layout/banner/simple.jspf" %>
@@ -11,7 +13,22 @@
                     <h3>Donate by Credit Card</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    Making money donations
+                    <form:form id="edit-profile" class="form-horizontal" method="POST" command="donation" modelAttribute="donation">
+                        <fieldset>
+                            <div class="form-element control-group">
+                                <form:label path="amount" class="control-label">
+                                    Amount:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="amount" placeholder="Orphanage name" />
+                                    <form:errors path="amount" cssClass="error" />
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-success"><i class=" icon-heart-empty"></i> Donate</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form:form>
                 </div>
                 <!-- /widget-content -->
             </div> <!-- /widget -->
