@@ -72,7 +72,7 @@
                                 <div class="controls">
                                     <form:select path="admin" class="chosen">
                                         <form:option value="" label="Choose an Admin"/>
-                                        <form:options items="${users}" itemValue="id" itemLabel="fullname" />
+                                        <form:options items="${users}" itemValue="id" itemLabel="firstname" />
                                     </form:select>
                                     <form:errors path="admin" cssClass="error" />
                                 </div>

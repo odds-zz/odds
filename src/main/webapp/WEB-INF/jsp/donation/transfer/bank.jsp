@@ -7,8 +7,8 @@
         <div class="span8">
             <div class="widget ">
                 <div class="widget-header">
-                    <i class="icon-money"></i>
-                    <h3>Make a Donation</h3>
+                    <i class=" icon-building"></i>
+                    <h3>Direct Deposit</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
                     Making money donations

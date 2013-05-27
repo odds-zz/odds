@@ -17,6 +17,6 @@ public class TransferController {
     @RequestMapping("/donation/money/transfer/bank")
     public String index(Model model) {
 
-        return "/donation/money/transfer/bank";
+        return "/donation/transfer/bank";
     }
 }

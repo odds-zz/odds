@@ -2,7 +2,7 @@
 
 <%@include file="../jspf/layout/banner/simple.jspf" %>
 
-<div id="myCarousel" class="carousel slide">
+<div id="myCarsousel" class="carousel slide">
     <div class="carousel-inner">
         <div class="item active">
             <img src="/odds/assets/img/carousel/slide-01.jpg" alt="">
