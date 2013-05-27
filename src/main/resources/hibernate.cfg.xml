@@ -22,13 +22,6 @@
     <mapping resource="org/odds/hibernate/entities/Donation.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Orphanage.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/User.hbm.xml"/>
-    <mapping/>
-    <mapping/>
-    <mapping/>
-    <mapping/>
-    <mapping/>
-    <mapping/>
-    <mapping/>
     <mapping resource="org/odds/hibernate/entities/OrphanageAddress.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -2,7 +2,7 @@
 
 <%@include file="../jspf/layout/banner/simple.jspf" %>
 
-<div id="myCarsousel" class="carousel slide">
+<div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
         <div class="item active">
             <img src="/odds/assets/img/carousel/orphanage2.jpg" alt="">
@@ -24,7 +24,16 @@
                 </div>
             </div>
         </div>
-        
+        <div class="item">
+            <img src="/odds/assets/img/carousel/orphanage1.jpg" alt="">
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>Join the Conversation</h1>
+                    <p class="lead">Orphans are around us and they need our care, friendship, love, our humanity.</p>
+                    <a class="btn btn-large btn-primary" href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <i class="icon-arrow-left"></i>

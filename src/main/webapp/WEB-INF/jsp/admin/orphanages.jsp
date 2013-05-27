@@ -11,7 +11,7 @@
                     <i class="icon-building"></i>
                     <h3>Administrator Orphanages</h3>
                 </div> <!-- /widget-header -->
-                <div class="widget-content">
+                <div class="widget widget-table action-table">
                     <table class="table table-bordered table-striped table-highlight">
                         <thead>
                             <tr>
@@ -29,13 +29,12 @@
                                     <td>${orphanage.name}</td>
                                     <td>Jordan</td>
                                     <td>@mjordan</td>
-                                    <td class="text-center">
-                                        <a href="/odds/admin/orphanage/${orphanage.id}">
-                                            <i class="icon-edit"></i> Edit
+                                    <td class="td-actions">
+                                        <a href="/odds/admin/orphanage/${orphanage.id}" class="btn btn-small btn-warning">
+                                            <i class="btn-icon-only  icon-edit"></i>
                                         </a>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="/odds/admin/orphanages/${orphanage.id}">
-                                            <i class="icon-remove"></i> Delete
+                                        <a href="/odds/admin/orphanage/delete/${orphanage.id}" class="btn btn-small">
+                                            <i class="btn-icon-only icon-trash"></i>
                                         </a>
                                     </td>
                                 </tr>
