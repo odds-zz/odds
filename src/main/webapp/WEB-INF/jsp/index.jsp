@@ -5,7 +5,7 @@
 <div id="myCarsousel" class="carousel slide">
     <div class="carousel-inner">
         <div class="item active">
-            <img src="/odds/assets/img/carousel/slide-01.jpg" alt="">
+            <img src="/odds/assets/img/carousel/orphanage2.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>ODDS</h1>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="item">
-            <img src="/odds/assets/img/carousel/slide-02.jpg" alt="">
+            <img src="/odds/assets/img/carousel/orphanage4.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Start helping</h1>
@@ -24,16 +24,7 @@
                 </div>
             </div>
         </div>
-        <div class="item">
-            <img src="/odds/assets/img/carousel/slide-03.jpg" alt="">
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>Join the Conversation</h1>
-                    <p class="lead">Lets share our stories, and create solutions to pressing problems in our communities.</p>
-                    <a class="btn btn-large btn-primary" href="#">Browse gallery</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
         <i class="icon-arrow-left"></i>
@@ -46,7 +37,7 @@
     <div class="row-fluid">
         <div class="span4">
             <a href="/odds/about">
-                <h3>About ODDS</h3>
+                <h3><i class="icon-home"> About ODDS</i> </h3>
             </a>
             <p>Welcome to Orphanages Donation and Distribution System.
                 This application is developed to create awareness of orphans in our community and
@@ -57,7 +48,7 @@
                 To join the development team, use our contact information at the bottom of the page.</p>
         </div>
         <div class="span4">
-            <h3>Start helping!</h3>
+            <h3><i class="icon-money"> Start helping!</i></h3>
             <p>Orphans are around us and they need our care, friendship, love, our humanity. . .<br />
                 To donate to ODDS for distribution to orphanages, visit any sub-menu of the donation menu.</p>
             <p>To help a particular orphanage, visit it through the information menu at the top of the page.
@@ -66,7 +57,7 @@
             </p>
         </div>
         <div class="span4">
-            <h3>Join the Conversation</h3>
+            <h3><i class="icon-globe"> Join the Conversation</i></h3>
             <p>Lets share our stories, and create solutions to pressing problems in our communities.
             </p>
             <p>Lets join our hands in building our society.</p>

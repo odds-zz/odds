@@ -2,17 +2,18 @@
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="odds_db"/>
-  <table-filter match-name="donation"/>
-  <table-filter match-name="user"/>
-  <table-filter match-name="feedback"/>
-  <table-filter match-name="orphanage_admin"/>
-  <table-filter match-name="donation_category"/>
+  <table-filter match-name="user_settings"/>
+  <table-filter match-name="user_role"/>
   <table-filter match-name="orphanage"/>
   <table-filter match-name="news"/>
-  <table-filter match-name="user_settings"/>
-  <table-filter match-name="record"/>
-  <table-filter match-name="orphanage_contact"/>
-  <table-filter match-name="user_contact"/>
+  <table-filter match-name="donation_category"/>
+  <table-filter match-name="orphanage_address"/>
+  <table-filter match-name="feedback"/>
   <table-filter match-name="address"/>
-  <table-filter match-name="user_role"/>
+  <table-filter match-name="user_contact"/>
+  <table-filter match-name="record"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="orphanage_contact"/>
+  <table-filter match-name="orphanage_admin"/>
+  <table-filter match-name="donation"/>
 </hibernate-reverse-engineering>
