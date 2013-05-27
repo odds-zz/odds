@@ -16,16 +16,50 @@
                     <form:form id="edit-profile" class="form-horizontal" method="POST" command="donation" modelAttribute="donation">
                         <fieldset>
                             <div class="form-element control-group">
+                                <form:label path="account" class="control-label">
+                                    Account:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="account" placeholder="Orphanage name" />
+                                    <form:errors path="account" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="service" class="control-label">
+                                    Service:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="service" placeholder="Orphanage name" />
+                                    <form:errors path="service" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
                                 <form:label path="amount" class="control-label">
                                     Amount:
                                 </form:label>
-                                <div class="controls">
+                                <div class="controls" style="width:50%">
+                                    <div class="item-content">
+                                        <span>Donation amount ($10 increments):</span>
+                                        <span id="incrementAmount" style="border:0; color:#f6931f; font-weight:bold;"></span>
+                                        <div id="incrementSlider" class="slider-primary" style="margin-top: 1em;"></div>
+                                    </div>
+                                    <!--
                                     <form:input path="amount" placeholder="Orphanage name" />
                                     <form:errors path="amount" cssClass="error" />
+                                    -->
                                 </div>
-                                <div class="form-actions">
-                                    <button type="submit" class="btn btn-success"><i class=" icon-heart-empty"></i> Donate</button>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="message" class="control-label">
+                                    Message
+                                </form:label>
+                                <div class="controls">
+                                    <form:textarea path="message" placeholder="Message" />
+                                    <form:errors path="message" cssClass="error" />
                                 </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-success"><i class=" icon-heart-empty"></i> Donate</button>
                             </div>
                         </fieldset>
                     </form:form>
@@ -47,5 +81,24 @@
     </div>
 </div>
 
+<script>
+    /*--------------------------------------------------
+     Plugin: Slider
+     --------------------------------------------------*/
+
+    /* Increment Slider */
+    $("#incrementSlider").slider({
+        range: "min",
+        value: 10,
+        min: 0,
+        max: 500,
+        step: 10,
+        slide: function(event, ui) {
+            $("#incrementAmount").text("$" + ui.value);
+        }
+    });
+
+    $("#incrementAmount").text("$" + $("#incrementSlider").slider("value"));
+</script>
 
 <%@include file="../../../jspf/layout/footer.jspf" %>
