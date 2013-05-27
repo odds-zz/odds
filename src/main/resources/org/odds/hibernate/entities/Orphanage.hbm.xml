@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated May 6, 2013 2:07:43 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated May 27, 2013 3:49:40 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="org.odds.hibernate.entities.Orphanage" table="orphanage" catalog="odds_db">
         <id name="id" type="java.lang.Integer">
@@ -24,6 +24,12 @@
             <many-to-many entity-name="org.odds.hibernate.entities.User">
                 <column name="user_id" not-null="true" />
             </many-to-many>
+        </set>
+        <set name="orphanageAddresses" inverse="true">
+            <key>
+                <column name="orphanage_id" not-null="true" />
+            </key>
+            <one-to-many class="org.odds.hibernate.entities.OrphanageAddress" />
         </set>
         <set name="records" inverse="true">
             <key>
