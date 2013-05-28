@@ -16,6 +16,12 @@
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
                     <form:form id="edit-profile" class="form-horizontal" method="POST" command="orphanage" modelAttribute="orphanage">
+                        <div class="form-interaction">
+                            <div class="alert alert-success">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                <strong>Success!</strong> Orphanage Center has been added to the system.
+                            </div>
+                        </div>
                         <fieldset>
                             <div class="form-element control-group">
                                 <form:label path="name" class="control-label">

@@ -13,6 +13,16 @@
                     </div> <!-- /widget-header -->
                     <div class="widget-content">
                         ${orphanage.name}
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Orphanage Center</a>
+                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+                                <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="i"></i> Assign admin</a></li>
+                            </ul>
+                        </div>
                     </div> <!-- /widget-content -->
                 </div> <!-- /widget -->
             </div> <!-- /span12 -->

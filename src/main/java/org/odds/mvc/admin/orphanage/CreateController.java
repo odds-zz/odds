@@ -76,6 +76,7 @@ public class CreateController {
             //if validator failed
             return "/admin/orphanage/create";
         } else {
+//            model.clear();
             status.setComplete();
 
             User user = UserDAO.getUser(form.getAdmin());
