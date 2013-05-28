@@ -1,7 +1,8 @@
 package org.odds.hibernate.entities;
-// Generated May 27, 2013 3:49:37 PM by Hibernate Tools 3.2.1.GA
+// Generated May 28, 2013 4:00:36 PM by Hibernate Tools 3.2.1.GA
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +16,7 @@ public class Orphanage  implements java.io.Serializable {
      private String name;
      private String location;
      private String details;
+     private Date time;
      private Set users = new HashSet(0);
      private Set orphanageAddresses = new HashSet(0);
      private Set records = new HashSet(0);
@@ -23,10 +25,11 @@ public class Orphanage  implements java.io.Serializable {
     public Orphanage() {
     }
 
-    public Orphanage(String name, String location, String details, Set users, Set orphanageAddresses, Set records, Set orphanageContacts) {
+    public Orphanage(String name, String location, String details, Date time, Set users, Set orphanageAddresses, Set records, Set orphanageContacts) {
        this.name = name;
        this.location = location;
        this.details = details;
+       this.time = time;
        this.users = users;
        this.orphanageAddresses = orphanageAddresses;
        this.records = records;
@@ -60,6 +63,13 @@ public class Orphanage  implements java.io.Serializable {
     
     public void setDetails(String details) {
         this.details = details;
+    }
+    public Date getTime() {
+        return this.time;
+    }
+    
+    public void setTime(Date time) {
+        this.time = time;
     }
     public Set getUsers() {
         return this.users;

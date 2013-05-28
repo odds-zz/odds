@@ -33,7 +33,7 @@ public class TransferCreditCardController {
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(Model model) {
 
-        CreateCardDonationValidator donation = new CreateCardDonationValidator();
+        CreateCardTransferBean donation = new CreateCardTransferBean();
 
         model.addAttribute("donation", donation);
 
@@ -42,7 +42,7 @@ public class TransferCreditCardController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
-            @ModelAttribute("donation") CreateCardDonationValidator form,
+            @ModelAttribute("donation") CreateCardTransferBean form,
             BindingResult result, SessionStatus status) {
 
 

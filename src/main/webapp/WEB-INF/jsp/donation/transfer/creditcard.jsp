@@ -16,24 +16,6 @@
                     <form:form id="edit-profile" class="form-horizontal" method="POST" command="donation" modelAttribute="donation">
                         <fieldset>
                             <div class="form-element control-group">
-                                <form:label path="account" class="control-label">
-                                    Account:
-                                </form:label>
-                                <div class="controls">
-                                    <form:input path="account" placeholder="Orphanage name" />
-                                    <form:errors path="account" cssClass="error" />
-                                </div>
-                            </div>
-                            <div class="form-element control-group">
-                                <form:label path="service" class="control-label">
-                                    Service:
-                                </form:label>
-                                <div class="controls">
-                                    <form:input path="service" placeholder="Orphanage name" />
-                                    <form:errors path="service" cssClass="error" />
-                                </div>
-                            </div>
-                            <div class="form-element control-group">
                                 <form:label path="amount" class="control-label">
                                     Amount:
                                 </form:label>
@@ -43,10 +25,44 @@
                                         <span id="incrementAmount" style="border:0; color:#f6931f; font-weight:bold;"></span>
                                         <div id="incrementSlider" class="slider-primary" style="margin-top: 1em;"></div>
                                     </div>
-                                    <!--
-                                    <form:input path="amount" placeholder="Orphanage name" />
+                                    <form:hidden id="donationAmount" path="amount" placeholder="Donation" />
                                     <form:errors path="amount" cssClass="error" />
-                                    -->
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="donor" class="control-label">
+                                    Name:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="donor" placeholder="First and Last name" />
+                                    <form:errors path="donor" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="email" class="control-label">
+                                    Email:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="email" placeholder="Email address" />
+                                    <form:errors path="email" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="account" class="control-label">
+                                    Card No:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="account" placeholder="Card Number" />
+                                    <form:errors path="account" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="service" class="control-label">
+                                    Service:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="service" placeholder="Credit provider" />
+                                    <form:errors path="service" cssClass="error" />
                                 </div>
                             </div>
                             <div class="form-element control-group">
@@ -95,6 +111,7 @@
         step: 10,
         slide: function(event, ui) {
             $("#incrementAmount").text("$" + ui.value);
+            $("#donationAmount").val(ui.value);
         }
     });
 

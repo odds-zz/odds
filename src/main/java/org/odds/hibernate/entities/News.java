@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 27, 2013 3:49:37 PM by Hibernate Tools 3.2.1.GA
+// Generated May 28, 2013 4:00:36 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -14,14 +14,16 @@ public class News  implements java.io.Serializable {
      private String title;
      private String body;
      private Date time;
+     private Integer categoryId;
 
     public News() {
     }
 
-    public News(String title, String body, Date time) {
+    public News(String title, String body, Date time, Integer categoryId) {
        this.title = title;
        this.body = body;
        this.time = time;
+       this.categoryId = categoryId;
     }
    
     public Integer getId() {
@@ -51,6 +53,13 @@ public class News  implements java.io.Serializable {
     
     public void setTime(Date time) {
         this.time = time;
+    }
+    public Integer getCategoryId() {
+        return this.categoryId;
+    }
+    
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
 

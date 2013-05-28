@@ -33,7 +33,7 @@ public class TransferMobileController {
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(Model model) {
 
-        MobileDonationValidator donation = new MobileDonationValidator();
+        MobileTransferBean donation = new MobileTransferBean();
 
         model.addAttribute("donation", donation);
 
@@ -42,7 +42,7 @@ public class TransferMobileController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
-            @ModelAttribute("donation") MobileDonationValidator form,
+            @ModelAttribute("donation") MobileTransferBean form,
             BindingResult result, SessionStatus status) {
 
 

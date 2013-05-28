@@ -23,5 +23,9 @@ public class CreateCardDonationValidator implements Validator {
                 "required.donor", "Field donor is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
                 "required.email", "Field email is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "account",
+                "required.account", "Field Car No. is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "service",
+                "required.service", "Field service is required.");
     }
 }

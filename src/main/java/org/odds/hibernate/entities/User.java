@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 27, 2013 3:49:37 PM by Hibernate Tools 3.2.1.GA
+// Generated May 28, 2013 4:00:36 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -18,27 +18,29 @@ public class User  implements java.io.Serializable {
      private String password;
      private Integer enabled;
      private Set orphanages = new HashSet(0);
+     private Set donationItems = new HashSet(0);
      private Set feedbacks = new HashSet(0);
      private Set userRoles = new HashSet(0);
      private Set userContacts = new HashSet(0);
      private Set userSettingses = new HashSet(0);
-     private Set donations = new HashSet(0);
+     private Set donationMoneies = new HashSet(0);
 
     public User() {
     }
 
-    public User(String firstname, String lastname, String username, String password, Integer enabled, Set orphanages, Set feedbacks, Set userRoles, Set userContacts, Set userSettingses, Set donations) {
+    public User(String firstname, String lastname, String username, String password, Integer enabled, Set orphanages, Set donationItems, Set feedbacks, Set userRoles, Set userContacts, Set userSettingses, Set donationMoneies) {
        this.firstname = firstname;
        this.lastname = lastname;
        this.username = username;
        this.password = password;
        this.enabled = enabled;
        this.orphanages = orphanages;
+       this.donationItems = donationItems;
        this.feedbacks = feedbacks;
        this.userRoles = userRoles;
        this.userContacts = userContacts;
        this.userSettingses = userSettingses;
-       this.donations = donations;
+       this.donationMoneies = donationMoneies;
     }
    
     public Integer getId() {
@@ -90,6 +92,13 @@ public class User  implements java.io.Serializable {
     public void setOrphanages(Set orphanages) {
         this.orphanages = orphanages;
     }
+    public Set getDonationItems() {
+        return this.donationItems;
+    }
+    
+    public void setDonationItems(Set donationItems) {
+        this.donationItems = donationItems;
+    }
     public Set getFeedbacks() {
         return this.feedbacks;
     }
@@ -118,12 +127,12 @@ public class User  implements java.io.Serializable {
     public void setUserSettingses(Set userSettingses) {
         this.userSettingses = userSettingses;
     }
-    public Set getDonations() {
-        return this.donations;
+    public Set getDonationMoneies() {
+        return this.donationMoneies;
     }
     
-    public void setDonations(Set donations) {
-        this.donations = donations;
+    public void setDonationMoneies(Set donationMoneies) {
+        this.donationMoneies = donationMoneies;
     }
 
 

@@ -23,5 +23,9 @@ public class MobileDonationValidator implements Validator {
                 "required.donor", "Field donor is required.");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email",
                 "required.email", "Field email is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "phone",
+                "required.phone", "Field Phone is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "service",
+                "required.service", "Field service is required.");
     }
 }

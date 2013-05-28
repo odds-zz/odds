@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 27, 2013 3:49:37 PM by Hibernate Tools 3.2.1.GA
+// Generated May 28, 2013 4:00:36 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -13,14 +13,16 @@ public class DonationCategory  implements java.io.Serializable {
 
      private Integer id;
      private String name;
-     private Set donations = new HashSet(0);
+     private Set donationItems = new HashSet(0);
+     private Set donationMoneies = new HashSet(0);
 
     public DonationCategory() {
     }
 
-    public DonationCategory(String name, Set donations) {
+    public DonationCategory(String name, Set donationItems, Set donationMoneies) {
        this.name = name;
-       this.donations = donations;
+       this.donationItems = donationItems;
+       this.donationMoneies = donationMoneies;
     }
    
     public Integer getId() {
@@ -37,12 +39,19 @@ public class DonationCategory  implements java.io.Serializable {
     public void setName(String name) {
         this.name = name;
     }
-    public Set getDonations() {
-        return this.donations;
+    public Set getDonationItems() {
+        return this.donationItems;
     }
     
-    public void setDonations(Set donations) {
-        this.donations = donations;
+    public void setDonationItems(Set donationItems) {
+        this.donationItems = donationItems;
+    }
+    public Set getDonationMoneies() {
+        return this.donationMoneies;
+    }
+    
+    public void setDonationMoneies(Set donationMoneies) {
+        this.donationMoneies = donationMoneies;
     }
 
 
