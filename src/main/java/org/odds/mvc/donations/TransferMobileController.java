@@ -4,6 +4,7 @@ package org.odds.mvc.donations;
  *
  * @author kenkataiwa
  */
+import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import org.odds.mvc.donations.form.MobileDonationValidator;
 import org.odds.mvc.donations.form.MobileTransferBean;
+import org.odds.hibernate.entities.DonationMoney;
+import org.odds.hibernate.dao.DonationMoneyDAO;
 
 /**
  * Handles requests for the application home page.
@@ -54,6 +57,14 @@ public class TransferMobileController {
         } else {
             status.setComplete();
 
+            DonationMoney donation = new DonationMoney();
+            donation.setAmount(form.getAmount());
+            donation.setDonor(form.getDonor());
+            donation.setMessage(form.getMessage());
+            donation.setStatus("1");
+            donation.setTime(new Date());
+            donation.setUser(null);
+            DonationMoneyDAO.createDonation(donation);
             //form success
             return "/donation/transfer/mobile";
         }

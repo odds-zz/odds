@@ -24,7 +24,7 @@ public class DonationItemDAO {
     public DonationItemDAO() {
     }
 
-    public Feedback createDonation(DonationItem d) {
+    public static Feedback createDonation(DonationItem d) {
 
         Transaction tx;
         tx = null;
@@ -49,7 +49,7 @@ public class DonationItemDAO {
         return f;
     }
 
-    public void deleteDonation(DonationItem d) {
+    public static void deleteDonation(DonationItem d) {
 
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -69,7 +69,7 @@ public class DonationItemDAO {
         }
     }
 
-    public void updateDonation(DonationItem d) {
+    public static void updateDonation(DonationItem d) {
 
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -89,7 +89,7 @@ public class DonationItemDAO {
         }
     }
 
-    public DonationItem getDonation(Integer id) {
+    public static DonationItem getDonation(Integer id) {
 
         DonationItem d = null;
         Transaction tx = null;
@@ -115,7 +115,7 @@ public class DonationItemDAO {
         return d;
     }
 
-    public List listDonations() {
+    public static List listDonations() {
 
         List<DonationItem> dList = null;
         Transaction tx = null;

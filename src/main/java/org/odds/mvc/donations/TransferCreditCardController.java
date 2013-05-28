@@ -4,6 +4,9 @@ package org.odds.mvc.donations;
  *
  * @author kenkataiwa
  */
+import java.util.Date;
+import org.odds.hibernate.dao.DonationMoneyDAO;
+import org.odds.hibernate.entities.DonationMoney;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,6 +56,15 @@ public class TransferCreditCardController {
             return "/donation/transfer/creditcard";
         } else {
             status.setComplete();
+
+            DonationMoney donation = new DonationMoney();
+            donation.setAmount(form.getAmount());
+            donation.setDonor(form.getDonor());
+            donation.setMessage(form.getMessage());
+            donation.setStatus("1");
+            donation.setTime(new Date());
+            donation.setUser(null);
+            DonationMoneyDAO.createDonation(donation);
 
             //form success
             return "/donation/transfer/creditcard";

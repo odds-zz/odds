@@ -21,7 +21,7 @@
                                 </form:label>
                                 <div class="controls" style="width:50%">
                                     <div class="item-content">
-                                        <span>Donation amount ($10 increments):</span>
+                                        <span>Donation amount (1000/= increments):</span>
                                         <span id="incrementAmount" style="border:0; color:#f6931f; font-weight:bold;"></span>
                                         <div id="incrementSlider" class="slider-primary" style="margin-top: 1em;"></div>
                                     </div>
@@ -105,17 +105,17 @@
     /* Increment Slider */
     $("#incrementSlider").slider({
         range: "min",
-        value: 10,
+        value: 1000,
         min: 0,
-        max: 500,
-        step: 10,
+        max: 500000,
+        step: 1000,
         slide: function(event, ui) {
-            $("#incrementAmount").text("$" + ui.value);
+            $("#incrementAmount").text(ui.value + "/=");
             $("#donationAmount").val(ui.value);
         }
     });
 
-    $("#incrementAmount").text("$" + $("#incrementSlider").slider("value"));
+    $("#incrementAmount").text($("#incrementSlider").slider("value") + "/=");
 </script>
 
 <%@include file="../../../jspf/layout/footer.jspf" %>
