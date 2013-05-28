@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
-import org.odds.mvc.donations.form.DonationValidator;
+import org.odds.mvc.donations.form.MobileDonationValidator;
 import org.odds.mvc.donations.form.MobileTransferBean;
 
 /**
@@ -23,17 +23,17 @@ import org.odds.mvc.donations.form.MobileTransferBean;
 @RequestMapping("/donation/money/transfer/mobile")
 public class TransferMobileController {
 
-    DonationValidator donationValidator;
+    MobileDonationValidator donationValidator;
 
     @Autowired
-    public TransferMobileController(DonationValidator donationValidator) {
+    public TransferMobileController(MobileDonationValidator donationValidator) {
         this.donationValidator = donationValidator;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(Model model) {
 
-        MobileTransferBean donation = new MobileTransferBean();
+        MobileDonationValidator donation = new MobileDonationValidator();
 
         model.addAttribute("donation", donation);
 
@@ -42,7 +42,7 @@ public class TransferMobileController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
-            @ModelAttribute("donation") MobileTransferBean form,
+            @ModelAttribute("donation") MobileDonationValidator form,
             BindingResult result, SessionStatus status) {
 
 

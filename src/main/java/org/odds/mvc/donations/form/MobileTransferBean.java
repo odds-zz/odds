@@ -7,6 +7,8 @@ package org.odds.mvc.donations.form;
 public class MobileTransferBean {
 
     private Integer id;
+    private String donor;
+    private String email;
     private String amount;
     private String phone;
     private String service;
@@ -18,6 +20,22 @@ public class MobileTransferBean {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getDonor() {
+        return this.donor;
+    }
+
+    public void setDonor(String donor) {
+        this.donor = donor;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAmount() {
@@ -43,7 +61,7 @@ public class MobileTransferBean {
     public void setService(String service) {
         this.service = service;
     }
-    
+
     public String getMessage() {
         return this.message;
     }

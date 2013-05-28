@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
-import org.odds.mvc.donations.form.DonationValidator;
+import org.odds.mvc.donations.form.CreateCardDonationValidator;
 import org.odds.mvc.donations.form.CreateCardTransferBean;
 
 /**
@@ -23,17 +23,17 @@ import org.odds.mvc.donations.form.CreateCardTransferBean;
 @RequestMapping("/donation/money/transfer/creditcard")
 public class TransferCreditCardController {
 
-    DonationValidator donationValidator;
+    CreateCardDonationValidator donationValidator;
 
     @Autowired
-    public TransferCreditCardController(DonationValidator donationValidator) {
+    public TransferCreditCardController(CreateCardDonationValidator donationValidator) {
         this.donationValidator = donationValidator;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(Model model) {
 
-        CreateCardTransferBean donation = new CreateCardTransferBean();
+        CreateCardDonationValidator donation = new CreateCardDonationValidator();
 
         model.addAttribute("donation", donation);
 
@@ -42,7 +42,7 @@ public class TransferCreditCardController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
-            @ModelAttribute("donation") CreateCardTransferBean form,
+            @ModelAttribute("donation") CreateCardDonationValidator form,
             BindingResult result, SessionStatus status) {
 
 

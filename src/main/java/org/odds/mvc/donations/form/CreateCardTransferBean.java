@@ -7,6 +7,8 @@ package org.odds.mvc.donations.form;
 public class CreateCardTransferBean {
 
     private Integer id;
+    private String donor;
+    private String email;
     private String amount;
     private String service;
     private String account;
@@ -18,6 +20,22 @@ public class CreateCardTransferBean {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getDonor() {
+        return this.donor;
+    }
+
+    public void setDonor(String donor) {
+        this.donor = donor;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getAmount() {
