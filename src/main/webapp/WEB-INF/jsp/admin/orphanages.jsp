@@ -33,7 +33,7 @@
                                         <a href="/odds/admin/orphanage/${orphanage.id}" class="btn btn-small btn-warning">
                                             <i class="btn-icon-only  icon-edit"></i>
                                         </a>
-                                        <a href="/odds/admin/orphanage/delete/${orphanage.id}" class="btn btn-small">
+                                        <a href="/odds/admin/orphanage/delete/${orphanage.id}" onclick="return confirm('Are you sure want to delete?');" class="btn btn-small">
                                             <i class="btn-icon-only icon-trash"></i>
                                         </a>
                                     </td>

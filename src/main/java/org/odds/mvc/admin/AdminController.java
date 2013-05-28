@@ -81,6 +81,16 @@ public class AdminController {
         return "admin/orphanage";
     }
 
+    @RequestMapping(value = "/admin/orphanage/delete/{id}")
+    public String orphanageDelete(Model model, @PathVariable("id") int id) {
+        Orphanage o = OrphanageDAO.getOrphanage(id);
+        // Check if the Orphanage exists, then delete
+        OrphanageDAO.deleteOrphanage(o);
+        // Todo:
+        // Else say that orphanage does not exists.
+        model.addAttribute("orphanage", o);
+        return "redirect:/admin/orphanages";
+    }
 
     @RequestMapping(value = "/admin/orphanage/edit/{id}")
     public String orphanageEdit(Model model, @PathVariable("id") int id) {
