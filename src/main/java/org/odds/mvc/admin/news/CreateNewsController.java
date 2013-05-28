@@ -4,7 +4,7 @@ package org.odds.mvc.admin.news;
  *
  * @author kenkataiwa
  */
-import java.util.LinkedHashMap;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import org.odds.hibernate.dao.NewsDAO;
@@ -58,6 +58,7 @@ public class CreateNewsController {
             News news = new News();
             news.setTitle(form.getTitle());
             news.setBody(form.getBody());
+            news.setTime(new Date());
             NewsDAO.createNews(news);
 
             status.setComplete();
