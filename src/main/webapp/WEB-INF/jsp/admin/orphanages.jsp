@@ -30,7 +30,7 @@
                                     <td>Jordan</td>
                                     <td>@mjordan</td>
                                     <td class="td-actions">
-                                        <a href="/odds/admin/orphanage/${orphanage.id}" class="btn btn-small btn-warning">
+                                        <a href="/odds/admin/orphanage/edit/${orphanage.id}" class="btn btn-small btn-warning">
                                             <i class="btn-icon-only  icon-edit"></i>
                                         </a>
                                         <a href="/odds/admin/orphanage/delete/${orphanage.id}" onclick="return confirm('Are you sure want to delete?');" class="btn btn-small">

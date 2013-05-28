@@ -92,7 +92,7 @@ public class AdminController {
         return "redirect:/admin/orphanages";
     }
 
-    @RequestMapping(value = "/admin/orphanage/edit/{id}")
+    @RequestMapping(value = "/admin/orphanage/sedit/{id}")
     public String orphanageEdit(Model model, @PathVariable("id") int id) {
         Orphanage o = OrphanageDAO.getOrphanage(id);
         model.addAttribute("orphanage", o);
