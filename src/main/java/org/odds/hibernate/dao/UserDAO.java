@@ -46,7 +46,7 @@ public class UserDAO {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Query query;
-            query = session.createQuery("select u from User u inner join u.userRoles uRole where uRole = USER_ADMIN");
+            query = session.createQuery("select u from User u full join u.userRoles uRole where uRole.authority = ROLE_ADMIN ");
             users = (List<User>) query.list();
 
             session.getTransaction().commit();//end of transaction
@@ -66,8 +66,8 @@ public class UserDAO {
         try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
-            Query query;
-            query = session.createQuery("from User");
+            Query query;//join u.userRoles uRole where uRole.authority = ROLE_ADMIN
+            query = session.createQuery("select u from User u inner join u.orphanages where u.id>3");
             users = (List<User>) query.list();
 
             session.getTransaction().commit();//end of transaction
