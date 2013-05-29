@@ -12,7 +12,7 @@
                     <i class="icon-group"></i>
                     <h3>Administrator Users</h3>
                 </div> <!-- /widget-header -->
-                <div class="widget-content">
+                <div class="widget widget-table action-table">
                     <table class="table table-bordered table-striped table-highlight">
                         <thead>
                             <tr>
@@ -20,6 +20,7 @@
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Username</th>
+                                <th>Operations</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -29,6 +30,14 @@
                                     <td>${user.firstname}</td>
                                     <td>${user.lastname}</td>
                                     <td>@${user.username}</td>
+                                    <td class="td-actions">
+                                        <a href="/odds/admin/user/edit/${user.id}" class="btn btn-small btn-warning">
+                                            <i class="btn-icon-only  icon-edit"></i>
+                                        </a>
+                                        <a href="/odds/admin/user/delete/${user.id}" onclick="return confirm('Are you sure want to delete?');" class="btn btn-small">
+                                            <i class="btn-icon-only icon-trash"></i>
+                                        </a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbody>

@@ -74,11 +74,13 @@ public class AdminController {
         return "admin/users";
     }
 
-    @RequestMapping(value = "/admin/orphanage/{id}")
-    public String orphanage(Model model, @PathVariable("id") int id) {
-        Orphanage o = OrphanageDAO.getOrphanage(id);
-        model.addAttribute("orphanage", o);
-        return "admin/orphanage";
+    @RequestMapping(value = "/admin/orphanages")
+    public String orphanages(Model model) {
+
+        List<Orphanage> oList = OrphanageDAO.listOrphanages();
+        model.addAttribute("orphanages", oList);
+
+        return "admin/orphanages";
     }
 
     @RequestMapping(value = "/admin/orphanage/delete/{id}")
@@ -90,21 +92,5 @@ public class AdminController {
         // Else say that orphanage does not exists.
         model.addAttribute("orphanage", o);
         return "redirect:/admin/orphanages";
-    }
-
-    @RequestMapping(value = "/admin/orphanage/sedit/{id}")
-    public String orphanageEdit(Model model, @PathVariable("id") int id) {
-        Orphanage o = OrphanageDAO.getOrphanage(id);
-        model.addAttribute("orphanage", o);
-        return "admin/orphanage/edit";
-    }
-
-    @RequestMapping(value = "/admin/orphanages")
-    public String orphanages(Model model) {
-
-        List<Orphanage> oList = OrphanageDAO.listOrphanages();
-        model.addAttribute("orphanages", oList);
-
-        return "admin/orphanages";
     }
 }
