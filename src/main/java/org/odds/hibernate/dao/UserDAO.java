@@ -38,6 +38,48 @@ public class UserDAO {
         return users;
     }
 
+    public static List listSystemAdministrators() {
+
+        List<User> users = null;
+
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            Query query;
+            query = session.createQuery("select user from User u, User_role ur where u.id = ur.user_id");
+            users = (List<User>) query.list();
+
+            session.getTransaction().commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        }
+
+        return users;
+    }
+    
+    public static List listOrphanageAdministrators() {
+
+        List<User> users = null;
+
+        try {
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            Query query;
+            query = session.createQuery("from User");
+            users = (List<User>) query.list();
+
+            session.getTransaction().commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        }
+
+        return users;
+    }
+    
     public static void createUser() {
 
         Session session;
