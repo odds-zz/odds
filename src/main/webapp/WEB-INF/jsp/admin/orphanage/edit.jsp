@@ -16,10 +16,12 @@
                 <div class="widget-content">
                     <form:form id="edit-profile" class="form-horizontal" method="POST" command="orphanage" modelAttribute="orphanage">
                         <div class="form-interaction">
-                            <div class="alert alert-success">
-                                <button type="button" class="close" data-dismiss="alert">×</button>
-                                <strong>Success!</strong> Orphanage Center information been updated.
-                            </div>
+                            <c:if test="${success}">
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Success!</strong> Orphanage Center information been updated.
+                                </div>
+                            </c:if>
                         </div>
                         <fieldset>
                             <div class="form-element control-group">

@@ -80,6 +80,7 @@ public class EditOrphanageController {
             return "/admin/orphanage/edit";
         } else {
             status.setComplete();
+            model.addAttribute("success", true);
 
 //            User user = UserDAO.getUser(form.getAdmin());
 //
