@@ -7,6 +7,7 @@ package org.odds.mvc.admin.orphanage;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import org.odds.hibernate.dao.OrphanageAddressDAO;
 import org.odds.hibernate.dao.OrphanageContactDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,6 +48,7 @@ public class CreateController {
         region.put("Dodoma", "Dodoma");
         region.put("Mwanza", "Mwanza");
         region.put("Arusha", "Arusha");
+        region.put("Kilimanjaro", "Kilimanjaro");
         return region;
     }
 
@@ -95,6 +97,7 @@ public class CreateController {
             oa.setRegion(form.getRegion());
             oa.setLongitude(form.getLongitude());
             oa.setLatitude(form.getLatitude());
+            OrphanageAddressDAO.create(oa);
 
             OrphanageContact oc = new OrphanageContact();
             oc.setEmail(form.getEmail());
