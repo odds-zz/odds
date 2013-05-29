@@ -15,6 +15,33 @@
                     <h3>Post news</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
+                    <form:form id="edit-profile" class="form-horizontal" method="POST" command="news" modelAttribute="news">
+                        <fieldset >
+                            <div class="form-element control-group">
+                                <form:label path="title" class="control-label">
+                                    Title:
+                                </form:label>
+                                <div class="controls" style="width:60%">
+                                    <form:input path="title" class="input-block-level" placeholder="Orphanage name" />
+                                    <form:errors path="title" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="body" class="control-label">
+                                    Body:
+                                </form:label>
+                                <div class="controls" style="width:60%">
+                                    <form:textarea path="body" class="input-block-level" placeholder="News" rows="10" />
+                                    <form:errors path="body" cssClass="error" />
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Post</button>
+                                <button type="reset" class="btn">Cancel</button>
+                            </div>
+                        </fieldset>
+                    </form:form>
                 </div>
                 <!-- /widget-content -->
             </div> <!-- /widget -->

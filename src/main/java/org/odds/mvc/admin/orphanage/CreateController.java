@@ -10,7 +10,7 @@ import java.util.Map;
 import org.odds.hibernate.dao.OrphanageContactDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,18 +56,18 @@ public class CreateController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String initForm(ModelMap model) {
+    public String initForm(Model model) {
 
         OrphanageBean orphanage = new OrphanageBean();
         orphanage.setRegion("DSM");
-        model.put("orphanage", orphanage);
+        model.addAttribute("orphanage", orphanage);
         return "/admin/orphanage/create";
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
             @ModelAttribute("orphanage") OrphanageBean form,
-            BindingResult result, SessionStatus status, ModelMap model) {
+            BindingResult result, SessionStatus status, Model model) {
 
 
         orphanageValidator.validate(form, result);
@@ -77,6 +77,7 @@ public class CreateController {
             return "/admin/orphanage/create";
         } else {
             status.setComplete();
+            model.addAttribute("success", true);
 
             User user = UserDAO.getUser(form.getAdmin());
 

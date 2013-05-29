@@ -16,13 +16,21 @@
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
                     <form:form id="edit-profile" class="form-horizontal" method="POST" command="orphanage" modelAttribute="orphanage">
+                        <div class="form-interaction">
+                            <c:if test="${success}">
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Success!</strong> Orphanage Center has been added to the system.
+                                </div>
+                            </c:if>  
+                        </div>
                         <fieldset>
                             <div class="form-element control-group">
                                 <form:label path="name" class="control-label">
                                     Orphanage name:
                                 </form:label>
                                 <div class="controls">
-                                    <form:input path="name" placeholder="Orphanage name" />
+                                    <form:input path="name"class="input-xlarge" placeholder="Orphanage name" />
                                     <form:errors path="name" cssClass="error" />
                                 </div>
                             </div>
@@ -31,7 +39,7 @@
                                     Email Address
                                 </form:label>
                                 <div class="controls">
-                                    <form:input path="email" placeholder="Orphanage email" />
+                                    <form:input path="email" class="input-xlarge"placeholder="Orphanage email" />
                                     <form:errors path="email" cssClass="error" />
                                 </div>
                             </div>
@@ -40,7 +48,7 @@
                                     Phone
                                 </form:label>
                                 <div class="controls">
-                                    <form:input path="phone" placeholder="Orphanage phone" />
+                                    <form:input path="phone" class="input-xlarge" placeholder="Orphanage phone" />
                                     <form:errors path="phone" cssClass="error" />
                                 </div>
                             </div>
@@ -61,8 +69,17 @@
                                     Orphanage details
                                 </form:label>
                                 <div class="controls">
-                                    <form:textarea path="details" placeholder="Orphanage details" />
+                                    <form:textarea path="details" class="input-xlarge" rows="5" placeholder="Orphanage details" />
                                     <form:errors path="details" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="details" class="control-label">
+                                    Location on map:
+                                </form:label>
+                                <div class="controls">
+                                    <div id="mapContainer" class="orphanage-map map-container">
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-element control-group">
@@ -72,7 +89,7 @@
                                 <div class="controls">
                                     <form:select path="admin" class="chosen">
                                         <form:option value="" label="Choose an Admin"/>
-                                        <form:options items="${users}" itemValue="id" itemLabel="fullname" />
+                                        <form:options items="${users}" itemValue="id" itemLabel="firstname" />
                                     </form:select>
                                     <form:errors path="admin" cssClass="error" />
                                 </div>
@@ -119,6 +136,62 @@
     $(function() {
         $(".chosen").chosen();
     });
+    var loadMap = function() {
+        var latitude = "-6.7767206421047990";
+        var longitude = "39.2426061630211650";
+        var map = null;
+        var markers = null;
+        var pin = null;
+        // define custom map event listeners
+        function mapEvent(event) {
+            var size = new OpenLayers.Size(36, 36);
+            var offset = new OpenLayers.Pixel(-(size.w / 2), -size.h);
+            var icon = new OpenLayers.Icon('/odds/assets/img/map/pin.png', size, offset);
+            markers.removeMarker(pin);
+            pin = new OpenLayers.Marker(map.getCenter(), icon);
+            markers.addMarker(pin);
+            var center = map.getCenter().clone();
+            center.transform(map.getProjectionObject(), new OpenLayers.Projection("EPSG:4326"));
+            var longitude = center.lon;
+            var latitude = center.lat;
+            $("input#latitude").attr({value: latitude});
+            $("input#longitude").attr({value: longitude});
+        }
+        map = new OpenLayers.Map("mapContainer", {
+            controls: [
+                new OpenLayers.Control.Navigation(),
+                new OpenLayers.Control.Zoom(),
+                new OpenLayers.Control.ScaleLine()
+            ], eventListeners: {
+                "move": mapEvent
+            }
+        });
+        map.addLayer(new OpenLayers.Layer.OSM());
+        var lonLat = new OpenLayers.LonLat(longitude, latitude)
+                .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+                );
+        var zoom = 15; // Zoom level
+        var markers = new OpenLayers.Layer.Markers("Marker");
+        map.addLayer(markers);
+        // Setting the map center.
+        map.setCenter(lonLat, zoom);
+    };
+    $.ajax({
+        url: 'http://www.openlayers.org/api/OpenLayers.js',
+        dataType: 'script',
+        cache: true, // otherwise will get fresh copy every page load
+        success: loadMap
+    });
 </script>
+<style>
+    .orphanage-map.map-container {
+        background: beige; height: 300px; width: 500px; border: 1px solid #ccc;
+    }
+    .olMap img {
+        max-width: none;
+    }
+</style>
 
 <%@include file="../../../jspf/layout/footer.jspf" %>

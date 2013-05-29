@@ -10,8 +10,11 @@
 
 
     <!-- Registering beans -->
+    <bean class="org.odds.mvc.admin.form.NewsValidator" />
     <bean class="org.odds.mvc.auth.validator.RegisterValidator" />
     <bean class="org.odds.mvc.admin.form.OrphanageValidator" />
+    <bean class="org.odds.mvc.donations.form.CreateCardDonationValidator" />
+    <bean class="org.odds.mvc.donations.form.MobileDonationValidator" />
     <bean class="org.odds.mvc.donations.form.DonationValidator" />
 
     <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->

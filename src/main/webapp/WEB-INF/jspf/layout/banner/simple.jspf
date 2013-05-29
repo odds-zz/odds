@@ -17,37 +17,48 @@
             <a class="brand" href="/odds">ODDS</a>
             <div class="nav-collapse collapse" id="main-menu">
                 <ul class="nav" id="main-menu-left">
-                    <li><a onclick="pageTracker._link(this.href);
-                            return false;" href="/odds/news">News</a></li>
-                    <li><a href="/odds/about">About</a></li>
+                    <li>
+                        <a href="/odds/news">
+                            <i class="icon-list-alt"></i> News
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/odds/about">
+                            <i class=" icon-certificate"></i> About
+                        </a>
+                    </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Information <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="icon-info-sign"></i> Information <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu" id="swatch-menu">
-                            <li><a href="/odds/help">Help</a></li>
+                            <li><a href="/odds/help"><i class=" icon-question-sign"></i> Help</a></li>
                             <li class="divider"></li>
-                            <li><a href="/odds/orphanage/list">Orphanages</a></li>
-                            <li><a href="/odds/children">Street Children</a></li>
-                            <li><a href="/odds/government">Government Support</a></li>
-                            <li><a href="/odds/partners">Partners</a></li>
+                            <li><a href="/odds/orphanage/list"><i class=" icon-building"></i> Orphanage Centers</a></li>
+                            <li><a href="/odds/government"><i class=" icon-legal"></i> Government Support</a></li>
+                            <li><a href="/odds/partners"><i class=" icon-exchange"></i> ODDS Partners</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Statistics <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class=" icon-bar-chart"></i> Statistics <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/odds/statistics">General</a></li>
+                            <li><a href="/odds/statistics"><i class=" icon-legal"></i> General</a></li>
                             <li class="divider"></li>
-                            <li><a href="/odds/statistics/orphanages">Orphanages</a></li>
-                            <li><a href="/odds/statistics/children">Children</a></li>
+                            <li><a href="/odds/statistics/orphanages"><i class=" icon-building"></i> Orphanage Centers</a></li>
+                            <li><a href="/odds/statistics/children"><i class=" icon-group"></i> Children</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Donate <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class=" icon-heart-empty"></i> Donate <b class="caret"></b>
+                        </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/odds/donation/food">Food</a></li>
-                            <li><a href="/odds/donation/money">Money</a></li>
+                            <li><a href="/odds/donation/food"><i class=" icon-group"></i> Food and Cloth</a></li>
+                            <li><a href="/odds/donation/money"><i class=" icon-money"></i> Money</a></li>
                             <li class="divider"></li>
-                            <li><a href="/odds/donation/funds">Funds</a></li>
-                            <li><a href="/odds/donation/scholarship">Scholarships</a></li>
+                            <li><a href="/odds/donation/scholarship"><i class=" icon-smile"></i> Scholarships</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -69,7 +80,7 @@
                         org.odds.hibernate.entities.User user = UserDAO.getUserByUsername(currentUser.getUsername());
                     %>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= user.getFirstname() + " " + user.getLastname() %> <b class="caret"></b></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= user.getFirstname() + " " + user.getLastname()%> <b class="caret"></b></a>
                         <ul
                             class="dropdown-menu">
                             <li><a href="/odds/user/account"><i class="icon-user"></i> Account</a></li>

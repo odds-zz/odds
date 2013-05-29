@@ -1,6 +1,11 @@
 /*
     Generic
 --------------------*/
+
+.olMap img {
+    max-width: none;
+}
+
 .pad-top {
     margin-top: 20px;
 }

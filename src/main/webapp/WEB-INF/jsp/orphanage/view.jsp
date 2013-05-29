@@ -13,6 +13,17 @@
                     </div> <!-- /widget-header -->
                     <div class="widget-content">
                         ${orphanage.name}
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Orphanage Center</a>
+                            <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+                                <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#"><i class="i"></i> Assign admin</a></li>
+                            </ul>
+                        </div>
+                        <div id="mapContainer" class="orphanage-map map-container"></div>
                     </div> <!-- /widget-content -->
                 </div> <!-- /widget -->
             </div> <!-- /span12 -->
@@ -42,5 +53,51 @@
         </div> <!-- /row -->
     </div> <!-- /container -->
 </div>
+<script>
+    $(function() {
+        $(".chosen").chosen();
+    });
+    var loadMap = function() {
+        var latitude = "-6.7767206421047990";
+        var longitude = "39.2426061630211650";
+        map = new OpenLayers.Map("mapContainer", {
+            controls: [
+                new OpenLayers.Control.Navigation(),
+                new OpenLayers.Control.Zoom(),
+                new OpenLayers.Control.ScaleLine()
+            ]
+        });
+        map.addLayer(new OpenLayers.Layer.OSM());
+        var lonLat = new OpenLayers.LonLat(longitude, latitude)
+                .transform(
+                new OpenLayers.Projection("EPSG:4326"), // transform from WGS 1984
+                new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+                );
+        var zoom = 15; // Zoom level
+        var markers = new OpenLayers.Layer.Markers("Marker");
+        map.addLayer(markers);
+        var size = new OpenLayers.Size(36, 36);
+        var offset = new OpenLayers.Pixel(-(size.w / 2), -size.h);
+        var icon = new OpenLayers.Icon('/odds/assets/img/map/pin.png', size, offset);
+        markers.addMarker(new OpenLayers.Marker(lonLat, icon));
+        markers.addMarker(new OpenLayers.Marker(lonLat, icon.clone()));
+// Setting the map center.
+        map.setCenter(lonLat, zoom);
+    };
+    $.ajax({
+        url: 'http://www.openlayers.org/api/OpenLayers.js',
+        dataType: 'script',
+        cache: true, // otherwise will get fresh copy every page load
+        success: loadMap
+    });
+</script>
+<style>
+    .orphanage-map.map-container {
+        background: beige; height: 300px; width: 500px; border: 1px solid #ccc;
+    }
+    .olMap img {
+        max-width: none;
+    }
+</style>
 
 <%@include file="../../jspf/layout/footer.jspf" %>

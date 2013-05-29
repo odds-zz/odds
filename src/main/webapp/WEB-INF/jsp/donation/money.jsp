@@ -11,9 +11,38 @@
                     <h3>Make a Donation</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    <p>Donate by Phone</p>
-                    <p>Credit Card / Paypal</p>
-                    <p>Direct Deposit</p>
+                    <p>
+                        Thank you for supporting Orphans in the country.
+                        There are many ways of  donating . <br/>
+                        In the following you can see the possibilities in more detail.
+                    </p>
+                    <div>
+                        <h4>Donate by Phone</h4>
+                        <p>You can donate using mobile money such as Tigo Pesa, Mpesa etc.</p>
+                        <a href="/odds/donation/money/transfer/mobile">
+                            <button class="btn btn-large btn-success">
+                                <i class="icon-mobile-phone"></i> Donation by Phone
+                            </button>
+                        </a>
+                    </div>
+                    <div>
+                        <h4>Credit Card</h4>
+                        <p>You can donate online using your credit card e.g. CRDB's Mastercard.</p>
+                        <a href="/odds/donation/money/transfer/creditcard">
+                            <button class="btn btn-large btn-info">
+                                <i class=" icon-credit-card"></i> Credit Card
+                            </button>
+                        </a>
+                    </div>
+                    <div>
+                        <h4>Direct Deposit</h4>
+                        <p>You can donate directly at a bank.</p>
+                        <a href="/odds/donation/money/transfer/bank">
+                            <button class="btn btn-large btn-primary">
+                                <i class=" icon-arrow-right"></i> Direct Deposit
+                            </button>
+                        </a>
+                    </div>
                 </div>
                 <!-- /widget-content -->
             </div> <!-- /widget -->
@@ -35,13 +64,13 @@
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
                     <a href="/odds/donation/money/transfer">
-                    <button class="btn btn-large btn-primary">
-                        Give Money <i class="icon-money"></i>
-                    </button>
+                        <button class="btn btn-large btn-primary">
+                            Give Money <i class="icon-money"></i>
+                        </button>
                     </a>
                 </div> <!-- /widget-content -->
             </div> <!-- /widget-box -->
-            <% } %>
+            <% }%>
         </div> <!-- /span4 -->
     </div>
 </div>

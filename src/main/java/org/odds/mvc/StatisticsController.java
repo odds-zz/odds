@@ -27,14 +27,18 @@ public class StatisticsController {
     @RequestMapping(value = "/statistics/orphanages")
     public String orphanages(Model model) {
 
-        return "statistics/index";
+        return "statistics/orphanages";
+    }
+
+    @RequestMapping(value = "/statistics/donations")
+    public String donations(Model model) {
+
+        return "statistics/donations";
     }
 
     @RequestMapping(value = "/statistics/children")
     public String children(Model model) {
 
-        return "statistics/index";
+        return "statistics/children";
     }
-
-
 }

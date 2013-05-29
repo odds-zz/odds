@@ -68,7 +68,7 @@ public class OrphanageDAO {
         }
     }
 
-    public void deleteOrphanage(Orphanage o) {
+    public static void deleteOrphanage(Orphanage o) {
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
