@@ -23,9 +23,9 @@
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a href="/odds/admin/users">System Administrators</a></li>
-                        <li><a href="/odds/admin/users">Orphanage Administrators</a></li>
                         <li><a href="/odds/admin/users">All Users</a></li>
+                        <li><a href="/odds/admin/users/systemadmins">Orphanage Administrators</a></li>
+                        <li><a href="/odds/admin/users/orphanageadmins">System Administrators</a></li>
                     </ul>
                 </li>
 

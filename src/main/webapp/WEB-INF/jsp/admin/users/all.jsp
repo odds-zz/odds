@@ -1,8 +1,8 @@
-<%@include file="../../jspf/layout/header.jspf" %>
+<%@include file="../../../jspf/layout/header.jspf" %>
 
-<%@include file="../../jspf/layout/banner/simple.jspf" %>
+<%@include file="../../../jspf/layout/banner/simple.jspf" %>
 
-<%@include file="jspf/subnav.jsp" %>
+<%@include file="../jspf/subnav.jsp" %>
 
 <div class="container">
     <div class="row-fluid">
@@ -74,4 +74,4 @@
     </div>
 </div>
 
-<%@include file="../../jspf/layout/footer.jspf" %>
+<%@include file="../../../jspf/layout/footer.jspf" %>

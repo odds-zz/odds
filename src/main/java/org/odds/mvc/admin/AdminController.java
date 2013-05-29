@@ -10,8 +10,6 @@ package org.odds.mvc.admin;
  */
 import java.util.List;
 import org.odds.hibernate.dao.OrphanageDAO;
-import org.odds.hibernate.dao.UserDAO;
-import org.odds.hibernate.entities.User;
 import org.odds.hibernate.entities.Orphanage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,15 +68,6 @@ public class AdminController {
     public String statistics(Model model) {
 
         return "admin/statistics";
-    }
-
-    @RequestMapping(value = "/admin/users")
-    public String user(Model model) {
-
-        List<User> uList;
-        uList = UserDAO.listOrphanageAdministrators();
-        model.addAttribute("users", uList);
-        return "admin/users";
     }
 
     @RequestMapping(value = "/admin/orphanages")
