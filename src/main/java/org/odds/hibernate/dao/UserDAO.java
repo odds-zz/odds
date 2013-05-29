@@ -46,7 +46,7 @@ public class UserDAO {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Query query;
-            query = session.createQuery("select user from User u, User_role ur where u.id = ur.user_id");
+            query = session.createQuery("select u from User u inner join u.userRoles uRole where uRole = USER_ADMIN");
             users = (List<User>) query.list();
 
             session.getTransaction().commit();//end of transaction
