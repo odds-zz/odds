@@ -35,6 +35,13 @@ public class AdminController {
         return "admin/donations";
     }
 
+
+    @RequestMapping(value = "/admin/donation/items")
+    public String items(Model model) {
+
+        return "/admin/donation/items";
+    }
+
     @RequestMapping(value = "/admin/media")
     public String media(Model model) {
 
