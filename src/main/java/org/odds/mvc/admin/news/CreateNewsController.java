@@ -62,6 +62,7 @@ public class CreateNewsController {
             NewsDAO.createNews(news);
 
             status.setComplete();
+            model.addAttribute("success", true);
             //form success
             return "/admin/news/create";
         }
