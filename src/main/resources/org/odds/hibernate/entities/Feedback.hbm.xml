@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated May 29, 2013 1:59:13 PM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated May 29, 2013 3:11:22 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="org.odds.hibernate.entities.Feedback" table="feedback" catalog="odds_db">
         <id name="id" type="java.lang.Integer">

@@ -1,13 +1,16 @@
 package org.odds.hibernate.entities;
-// Generated May 29, 2013 1:59:10 PM by Hibernate Tools 3.2.1.GA
+// Generated May 29, 2013 3:11:20 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -23,19 +26,19 @@ public class News  implements java.io.Serializable {
 
 
      private Integer id;
+     private NewsCategory newsCategory;
      private String title;
      private String body;
      private Date time;
-     private Integer categoryId;
 
     public News() {
     }
 
-    public News(String title, String body, Date time, Integer categoryId) {
+    public News(NewsCategory newsCategory, String title, String body, Date time) {
+       this.newsCategory = newsCategory;
        this.title = title;
        this.body = body;
        this.time = time;
-       this.categoryId = categoryId;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
@@ -47,6 +50,15 @@ public class News  implements java.io.Serializable {
     
     public void setId(Integer id) {
         this.id = id;
+    }
+@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="category_id")
+    public NewsCategory getNewsCategory() {
+        return this.newsCategory;
+    }
+    
+    public void setNewsCategory(NewsCategory newsCategory) {
+        this.newsCategory = newsCategory;
     }
     
     @Column(name="title")
@@ -74,15 +86,6 @@ public class News  implements java.io.Serializable {
     
     public void setTime(Date time) {
         this.time = time;
-    }
-    
-    @Column(name="category_id")
-    public Integer getCategoryId() {
-        return this.categoryId;
-    }
-    
-    public void setCategoryId(Integer categoryId) {
-        this.categoryId = categoryId;
     }
 
 

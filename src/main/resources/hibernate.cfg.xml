@@ -13,16 +13,19 @@
     <mapping resource="org/odds/hibernate/entities/UserSettings.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/UserRole.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Address.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/NewsCategory.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/DonationMoney.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/Receipt.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/UserContact.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Feedback.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/News.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/OrphanageContact.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/DonationItem.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/DonationCategory.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Record.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/DonationReceipt.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/Orphanage.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/entities/User.hbm.xml"/>
     <mapping resource="org/odds/hibernate/entities/OrphanageAddress.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/entities/DonationMoney.hbm.xml"/>
-    <mapping resource="org/odds/hibernate/entities/DonationItem.hbm.xml"/>
+    <mapping resource="org/odds/hibernate/entities/User.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
