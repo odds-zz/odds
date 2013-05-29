@@ -69,7 +69,7 @@ public class AdminController {
     public String user(Model model) {
 
         List<User> uList;
-        uList = UserDAO.listUser();
+        uList = UserDAO.listOrphanageAdministrators();
         model.addAttribute("users", uList);
         return "admin/users";
     }
