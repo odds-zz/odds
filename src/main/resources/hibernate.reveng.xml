@@ -19,11 +19,11 @@
     <table-filter match-name="donation_category"/>
     <table-filter match-name="user_contact"/>
     <table-filter match-name="donation_receipt"/>
-    <table-filter match-name="address"/>
-    <table name="orphanage_contact">
+    <!--table-filter match-name="address"/>    <table name="orphanage_contact">
         <foreign-key constraint-name="FK_ORPHANAGE_CONTACT">
             <one-to-one exclude="false"/>
             <inverse-one-to-one exclude="true"/>
         </foreign-key>
-    </table>
+    </table-->
+
 </hibernate-reverse-engineering>
