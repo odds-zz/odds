@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated May 29, 2013 3:11:22 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="org.odds.hibernate.entities.Receipt" table="receipt" catalog="odds_db">
+        <id name="id" type="int">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="donor" type="string">
+            <column name="donor" length="128" />
+        </property>
+        <property name="time" type="java.lang.Integer">
+            <column name="time" />
+        </property>
+        <property name="transcationId" type="string">
+            <column name="transcation_id" length="45" />
+        </property>
+        <property name="donationType" type="string">
+            <column name="donation_type" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>
