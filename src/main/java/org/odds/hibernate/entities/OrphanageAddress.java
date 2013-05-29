@@ -1,7 +1,8 @@
 package org.odds.hibernate.entities;
-// Generated May 29, 2013 3:11:20 PM by Hibernate Tools 3.2.1.GA
+// Generated May 29, 2013 4:46:59 PM by Hibernate Tools 3.2.1.GA
 
 
+import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -27,6 +28,8 @@ public class OrphanageAddress  implements java.io.Serializable {
      private String settlement;
      private String district;
      private String region;
+     private BigDecimal longitude;
+     private BigDecimal latitude;
 
     public OrphanageAddress() {
     }
@@ -35,11 +38,13 @@ public class OrphanageAddress  implements java.io.Serializable {
     public OrphanageAddress(Orphanage orphanage) {
         this.orphanage = orphanage;
     }
-    public OrphanageAddress(Orphanage orphanage, String settlement, String district, String region) {
+    public OrphanageAddress(Orphanage orphanage, String settlement, String district, String region, BigDecimal longitude, BigDecimal latitude) {
        this.orphanage = orphanage;
        this.settlement = settlement;
        this.district = district;
        this.region = region;
+       this.longitude = longitude;
+       this.latitude = latitude;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
@@ -87,6 +92,24 @@ public class OrphanageAddress  implements java.io.Serializable {
     
     public void setRegion(String region) {
         this.region = region;
+    }
+    
+    @Column(name="longitude", precision=24, scale=16)
+    public BigDecimal getLongitude() {
+        return this.longitude;
+    }
+    
+    public void setLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+    }
+    
+    @Column(name="latitude", precision=24, scale=16)
+    public BigDecimal getLatitude() {
+        return this.latitude;
+    }
+    
+    public void setLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
     }
 
 
