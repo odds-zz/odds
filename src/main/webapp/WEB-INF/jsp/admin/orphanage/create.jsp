@@ -22,7 +22,7 @@
                                     <button type="button" class="close" data-dismiss="alert">×</button>
                                     <strong>Success!</strong> Orphanage Center has been added to the system.
                                 </div>
-                            </c:if>  
+                            </c:if>
                         </div>
                         <fieldset>
                             <div class="form-element control-group">
@@ -77,6 +77,8 @@
                                 <form:label path="details" class="control-label">
                                     Location on map:
                                 </form:label>
+                                <form:hidden id="longitude" path="longitude" class="input-xlarge" placeholder="Longitude" />
+                                <form:hidden id="latitude" path="latitude" class="input-xlarge" placeholder="Latitude" />
                                 <div class="controls">
                                     <div id="mapContainer" class="orphanage-map map-container">
                                     </div>

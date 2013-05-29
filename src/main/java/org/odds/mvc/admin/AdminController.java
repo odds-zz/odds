@@ -10,8 +10,6 @@ package org.odds.mvc.admin;
  */
 import java.util.List;
 import org.odds.hibernate.dao.OrphanageDAO;
-import org.odds.hibernate.dao.UserDAO;
-import org.odds.hibernate.entities.User;
 import org.odds.hibernate.entities.Orphanage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +31,13 @@ public class AdminController {
     public String donations(Model model) {
 
         return "admin/donations";
+    }
+
+
+    @RequestMapping(value = "/admin/donation/items")
+    public String items(Model model) {
+
+        return "/admin/donation/items";
     }
 
     @RequestMapping(value = "/admin/media")
@@ -65,20 +70,13 @@ public class AdminController {
         return "admin/statistics";
     }
 
-    @RequestMapping(value = "/admin/users")
-    public String user(Model model) {
+    @RequestMapping(value = "/admin/orphanages")
+    public String orphanages(Model model) {
 
-        List<User> uList;
-        uList = UserDAO.listOrphanageAdministrators();
-        model.addAttribute("users", uList);
-        return "admin/users";
-    }
+        List<Orphanage> oList = OrphanageDAO.listOrphanages();
+        model.addAttribute("orphanages", oList);
 
-    @RequestMapping(value = "/admin/orphanage/{id}")
-    public String orphanage(Model model, @PathVariable("id") int id) {
-        Orphanage o = OrphanageDAO.getOrphanage(id);
-        model.addAttribute("orphanage", o);
-        return "admin/orphanage";
+        return "admin/orphanages";
     }
 
     @RequestMapping(value = "/admin/orphanage/delete/{id}")
@@ -90,21 +88,5 @@ public class AdminController {
         // Else say that orphanage does not exists.
         model.addAttribute("orphanage", o);
         return "redirect:/admin/orphanages";
-    }
-
-    @RequestMapping(value = "/admin/orphanage/sedit/{id}")
-    public String orphanageEdit(Model model, @PathVariable("id") int id) {
-        Orphanage o = OrphanageDAO.getOrphanage(id);
-        model.addAttribute("orphanage", o);
-        return "admin/orphanage/edit";
-    }
-
-    @RequestMapping(value = "/admin/orphanages")
-    public String orphanages(Model model) {
-
-        List<Orphanage> oList = OrphanageDAO.listOrphanages();
-        model.addAttribute("orphanages", oList);
-
-        return "admin/orphanages";
     }
 }

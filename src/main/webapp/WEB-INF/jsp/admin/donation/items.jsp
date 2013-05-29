@@ -1,8 +1,8 @@
-<%@include file="../../jspf/layout/header.jspf" %>
+<%@include file="../../../jspf/layout/header.jspf" %>
 
-<%@include file="../../jspf/layout/banner/simple.jspf" %>
+<%@include file="../../../jspf/layout/banner/simple.jspf" %>
 
-<%@include file="jspf/subnav.jsp" %>
+<%@include file="../jspf/subnav.jsp" %>
 
 <div class="container">
     <div class="row-fluid">
@@ -10,7 +10,7 @@
             <div class="widget ">
                 <div class="widget-header">
                     <i class="icon-group"></i>
-                    <h3>Funds Received</h3>
+                    <h3>Physical Items Received</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget widget-table action-table">
                     <table class="table table-bordered table-striped table-highlight">
@@ -62,9 +62,9 @@
                     <h3>Admin options</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    <a href="/odds/admin">
+                    <a href="/odds/admin/donation/items/register">
                         <button class="btn btn-large btn-primary">
-                            Administration Home
+                            Register Items
                         </button>
                     </a>
                 </div> <!-- /widget-content -->
@@ -73,4 +73,4 @@
         </div> <!-- /span4 -->
     </div>
 </div>
-<%@include file="../../jspf/layout/footer.jspf" %>
+<%@include file="../../../jspf/layout/footer.jspf" %>

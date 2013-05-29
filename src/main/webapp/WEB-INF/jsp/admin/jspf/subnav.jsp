@@ -23,9 +23,9 @@
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a href="/odds/admin/users">System Administrators</a></li>
-                        <li><a href="/odds/admin/users">Orphanage Administrators</a></li>
                         <li><a href="/odds/admin/users">All Users</a></li>
+                        <li><a href="/odds/admin/users/systemadmins">Orphanage Administrators</a></li>
+                        <li><a href="/odds/admin/users/orphanageadmins">System Administrators</a></li>
                     </ul>
                 </li>
 
@@ -37,11 +37,17 @@
                     </a>
                 </li>
 
-                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/donations")) {%>active<% }%> subnavbar-open-right">
-                    <a href="/odds/admin/donations" class="dropdown-toggle">
+                <li class="dropdown <% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/donations")) {%>active<% }%>">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-money"></i>
                         <span>Donations</span>
+                        <b class="caret"></b>
                     </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a href="/odds/admin/donations"><i class="icon-credit-card"></i> Received Funds</a></li>
+                        <li><a href="/odds/admin/donation/items"><i class="icon-coffee"></i> Physical Items</a></li>
+                    </ul>
                 </li>
 
                 <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/reports")) {%>active<% }%> subnavbar-open-right">

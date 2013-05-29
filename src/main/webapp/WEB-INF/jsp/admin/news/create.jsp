@@ -17,6 +17,14 @@
                 <div class="widget-content">
                     <form:form id="edit-profile" class="form-horizontal" method="POST" command="news" modelAttribute="news">
                         <fieldset >
+                            <div class="form-interaction">
+                                <c:if test="${success}">
+                                    <div class="alert alert-success">
+                                        <button type="button" class="close" data-dismiss="alert">×</button>
+                                        <strong>Success!</strong> Orphanage Center has been added to the system.
+                                    </div>
+                                </c:if>
+                            </div>
                             <div class="form-element control-group">
                                 <form:label path="title" class="control-label">
                                     Title:

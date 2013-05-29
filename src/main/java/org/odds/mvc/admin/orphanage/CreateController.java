@@ -7,6 +7,7 @@ package org.odds.mvc.admin.orphanage;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import org.odds.hibernate.dao.OrphanageAddressDAO;
 import org.odds.hibernate.dao.OrphanageContactDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ import org.odds.mvc.admin.form.OrphanageValidator;
 import org.odds.mvc.admin.form.OrphanageBean;
 import org.odds.hibernate.entities.Orphanage;
 import org.odds.hibernate.entities.OrphanageContact;
+import org.odds.hibernate.entities.OrphanageAddress;
 import org.odds.hibernate.dao.OrphanageDAO;
 import org.odds.hibernate.dao.UserDAO;
 import org.odds.hibernate.entities.User;
@@ -46,6 +48,7 @@ public class CreateController {
         region.put("Dodoma", "Dodoma");
         region.put("Mwanza", "Mwanza");
         region.put("Arusha", "Arusha");
+        region.put("Kilimanjaro", "Kilimanjaro");
         return region;
     }
 
@@ -89,7 +92,12 @@ public class CreateController {
 
             // Todo:
             // Save address as well
-            // OrphanageAddress oa = new OrphanageAddress();
+            OrphanageAddress oa = new OrphanageAddress();
+            oa.setOrphanage(orphanage);
+            oa.setRegion(form.getRegion());
+            oa.setLongitude(form.getLongitude());
+            oa.setLatitude(form.getLatitude());
+            OrphanageAddressDAO.create(oa);
 
             OrphanageContact oc = new OrphanageContact();
             oc.setEmail(form.getEmail());

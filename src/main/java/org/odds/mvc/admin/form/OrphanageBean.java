@@ -1,5 +1,7 @@
 package org.odds.mvc.admin.form;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author kenkataiwa
@@ -13,6 +15,8 @@ public class OrphanageBean {
     private String region;
     private Integer admin;
     private String details;
+    private BigDecimal longitude;
+    private BigDecimal latitude;
 
     public Integer getId() {
         return this.id;
@@ -68,5 +72,21 @@ public class OrphanageBean {
 
     public void setDetails(String details) {
         this.details = details;
+    }
+
+    public BigDecimal getLongitude() {
+        return this.longitude;
+    }
+
+    public void setLongitude(BigDecimal longitude) {
+        this.longitude = longitude;
+    }
+
+    public BigDecimal getLatitude() {
+        return this.latitude;
+    }
+
+    public void setLatitude(BigDecimal latitude) {
+        this.latitude = latitude;
     }
 }
