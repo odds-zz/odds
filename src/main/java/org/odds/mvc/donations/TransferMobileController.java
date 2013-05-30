@@ -57,12 +57,13 @@ public class TransferMobileController {
             return "/donation/transfer/mobile";
         } else {
             status.setComplete();
-            model.addAttribute("success", true);            
+            model.addAttribute("success", true);
 
             DonationMoney donation = new DonationMoney();
             donation.setAmount(form.getAmount());
             donation.setDonor(form.getDonor());
             donation.setMessage(form.getMessage());
+            donation.setDonorEmail(form.getEmail());
             donation.setStatus("1");
             donation.setTime(new Date());
             donation.setUser(null);

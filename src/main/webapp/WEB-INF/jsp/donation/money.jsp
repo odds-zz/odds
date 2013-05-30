@@ -63,7 +63,7 @@
                     <h3>Donation options</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    <a href="/odds/donation/money/transfer">
+                    <a href="/odds/donation/money/transfer/creditcard">
                         <button class="btn btn-large btn-primary">
                             Give Money <i class="icon-money"></i>
                         </button>

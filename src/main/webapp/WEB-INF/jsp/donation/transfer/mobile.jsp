@@ -101,6 +101,20 @@
                     <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 </div> <!-- /widget-content -->
             </div> <!-- /widget-box -->
+            <% if (request.isUserInRole("ROLE_USER")) {%>
+            <div class="widget widget-box">
+                <div class="widget-header">
+                    <h3>Donation options</h3>
+                </div> <!-- /widget-header -->
+                <div class="widget-content">
+                    <a href="/odds/donation/money">
+                        <button class="btn btn-large btn-primary">
+                            <i class="icon-heart-empty"></i> Money Donation Options
+                        </button>
+                    </a>
+                </div> <!-- /widget-content -->
+            </div> <!-- /widget-box -->
+            <% }%>               
         </div> <!-- /span4 -->
     </div>
 </div>

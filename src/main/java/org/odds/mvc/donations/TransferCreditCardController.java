@@ -62,6 +62,7 @@ public class TransferCreditCardController {
             DonationMoney donation = new DonationMoney();
             donation.setAmount(form.getAmount());
             donation.setDonor(form.getDonor());
+            donation.setDonorEmail(form.getEmail());
             donation.setMessage(form.getMessage());
             donation.setStatus("1");
             donation.setTime(new Date());

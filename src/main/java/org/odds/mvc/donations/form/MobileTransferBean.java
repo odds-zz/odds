@@ -67,6 +67,6 @@ public class MobileTransferBean {
     }
 
     public void setMessage(String message) {
-        this.service = message;
+        this.message = message;
     }
 }
