@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 30, 2013 2:03:18 PM by Hibernate Tools 3.2.1.GA
+// Generated May 31, 2013 1:32:30 AM by Hibernate Tools 3.2.1.GA
 
 
 import javax.persistence.Column;
@@ -26,6 +26,9 @@ public class DonationItem  implements java.io.Serializable {
      private User user;
      private DonationCategory donationCategory;
      private String name;
+     private Integer quantity;
+     private Long size;
+     private String metric;
      private String details;
      private String status;
      private String donor;
@@ -33,10 +36,13 @@ public class DonationItem  implements java.io.Serializable {
     public DonationItem() {
     }
 
-    public DonationItem(User user, DonationCategory donationCategory, String name, String details, String status, String donor) {
+    public DonationItem(User user, DonationCategory donationCategory, String name, Integer quantity, Long size, String metric, String details, String status, String donor) {
        this.user = user;
        this.donationCategory = donationCategory;
        this.name = name;
+       this.quantity = quantity;
+       this.size = size;
+       this.metric = metric;
        this.details = details;
        this.status = status;
        this.donor = donor;
@@ -78,6 +84,33 @@ public class DonationItem  implements java.io.Serializable {
     
     public void setName(String name) {
         this.name = name;
+    }
+    
+    @Column(name="quantity")
+    public Integer getQuantity() {
+        return this.quantity;
+    }
+    
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+    
+    @Column(name="size", precision=10, scale=0)
+    public Long getSize() {
+        return this.size;
+    }
+    
+    public void setSize(Long size) {
+        this.size = size;
+    }
+    
+    @Column(name="metric", length=45)
+    public String getMetric() {
+        return this.metric;
+    }
+    
+    public void setMetric(String metric) {
+        this.metric = metric;
     }
     
     @Column(name="details", length=45)
