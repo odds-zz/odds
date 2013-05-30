@@ -18,6 +18,7 @@ import org.odds.mvc.donations.form.MobileDonationValidator;
 import org.odds.mvc.donations.form.MobileTransferBean;
 import org.odds.hibernate.entities.DonationMoney;
 import org.odds.hibernate.dao.DonationMoneyDAO;
+import org.springframework.ui.ModelMap;
 
 /**
  * Handles requests for the application home page.
@@ -46,7 +47,7 @@ public class TransferMobileController {
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
             @ModelAttribute("donation") MobileTransferBean form,
-            BindingResult result, SessionStatus status) {
+            BindingResult result, SessionStatus status, ModelMap model) {
 
 
         donationValidator.validate(form, result);
@@ -56,6 +57,7 @@ public class TransferMobileController {
             return "/donation/transfer/mobile";
         } else {
             status.setComplete();
+            model.addAttribute("success", true);            
 
             DonationMoney donation = new DonationMoney();
             donation.setAmount(form.getAmount());

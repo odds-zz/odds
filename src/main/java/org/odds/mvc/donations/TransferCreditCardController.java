@@ -18,6 +18,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import org.odds.mvc.donations.form.CreateCardDonationValidator;
 import org.odds.mvc.donations.form.CreateCardTransferBean;
+import org.springframework.ui.ModelMap;
 
 /**
  * Handles requests for the application home page.
@@ -46,7 +47,7 @@ public class TransferCreditCardController {
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
             @ModelAttribute("donation") CreateCardTransferBean form,
-            BindingResult result, SessionStatus status) {
+            BindingResult result, SessionStatus status, ModelMap model) {
 
 
         donationValidator.validate(form, result);
@@ -56,7 +57,8 @@ public class TransferCreditCardController {
             return "/donation/transfer/creditcard";
         } else {
             status.setComplete();
-
+            model.addAttribute("success", true);  
+            
             DonationMoney donation = new DonationMoney();
             donation.setAmount(form.getAmount());
             donation.setDonor(form.getDonor());
