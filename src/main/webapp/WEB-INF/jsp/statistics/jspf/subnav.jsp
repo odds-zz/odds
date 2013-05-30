@@ -38,6 +38,17 @@
 
             </ul>
 
+            <ul class="mainnav pull-right">
+
+                <li class=" active subnavbar-open-right">
+                    <a href="/odds/statistics/children">
+                        <i class="icon-bar-chart"></i>
+                        <span>Children Statistics</span>
+                    </a>
+                </li>
+
+            </ul>                    
+
         </div> <!-- /container -->
 
     </div> <!-- /subnavbar-inner -->

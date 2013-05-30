@@ -17,22 +17,22 @@
                     <div id="big_stats" class="cf">
                         <div class="stat">
                             <h4>No. of Orphanages</h4>
-                            <span class="value">12</span>
+                            <span class="value">${numberOrphanages}</span>
                         </div> <!-- .stat -->
 
                         <div class="stat">
                             <h4>No. of Children</h4>
-                            <span class="value">23</span>
+                            <span class="value">${numberChildren}</span>
                         </div> <!-- .stat -->
 
                         <div class="stat">
-                            <h4>Donations Today</h4>
-                            <span class="value">2</span>
+                            <h4>Street Children in Tanzania</h4>
+                            <span class="value">24,400</span>
                         </div> <!-- .stat -->
 
                         <div class="stat">
-                            <h4>Donations this Year</h4>
-                            <span class="value">13</span>
+                            <h4>Sponsored through ODDS</h4>
+                            <span class="value">0</span>
                         </div> <!-- .stat -->
                     </div>
 

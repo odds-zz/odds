@@ -16,24 +16,24 @@
 
                     <div id="big_stats" class="cf">
                         <div class="stat">
-                            <h4>No. of Orphanages</h4>
-                            <span class="value">12</span>
-                        </div> <!-- .stat -->
-
-                        <div class="stat">
-                            <h4>No. of Children</h4>
-                            <span class="value">23</span>
-                        </div> <!-- .stat -->
-
-                        <div class="stat">
                             <h4>Donations Today</h4>
-                            <span class="value">2</span>
+                            <span class="value">${numberDonations}</span>
                         </div> <!-- .stat -->
 
                         <div class="stat">
                             <h4>Donations this Year</h4>
-                            <span class="value">13</span>
+                            <span class="value">${numberYearDonations}</span>
                         </div> <!-- .stat -->
+
+                        <div class="stat">
+                            <h4>Physical Item Donations</h4>
+                            <span class="value">${numberItemDonations}</span>
+                        </div> <!-- .stat -->                        
+
+                        <div class="stat">
+                            <h4>Funds Donations</h4>
+                            <span class="value">${numberMoneyDonations}</span>
+                        </div> <!-- .stat -->                        
                     </div>
 
                 </div> <!-- /widget-content -->
