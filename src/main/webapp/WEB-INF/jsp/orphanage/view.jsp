@@ -12,12 +12,21 @@
                         <h3>Orphanage</h3>
                     </div> <!-- /widget-header -->
                     <div class="widget-content">
-                        ${orphanage.name}
-                        <div class="btn-group pull-right">
+                        <h3>${orphanage.name}</h3
+                        <p>
+                        <h4>Contact:</h4>
+                        ${orphanage}
+                        </p>                        
+                        <p>
+                        <h4>About:</h4>
+                        ${orphanage.details}
+                        </p>
+                        <h4>Location on Map</h4>                        
+                        <div class="btn-group pull-right" style="position: absolute;top: 40px; right: 15px;">
                             <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Orphanage Center</a>
                             <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
+                                <li><a href="/odds/admin/orphanage/edit/${orphanage.id}"><i class="icon-pencil"></i> Edit</a></li>
                                 <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
                                 <li class="divider"></li>
                                 <li><a href="#"><i class="i"></i> Assign admin</a></li>

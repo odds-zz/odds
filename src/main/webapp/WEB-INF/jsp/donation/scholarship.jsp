@@ -2,11 +2,19 @@
 
 <%@include file="../../jspf/layout/banner/simple.jspf" %>
 
-<div class="container">
+<div class="container pad-top">
     <div class="row-fluid">
         <div class="span12">
-            <h1>ODDS Donation Scholarship</h1>
-        </div>
+            <div class="widget widget-box">
+                <div class="widget-header">
+                    <i class="icon-pushpin"></i>
+                    <h3>Sponsor a Child</h3>
+                </div> <!-- /widget-header -->
+                <div class="widget-content">
+                    
+                </div> <!-- /widget-content -->
+            </div> <!-- /widget-box -->
+        </div>        
     </div>
 </div>
 
