@@ -46,7 +46,11 @@ public class UserDAO {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
             Query query;
-            query = session.createQuery("select u from User u full join u.userRoles uRole where uRole.authority = ROLE_ADMIN ");
+            query = session.createQuery(
+                    "select u from User u"
+                    + " inner join u.userRoles ur"
+                    + " where ur.authority = :role ")
+                    .setParameter("role", "ROLE_ADMIN");
             users = (List<User>) query.list();
 
             session.getTransaction().commit();//end of transaction
@@ -58,7 +62,7 @@ public class UserDAO {
 
         return users;
     }
-    
+
     public static List listOrphanageAdministrators() {
 
         List<User> users = null;
@@ -66,8 +70,12 @@ public class UserDAO {
         try {
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
-            Query query;//join u.userRoles uRole where uRole.authority = ROLE_ADMIN
-            query = session.createQuery("select u from User u inner join u.orphanages where u.id>3");
+            Query query;
+            query = session.createQuery(
+                    "select u from User u"
+                    + " inner join u.userRoles ur"
+                    + " where ur.authority = :role ")
+                    .setParameter("role", "ROLE_ADMIN");
             users = (List<User>) query.list();
 
             session.getTransaction().commit();//end of transaction
@@ -79,7 +87,7 @@ public class UserDAO {
 
         return users;
     }
-    
+
     public static void createUser() {
 
         Session session;

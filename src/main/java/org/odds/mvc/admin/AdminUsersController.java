@@ -28,7 +28,7 @@ public class AdminUsersController {
     public String user(Model model) {
 
         List<User> uList;
-        uList = UserDAO.listOrphanageAdministrators();
+        uList = UserDAO.listUser();
         model.addAttribute("users", uList);
         return "admin/users/all";
     }
@@ -37,7 +37,7 @@ public class AdminUsersController {
     public String systemAdmins(Model model) {
 
         List<User> uList;
-        uList = UserDAO.listOrphanageAdministrators();
+        uList = UserDAO.listSystemAdministrators();
         model.addAttribute("users", uList);
         return "admin/users/system-admins";
     }
