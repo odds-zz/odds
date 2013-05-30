@@ -142,4 +142,9 @@ public class DonationMoneyDAO {
         }
         return dList;
     }
+    
+    public static Integer countDonations() {
+
+        return 54;
+    }    
 }

@@ -141,4 +141,9 @@ public class OrphanageDAO {
         }
         return oList;
     }
+    
+    public static Integer countOrphanages() {
+    
+        return 14;
+    }
 }
