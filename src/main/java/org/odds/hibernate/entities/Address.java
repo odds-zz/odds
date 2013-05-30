@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 29, 2013 6:20:03 PM by Hibernate Tools 3.2.1.GA
+// Generated May 30, 2013 2:03:18 PM by Hibernate Tools 3.2.1.GA
 
 
 import javax.persistence.Column;

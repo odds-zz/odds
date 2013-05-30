@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 29, 2013 6:20:03 PM by Hibernate Tools 3.2.1.GA
+// Generated May 30, 2013 2:03:18 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.HashSet;
@@ -33,29 +33,29 @@ public class User  implements java.io.Serializable {
      private String username;
      private String password;
      private Integer enabled;
-     private Set<Orphanage> orphanages = new HashSet<Orphanage>(0);
      private Set<DonationItem> donationItems = new HashSet<DonationItem>(0);
      private Set<Feedback> feedbacks = new HashSet<Feedback>(0);
      private Set<UserRole> userRoles = new HashSet<UserRole>(0);
      private Set<UserContact> userContacts = new HashSet<UserContact>(0);
      private Set<UserSettings> userSettingses = new HashSet<UserSettings>(0);
+     private Set<Orphanage> orphanages = new HashSet<Orphanage>(0);
      private Set<DonationMoney> donationMoneies = new HashSet<DonationMoney>(0);
 
     public User() {
     }
 
-    public User(String firstname, String lastname, String username, String password, Integer enabled, Set<Orphanage> orphanages, Set<DonationItem> donationItems, Set<Feedback> feedbacks, Set<UserRole> userRoles, Set<UserContact> userContacts, Set<UserSettings> userSettingses, Set<DonationMoney> donationMoneies) {
+    public User(String firstname, String lastname, String username, String password, Integer enabled, Set<DonationItem> donationItems, Set<Feedback> feedbacks, Set<UserRole> userRoles, Set<UserContact> userContacts, Set<UserSettings> userSettingses, Set<Orphanage> orphanages, Set<DonationMoney> donationMoneies) {
        this.firstname = firstname;
        this.lastname = lastname;
        this.username = username;
        this.password = password;
        this.enabled = enabled;
-       this.orphanages = orphanages;
        this.donationItems = donationItems;
        this.feedbacks = feedbacks;
        this.userRoles = userRoles;
        this.userContacts = userContacts;
        this.userSettingses = userSettingses;
+       this.orphanages = orphanages;
        this.donationMoneies = donationMoneies;
     }
    
@@ -114,17 +114,6 @@ public class User  implements java.io.Serializable {
     public void setEnabled(Integer enabled) {
         this.enabled = enabled;
     }
-@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="orphanage_admin", catalog="odds_db", joinColumns = { 
-        @JoinColumn(name="user_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
-        @JoinColumn(name="orphanage_id", nullable=false, updatable=false) })
-    public Set<Orphanage> getOrphanages() {
-        return this.orphanages;
-    }
-    
-    public void setOrphanages(Set<Orphanage> orphanages) {
-        this.orphanages = orphanages;
-    }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="user")
     public Set<DonationItem> getDonationItems() {
         return this.donationItems;
@@ -164,6 +153,17 @@ public class User  implements java.io.Serializable {
     
     public void setUserSettingses(Set<UserSettings> userSettingses) {
         this.userSettingses = userSettingses;
+    }
+@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @JoinTable(name="orphanage_admin", catalog="odds_db", joinColumns = { 
+        @JoinColumn(name="user_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
+        @JoinColumn(name="orphanage_id", nullable=false, updatable=false) })
+    public Set<Orphanage> getOrphanages() {
+        return this.orphanages;
+    }
+    
+    public void setOrphanages(Set<Orphanage> orphanages) {
+        this.orphanages = orphanages;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="user")
     public Set<DonationMoney> getDonationMoneies() {
