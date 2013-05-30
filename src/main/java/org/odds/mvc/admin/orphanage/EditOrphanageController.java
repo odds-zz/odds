@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping(value = "/admin/orphanage/edit/{id}")
+@RequestMapping(value = {"/admin/orphanage/edit/{id}","/orphanage/edit/{id}" })
 public class EditOrphanageController {
 
     OrphanageValidator orphanageValidator;

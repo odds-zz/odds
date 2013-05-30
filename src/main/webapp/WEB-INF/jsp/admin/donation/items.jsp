@@ -24,17 +24,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="user" items="${users}" varStatus="status">
+                            <c:forEach var="item" items="${items}" varStatus="status">
                                 <tr>
                                     <td>${status.count}</td>
-                                    <td>${user.firstname}</td>
-                                    <td>${user.lastname}</td>
-                                    <td>@${user.username}</td>
+                                    <td>${item.donor}</td>
+                                    <td>${item.amount}</td>
+                                    <td>${item.donorEmail}</td>
                                     <td class="td-actions">
-                                        <a href="/odds/admin/user/edit/${user.id}" class="btn btn-small btn-warning">
+                                        <a href="/odds/admin/item/edit/${user.id}" class="btn btn-small btn-warning">
                                             <i class="btn-icon-only  icon-edit"></i>
                                         </a>
-                                        <a href="/odds/admin/user/delete/${user.id}" onclick="return confirm('Are you sure want to delete?');" class="btn btn-small">
+                                        <a href="/odds/admin/item/delete/${user.id}" onclick="return confirm('Are you sure want to delete?');" class="btn btn-small">
                                             <i class="btn-icon-only icon-trash"></i>
                                         </a>
                                     </td>

@@ -24,12 +24,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="user" items="${users}" varStatus="status">
+                            <c:forEach var="donation" items="${donations}" varStatus="status">
                                 <tr>
                                     <td>${status.count}</td>
-                                    <td>${user.firstname}</td>
-                                    <td>${user.lastname}</td>
-                                    <td>@${user.username}</td>
+                                    <td>${donation.donor}</td>
+                                    <td>${donation.amount}</td>
+                                    <td>${donation.donorEmail}</td>
                                     <td class="td-actions">
                                         <a href="/odds/admin/user/edit/${user.id}" class="btn btn-small btn-warning">
                                             <i class="btn-icon-only  icon-edit"></i>

@@ -96,7 +96,7 @@ public class DonationMoneyDAO {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
             tx = session.beginTransaction();
-            Query q = session.createQuery("from Donation where Donation.id = :id");
+            Query q = session.createQuery("from DonationMoney where DonationMoney.id = :id");
             q.setString("id", id.toString());
             d = (DonationMoney) q.uniqueResult();
             tx.commit();
@@ -125,7 +125,7 @@ public class DonationMoneyDAO {
         try {
             tx = session.beginTransaction();
             Query q;
-            q = session.createQuery("from Donation");
+            q = session.createQuery("from DonationMoney");
             dList = (List<DonationMoney>) q.list();
             tx.commit();//end of transaction
             Connection close; //end of  session
