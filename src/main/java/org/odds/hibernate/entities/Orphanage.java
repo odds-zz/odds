@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 29, 2013 6:20:03 PM by Hibernate Tools 3.2.1.GA
+// Generated May 30, 2013 2:03:18 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -35,23 +35,25 @@ public class Orphanage  implements java.io.Serializable {
      private String location;
      private String details;
      private Date time;
-     private Set<User> users = new HashSet<User>(0);
      private Set<OrphanageAddress> orphanageAddresses = new HashSet<OrphanageAddress>(0);
+     private Set<User> users = new HashSet<User>(0);
      private Set<Record> records = new HashSet<Record>(0);
      private Set<OrphanageContact> orphanageContacts = new HashSet<OrphanageContact>(0);
+     private Set<Children> childrens = new HashSet<Children>(0);
 
     public Orphanage() {
     }
 
-    public Orphanage(String name, String location, String details, Date time, Set<User> users, Set<OrphanageAddress> orphanageAddresses, Set<Record> records, Set<OrphanageContact> orphanageContacts) {
+    public Orphanage(String name, String location, String details, Date time, Set<OrphanageAddress> orphanageAddresses, Set<User> users, Set<Record> records, Set<OrphanageContact> orphanageContacts, Set<Children> childrens) {
        this.name = name;
        this.location = location;
        this.details = details;
        this.time = time;
-       this.users = users;
        this.orphanageAddresses = orphanageAddresses;
+       this.users = users;
        this.records = records;
        this.orphanageContacts = orphanageContacts;
+       this.childrens = childrens;
     }
    
      @Id @GeneratedValue(strategy=IDENTITY)
@@ -100,6 +102,14 @@ public class Orphanage  implements java.io.Serializable {
     public void setTime(Date time) {
         this.time = time;
     }
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="orphanage")
+    public Set<OrphanageAddress> getOrphanageAddresses() {
+        return this.orphanageAddresses;
+    }
+    
+    public void setOrphanageAddresses(Set<OrphanageAddress> orphanageAddresses) {
+        this.orphanageAddresses = orphanageAddresses;
+    }
 @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     @JoinTable(name="orphanage_admin", catalog="odds_db", joinColumns = { 
         @JoinColumn(name="orphanage_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
@@ -110,14 +120,6 @@ public class Orphanage  implements java.io.Serializable {
     
     public void setUsers(Set<User> users) {
         this.users = users;
-    }
-@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="orphanage")
-    public Set<OrphanageAddress> getOrphanageAddresses() {
-        return this.orphanageAddresses;
-    }
-    
-    public void setOrphanageAddresses(Set<OrphanageAddress> orphanageAddresses) {
-        this.orphanageAddresses = orphanageAddresses;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="orphanage")
     public Set<Record> getRecords() {
@@ -134,6 +136,14 @@ public class Orphanage  implements java.io.Serializable {
     
     public void setOrphanageContacts(Set<OrphanageContact> orphanageContacts) {
         this.orphanageContacts = orphanageContacts;
+    }
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="orphanage")
+    public Set<Children> getChildrens() {
+        return this.childrens;
+    }
+    
+    public void setChildrens(Set<Children> childrens) {
+        this.childrens = childrens;
     }
 
 
