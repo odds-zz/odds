@@ -16,11 +16,11 @@
             <div class="login-fields">
 
                 <p>Sign in using your registered account:</p>
-
-                <c:if test="${not empty error}">
-                    <div class="errorblock">
-                        Your login attempt was not successful, try again.<br /> Caused :
-                        ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+                
+                <c:if test="${not empty param.error}">
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        <strong>Login failure!</strong>  ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
                     </div>
                 </c:if>
 
@@ -43,7 +43,7 @@
             <div class="login-actions">
 
                 <span class="login-checkbox">
-                    <input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4">
+                    <input id="Field" name="Field" type="checkbox" checked="checked" class="field login-checkbox" value="First Choice" tabindex="4">
                     <label class="choice" for="Field">Keep me signed in</label>
                 </span>
 
