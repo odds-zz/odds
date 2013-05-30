@@ -16,7 +16,7 @@
 
                     <div id="big_stats" class="cf">
                         <div class="stat">
-                            <h4>No. of Orphanages</h4>
+                            <h4>No. of Orphanage Centers</h4>
                             <span class="value">${numberOrphanages}</span>
                         </div> <!-- .stat -->
 
