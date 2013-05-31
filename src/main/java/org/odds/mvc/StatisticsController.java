@@ -27,8 +27,8 @@ public class StatisticsController {
 
         Integer numberOrphanages = OrphanageDAO.countOrphanages();
         Integer numberChildren = ChildrenDAO.countChildren();
-        Integer numberMoneyDonations = DonationItemDAO.countDonations();
-        Integer numberItemDonations = DonationMoneyDAO.countDonations();
+        Integer numberMoneyDonations = DonationMoneyDAO.countDonations();
+        Integer numberItemDonations = DonationItemDAO.countDonations();
         model.addAttribute("numberOrphanages", numberOrphanages);
         model.addAttribute("numberChildren", numberChildren);
         model.addAttribute("numberDonations", numberMoneyDonations + numberItemDonations);
@@ -44,29 +44,29 @@ public class StatisticsController {
         model.addAttribute("numberOrphanages", numberOrphanages);
         model.addAttribute("numberChildren", numberChildren);
         model.addAttribute("numberMonthOrphanages", numberOrphanages);
-        model.addAttribute("numberYearOrphanages", numberChildren);        
+        model.addAttribute("numberYearOrphanages", numberChildren);
         return "statistics/orphanages";
     }
 
     @RequestMapping(value = "/statistics/donations")
     public String donations(Model model) {
 
-        Integer numberMoneyDonations = DonationItemDAO.countDonations();
-        Integer numberItemDonations = DonationMoneyDAO.countDonations();
+        Integer numberMoneyDonations = DonationMoneyDAO.countDonations();
+        Integer numberItemDonations = DonationItemDAO.countDonations();
         model.addAttribute("numberDonations", numberMoneyDonations + numberItemDonations);
-        model.addAttribute("numberYearDonations", numberMoneyDonations + numberItemDonations);    
+        model.addAttribute("numberYearDonations", numberMoneyDonations + numberItemDonations);
         model.addAttribute("numberMoneyDonations", numberMoneyDonations);
-        model.addAttribute("numberItemDonations", numberItemDonations);            
+        model.addAttribute("numberItemDonations", numberItemDonations);
         return "statistics/donations";
     }
 
     @RequestMapping(value = "/statistics/children")
     public String children(Model model) {
 
-        Integer numberOrphanages = OrphanageDAO.countOrphanages();        
-        Integer numberChildren = ChildrenDAO.countChildren();        
+        Integer numberOrphanages = OrphanageDAO.countOrphanages();
+        Integer numberChildren = ChildrenDAO.countChildren();
         model.addAttribute("numberOrphanages", numberOrphanages);
-        model.addAttribute("numberChildren", numberChildren);        
+        model.addAttribute("numberChildren", numberChildren);
         return "statistics/children";
     }
 }

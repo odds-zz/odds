@@ -144,7 +144,29 @@ public class DonationItemDAO {
     }
 
     public static Integer countDonations() {
+        Integer numberDonations = 0;
+        Transaction tx = null;
+        Session session;
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
 
-        return 54;
+        try {
+            tx = session.beginTransaction();
+            Query q;
+            q = session.createQuery("select count(*) from DonationItem");
+            numberDonations = ((Long) q.uniqueResult()).intValue();
+            tx.commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
+                }
+            }
+
+        }
+        return numberDonations;
     }
 }

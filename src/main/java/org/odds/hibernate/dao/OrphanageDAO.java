@@ -152,9 +152,8 @@ public class OrphanageDAO {
         try {
             tx = session.beginTransaction();
             Query q;
-            numberOrphanages = ((Integer) session.createQuery("select count(*) from Orphanage")
-                    .iterate()
-                    .next()).intValue();
+            q = session.createQuery("select count(*) from Orphanage");
+            numberOrphanages = ((Long) q.uniqueResult()).intValue();
             tx.commit();//end of transaction
             Connection close; //end of  session
             close = session.close();
