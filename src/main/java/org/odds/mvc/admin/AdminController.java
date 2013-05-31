@@ -11,8 +11,10 @@ package org.odds.mvc.admin;
 import java.util.List;
 import org.odds.hibernate.dao.OrphanageDAO;
 import org.odds.hibernate.dao.DonationMoneyDAO;
+import org.odds.hibernate.dao.DonationItemDAO;
 import org.odds.hibernate.entities.Orphanage;
 import org.odds.hibernate.entities.DonationMoney;
+import org.odds.hibernate.entities.DonationItem;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,14 +35,15 @@ public class AdminController {
     public String donations(Model model) {
 
         List<DonationMoney> donations = DonationMoneyDAO.listDonations();
-        model.addAttribute("donations", donations);        
+        model.addAttribute("donations", donations);
         return "admin/donations";
     }
-
 
     @RequestMapping(value = "/admin/donation/items")
     public String items(Model model) {
 
+        List<DonationItem> donations = DonationItemDAO.listDonations();
+        model.addAttribute("donations", donations);
         return "/admin/donation/items";
     }
 

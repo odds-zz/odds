@@ -17,19 +17,19 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Item</th>                                
                                 <th>Donor</th>
-                                <th>Amount</th>
-                                <th>email</th>
+                                <th>Quantity</th>
                                 <th>Operations</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="item" items="${items}" varStatus="status">
+                            <c:forEach var="donation" items="${donations}" varStatus="status">
                                 <tr>
                                     <td>${status.count}</td>
-                                    <td>${item.donor}</td>
-                                    <td>${item.amount}</td>
-                                    <td>${item.donorEmail}</td>
+                                    <td>${donation.name}</td>                                    
+                                    <td>${donation.donor}</td>
+                                    <td>${donation.quantity}</td>
                                     <td class="td-actions">
                                         <a href="/odds/admin/item/edit/${user.id}" class="btn btn-small btn-warning">
                                             <i class="btn-icon-only  icon-edit"></i>
@@ -62,7 +62,7 @@
                     <h3>Admin options</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-                    <a href="/odds/admin/donation/items/register">
+                    <a href="/odds/admin/donation/item/register">
                         <button class="btn btn-large btn-primary">
                             Register Items
                         </button>

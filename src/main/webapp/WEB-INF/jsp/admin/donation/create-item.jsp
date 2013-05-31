@@ -11,10 +11,80 @@
             <div class="widget ">
                 <div class="widget-header">
                     <i class="icon-building"></i>
-                    <h3>Edit Orphanage</h3>
+                    <h3>Register a Physical Item Donated</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
-
+                    <form:form id="register-item" class="form-horizontal" method="POST" command="donation" modelAttribute="donation">
+                        <div class="form-interaction">
+                            <c:if test="${success}">
+                                <div class="alert alert-success">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>Success!</strong> Item has been recorded to the system.
+                                </div>
+                            </c:if>
+                        </div>
+                        <fieldset>
+                            <div class="form-element control-group">
+                                <form:label path="name" class="control-label">
+                                    Item name:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="name" class="input-xlarge" placeholder="Item name" />
+                                    <form:errors path="name" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="donor" class="control-label">
+                                    Name:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="donor" class="input-xlarge"  placeholder="First and Last name" />
+                                    <form:errors path="donor" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="quantity" class="control-label">
+                                    Quantity:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="quantity" class="input-xlarge"  placeholder="Quantity" />
+                                    <form:errors path="quantity" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="size" class="control-label">
+                                    Size:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="size" class="input-xlarge"  placeholder="Size" />
+                                    <form:errors path="size" cssClass="error" />
+                                </div>
+                            </div>
+                            <div class="form-element control-group">
+                                <form:label path="metric" class="control-label">
+                                    Metric:
+                                </form:label>
+                                <div class="controls">
+                                    <form:input path="metric" class="input-xlarge"  placeholder="Metric" />
+                                    <form:errors path="metric" cssClass="error" />
+                                </div>
+                            </div>                                
+                            <div class="form-element control-group">
+                                <form:label path="details" class="control-label">
+                                    Details:
+                                </form:label>
+                                <div class="controls">
+                                    <form:textarea path="details" rows="5" class="input-xlarge"  placeholder="Message" />
+                                    <form:errors path="details" cssClass="error" />
+                                </div>
+                            </div>                                
+                            <br/>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                                <button type="reset" class="btn">Cancel</button>
+                            </div>
+                        </fieldset>
+                    </form:form>
                 </div>
                 <!-- /widget-content -->
             </div> <!-- /widget -->
