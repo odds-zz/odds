@@ -1,5 +1,5 @@
 package org.odds.hibernate.entities;
-// Generated May 31, 2013 1:32:30 AM by Hibernate Tools 3.2.1.GA
+// Generated Jun 2, 2013 2:12:54 PM by Hibernate Tools 3.2.1.GA
 
 
 import java.util.Date;
@@ -37,6 +37,7 @@ public class Orphanage  implements java.io.Serializable {
      private Date time;
      private Set<OrphanageAddress> orphanageAddresses = new HashSet<OrphanageAddress>(0);
      private Set<User> users = new HashSet<User>(0);
+     private Set<DonationItem> donationItems = new HashSet<DonationItem>(0);
      private Set<Record> records = new HashSet<Record>(0);
      private Set<OrphanageContact> orphanageContacts = new HashSet<OrphanageContact>(0);
      private Set<Children> childrens = new HashSet<Children>(0);
@@ -44,13 +45,14 @@ public class Orphanage  implements java.io.Serializable {
     public Orphanage() {
     }
 
-    public Orphanage(String name, String location, String details, Date time, Set<OrphanageAddress> orphanageAddresses, Set<User> users, Set<Record> records, Set<OrphanageContact> orphanageContacts, Set<Children> childrens) {
+    public Orphanage(String name, String location, String details, Date time, Set<OrphanageAddress> orphanageAddresses, Set<User> users, Set<DonationItem> donationItems, Set<Record> records, Set<OrphanageContact> orphanageContacts, Set<Children> childrens) {
        this.name = name;
        this.location = location;
        this.details = details;
        this.time = time;
        this.orphanageAddresses = orphanageAddresses;
        this.users = users;
+       this.donationItems = donationItems;
        this.records = records;
        this.orphanageContacts = orphanageContacts;
        this.childrens = childrens;
@@ -120,6 +122,14 @@ public class Orphanage  implements java.io.Serializable {
     
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="orphanage")
+    public Set<DonationItem> getDonationItems() {
+        return this.donationItems;
+    }
+    
+    public void setDonationItems(Set<DonationItem> donationItems) {
+        this.donationItems = donationItems;
     }
 @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="orphanage")
     public Set<Record> getRecords() {

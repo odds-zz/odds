@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated May 31, 2013 1:32:30 AM by Hibernate Tools 3.2.1.GA -->
+<!-- Generated Jun 2, 2013 2:12:55 PM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
     <class name="org.odds.hibernate.entities.DonationItem" table="donation_item" catalog="odds_db">
         <id name="id" type="java.lang.Integer">
@@ -10,6 +10,9 @@
         </id>
         <many-to-one name="user" class="org.odds.hibernate.entities.User" fetch="select">
             <column name="user_id" />
+        </many-to-one>
+        <many-to-one name="orphanage" class="org.odds.hibernate.entities.Orphanage" fetch="select">
+            <column name="orphanage_id" />
         </many-to-one>
         <many-to-one name="donationCategory" class="org.odds.hibernate.entities.DonationCategory" fetch="select">
             <column name="category_id" />
@@ -34,6 +37,9 @@
         </property>
         <property name="donor" type="string">
             <column name="donor" length="45" />
+        </property>
+        <property name="time" type="timestamp">
+            <column name="time" length="19" />
         </property>
     </class>
 </hibernate-mapping>
