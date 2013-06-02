@@ -5,11 +5,13 @@ package org.odds.mvc.admin.donations;
  * @author kenkataiwa
  */
 import java.util.Date;
+import java.util.List;
 import org.odds.hibernate.dao.DonationItemDAO;
 import org.odds.mvc.admin.form.DonationItemValidator;
 import org.odds.mvc.admin.form.DonationItemBean;
 import org.odds.hibernate.entities.User;
 import org.odds.hibernate.entities.DonationItem;
+import org.odds.hibernate.entities.Orphanage;
 import org.odds.hibernate.entities.OrphanageContact;
 import org.odds.hibernate.entities.OrphanageAddress;
 import org.odds.hibernate.dao.OrphanageDAO;
@@ -30,38 +32,46 @@ import org.springframework.web.bind.support.SessionStatus;
 @Controller
 @RequestMapping(value = "/admin/donation/item/register")
 public class CreateDonationItemController {
-
+    
     DonationItemValidator donationValidator;
-
+    
     @Autowired
     public CreateDonationItemController(DonationItemValidator donationValidator) {
         this.donationValidator = donationValidator;
     }
-
+    
+    @ModelAttribute("orphanages")
+    public List<Orphanage> populateOrphanages() {
+        List<Orphanage> orphanages = OrphanageDAO.listOrphanages();
+        return orphanages;
+    }
+    
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(Model model) {
-
+        
         DonationItemBean donation = new DonationItemBean();
         model.addAttribute("donation", donation);
-
+        
         return "/admin/donation/create-item";
     }
-
+    
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
             @ModelAttribute("donation") DonationItemBean form,
             BindingResult result, SessionStatus status, Model model) {
-
-
+        
+        
         donationValidator.validate(form, result);
-
+        
         if (result.hasErrors()) {
             //if validator failed
             return "/admin/donation/create-item";
         } else {
             status.setComplete();
             model.addAttribute("success", true);
-
+            
+            Orphanage orphanage = OrphanageDAO.getOrphanage(form.getOrphanage());
+            
             DonationItem donation = new DonationItem();
             donation.setName(form.getName());
             donation.setDonor(form.getDonor());
@@ -69,10 +79,11 @@ public class CreateDonationItemController {
             donation.setMetric(form.getMetric());
             donation.setSize(form.getSize());
             donation.setStatus("1");
-//            donation.setTime(new Date());
+            donation.setTime(new Date());
             donation.setUser(null);
+            donation.setOrphanage(orphanage);
             DonationItemDAO.createDonation(donation);
-            
+
             //form success
             return "/admin/donation/create-item";
         }

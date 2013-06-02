@@ -77,6 +77,18 @@
                                     <form:textarea path="details" rows="5" class="input-xlarge"  placeholder="Message" />
                                     <form:errors path="details" cssClass="error" />
                                 </div>
+                            </div>      
+                            <div class="form-element control-group">
+                                <form:label path="orphanage" class="control-label">
+                                    Orphanage Center
+                                </form:label>
+                                <div class="controls">
+                                    <form:select path="orphanage" class="chosen">
+                                        <form:option value="" label="Choose an Orphanage Center"/>
+                                        <form:options items="${orphanages}" itemValue="id" itemLabel="name" />
+                                    </form:select>
+                                    <form:errors path="orphanage" cssClass="error" />
+                                </div>
                             </div>                                
                             <br/>
                             <div class="form-actions">

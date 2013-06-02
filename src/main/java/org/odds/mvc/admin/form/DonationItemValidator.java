@@ -23,5 +23,10 @@ public class DonationItemValidator implements Validator {
         DonationItemBean o = (DonationItemBean) target;
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name",
                 "required.name", "Field name is required.");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "donor",
+                "required.donor", "Field donor is required.");
+        if (o.getOrphanage() == null) {
+            errors.rejectValue("orphanage", "required.orphanage", "Field orphanage is required.");
+        }
     }
 }

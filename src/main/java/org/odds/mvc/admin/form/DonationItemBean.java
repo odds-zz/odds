@@ -14,6 +14,7 @@ public class DonationItemBean {
     private String details;
     private String status;
     private String donor;
+    private Integer orphanage;
 
     public Integer getId() {
         return this.id;
@@ -77,5 +78,13 @@ public class DonationItemBean {
 
     public void setDonor(String donor) {
         this.donor = donor;
+    }
+
+    public Integer getOrphanage() {
+        return orphanage;
+    }
+
+    public void setOrphanage(Integer orphanage) {
+        this.orphanage = orphanage;
     }
 }
