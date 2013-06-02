@@ -26,10 +26,10 @@
                         <fieldset>
                             <div class="form-element control-group">
                                 <form:label path="name" class="control-label">
-                                    Orphanage name:
+                                    User:
                                 </form:label>
                                 <div class="controls">
-                                    <form:input path="name" placeholder="Orphanage name" />
+                                    <form:input path="name" placeholder="User" />
                                     <form:errors path="name" cssClass="error" />
                                 </div>
                             </div>

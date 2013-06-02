@@ -15,6 +15,7 @@
     <bean class="org.odds.mvc.admin.form.DonationItemValidator" />
     <bean class="org.odds.mvc.admin.form.OrphanageChildValidator" />    
     <bean class="org.odds.mvc.admin.form.OrphanageValidator" />
+    <bean class="org.odds.mvc.admin.form.UserPrivilegesValidator" />    
     <bean class="org.odds.mvc.donations.form.CreateCardDonationValidator" />
     <bean class="org.odds.mvc.donations.form.MobileDonationValidator" />
     <bean class="org.odds.mvc.donations.form.DonationValidator" />

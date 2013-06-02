@@ -21,8 +21,6 @@ public class UserPrivilegesValidator implements Validator {
     public void validate(Object target, Errors errors) {
 
         UserPrivilegesBean user = (UserPrivilegesBean) target;
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name",
-                "required.name", "Field name is required.");
         if (user.getUserRoles().length == 0) {
             errors.rejectValue("userRoles", "required.userRoles", "Field name is required.");
         }
