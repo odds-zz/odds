@@ -11,7 +11,7 @@
             <div class="widget ">
                 <div class="widget-header">
                     <i class="icon-building"></i>
-                    <h3>Edit Orphanage</h3>
+                    <h3>Edit Orphanage Center</h3>
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
                     <form:form id="edit-profile" class="form-horizontal" method="POST" command="orphanage" modelAttribute="orphanage">
