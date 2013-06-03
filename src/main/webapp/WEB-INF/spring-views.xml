@@ -5,8 +5,8 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
         ">
 
-    <bean id="simpleStudPdfView" class="org.odds.mvc.admin.view.SimpleOrphanagePDFView">
+    <bean id="simpleOrphanagesPdfView" class="org.odds.mvc.admin.view.SimpleOrphanagePDFView">
     </bean>
-    <bean id="richStudPdfView" class="org.odds.mvc.admin.view.RichOrphanagePDFView">
+    <bean id="richOrphanagesPdfView" class="org.odds.mvc.admin.view.RichOrphanagePDFView">
     </bean>
 </beans>
