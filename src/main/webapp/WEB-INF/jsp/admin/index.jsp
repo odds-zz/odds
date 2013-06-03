@@ -115,21 +115,6 @@
 
                     <div class="widget">
 
-                        <div class="widget-header">
-                            <i class="icon-file"></i>
-                            <h3>Content</h3>
-                        </div> <!-- /widget-header -->
-
-                        <div class="widget-content">
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                        </div> <!-- /widget-content -->
 
                     </div> <!-- /widget -->
 
@@ -158,28 +143,26 @@
                                     <span class="shortcut-label">Orphanages</span>
                                 </a>
                                 <a href="/odds/admin/donations" class="shortcut">
-                                    <i class="shortcut-icon icon-money"></i>
+                                    <i class="shortcut-icon icon-credit-card"></i>
                                     <span class="shortcut-label">Donations</span>
                                 </a>
                                 <a href="/odds/admin/news" class="shortcut">
                                     <i class="shortcut-icon icon-list-alt"></i>
                                     <span class="shortcut-label">News</span>
                                 </a>
+                                <a href="/odds/statistics" class="shortcut">
+                                    <i class="shortcut-icon icon-bar-chart"></i>
+                                    <span class="shortcut-label">View Statistics</span>
+                                </a>                                
                                 <a href="/odds/admin/messaging" class="shortcut">
-                                    <i class="shortcut-icon icon-comment"></i>
-                                    <span class="shortcut-label">Messaging</span>
+                                    <i class="shortcut-icon icon-coffee"></i>
+                                    <span class="shortcut-label">Physical Item</span>
                                 </a>
                                 <a href="/odds/admin/reports" class="shortcut">
                                     <i class="shortcut-icon icon-signal"></i>
                                     <span class="shortcut-label">Reports</span>
                                 </a>
-                                <a href="/odds/admin/statistics" class="shortcut">
-                                    <i class="shortcut-icon icon-tag"></i>
-                                    <span class="shortcut-label">Statistics</span>
-                                </a>
                                 <a href="/odds/admin/media" class="shortcut">
-                                    <i class="shortcut-icon icon-picture"></i>
-                                    <span class="shortcut-label">Media</span>
                                 </a>
                             </div> <!-- /shortcuts -->
 
@@ -210,7 +193,7 @@
 
                         <div class="widget-header">
                             <i class="icon-th-list"></i>
-                            <h3>Table</h3>
+                            <h3>Latest Donations</h3>
                         </div> <!-- /widget-header -->
 
                         <div class="widget-content">
@@ -218,86 +201,15 @@
                             <table class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Engine</th>
-                                        <th>Browser</th>
+                                        <th>Donation</th>
+                                        <th>Donor</th>
                                         <th class="td-actions"></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 4.0</td>
-                                        <td class="td-actions">
-                                            <a href="/odds/admin/" class="btn btn-small btn-warning">
-                                                <i class="btn-icon-only icon-ok"></i>
-                                            </a>
-
-                                            <a href="/odds/admin/" class="btn btn-small">
-                                                <i class="btn-icon-only icon-remove"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.0</td>
-                                        <td class="td-actions">
-                                            <a href="/odds/admin/" class="btn btn-small btn-warning">
-                                                <i class="btn-icon-only icon-ok"></i>
-                                            </a>
-
-                                            <a href="/odds/admin/" class="btn btn-small">
-                                                <i class="btn-icon-only icon-remove"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.5</td>
-                                        <td class="td-actions">
-                                            <a href="/odds/admin/" class="btn btn-small btn-warning">
-                                                <i class="btn-icon-only icon-ok"></i>
-                                            </a>
-
-                                            <a href="/odds/admin/" class="btn btn-small">
-                                                <i class="btn-icon-only icon-remove"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.5</td>
-                                        <td class="td-actions">
-                                            <a href="/odds/admin/" class="btn btn-small btn-warning">
-                                                <i class="btn-icon-only icon-ok"></i>
-                                            </a>
-
-                                            <a href="/odds/admin/" class="btn btn-small">
-                                                <i class="btn-icon-only icon-remove"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.5</td>
-                                        <td class="td-actions">
-                                            <a href="/odds/admin/" class="btn btn-small btn-warning">
-                                                <i class="btn-icon-only icon-ok"></i>
-                                            </a>
-
-                                            <a href="/odds/admin/" class="btn btn-small">
-                                                <i class="btn-icon-only icon-remove"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.5</td>
+                                        <td>400,000</td>
+                                        <td>Kenneth Kataiwa</td>
                                         <td class="td-actions">
                                             <a href="/odds/admin/" class="btn btn-small btn-warning">
                                                 <i class="btn-icon-only icon-ok"></i>

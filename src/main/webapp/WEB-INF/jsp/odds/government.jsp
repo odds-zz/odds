@@ -4,8 +4,7 @@
 
 
 
-<div style="margin-bottom: 2.5em;"></div>
-<div class="main">
+<div class="main pad-top">
 
 	<div class="main-inner">
 
@@ -13,7 +12,7 @@
 
 	      <div class="row">
 
-	      	<div class="span8">
+	      	<div class="span12">
 
 	      		<div class="widget">
 

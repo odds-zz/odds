@@ -56,9 +56,9 @@
                 </li>
 
                 <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/reports")) {%>active<% }%> subnavbar-open-right">
-                    <a href="/odds/admin/reports">
-                        <i class="icon-bar-chart"></i>
-                        <span>Reports</span>
+                    <a href="/odds/admin/news">
+                        <i class="icon-list-alt"></i>
+                        <span>News</span>
                     </a>
                 </li>
 

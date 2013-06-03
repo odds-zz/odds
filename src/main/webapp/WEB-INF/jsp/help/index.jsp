@@ -131,10 +131,10 @@
 
                         <div class="widget-content">
 
-                            <a href="javascript:;" class="btn btn-large btn-warning btn-support-ask">Ask A Question</a>
+                            <!-- a href="javascript:;" class="btn btn-large btn-warning btn-support-ask">Ask A Question</a -->
 
 
-                            <a href="javascript:;" class="btn btn-large btn-support-contact">Contact Support</a>
+                            <a href="javascript:;" class="btn btn-large btn-warning  btn-support-contact">Contact Support</a>
 
 
 
