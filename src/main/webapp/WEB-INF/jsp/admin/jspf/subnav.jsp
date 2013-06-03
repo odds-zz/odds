@@ -30,11 +30,16 @@
                 </li>
 
 
-                <li class="<% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/orphanages")) {%>active<% }%> subnavbar-open-right">
-                    <a href="/odds/admin/orphanages" class="dropdown-toggle">
+                <li class="dropdown <% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/orphanages")) {%>active<% }%> subnavbar-open-right">
+                    <a href="/odds/admin/orphanages" class="dropdown-toggle" data-toggle="dropdown">
                         <i class="icon-building"></i>
                         <span>Orphanages</span>
+                        <b class="caret"></b>
                     </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/odds/admin/orphanages">All Orphanage Centers</a></li>
+                        <li><a href="/odds/admin/orphanages/pdf/rich">View PDF</a></li>
+                    </ul>                    
                 </li>
 
                 <li class="dropdown <% if (request.getAttribute("javax.servlet.forward.request_uri").equals("/odds/admin/donations")) {%>active<% }%>">
