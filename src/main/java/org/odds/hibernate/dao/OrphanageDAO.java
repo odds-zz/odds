@@ -181,7 +181,7 @@ public class OrphanageDAO {
             tx = session.beginTransaction();
             Query q;
             q = session.createQuery("select count(o.id) from Orphanage o"
-                    + "where year(o.time) = year(current_date())");
+                    + "where month(o.time) = month(current_date())");
             numberOrphanages = ((Long) q.uniqueResult()).intValue();
             tx.commit();//end of transaction
             Connection close; //end of  session
