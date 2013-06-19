@@ -18,7 +18,6 @@
                             <li class="active">
                                 <a href="#profile" data-toggle="tab">Profile</a>
                             </li>
-                            <li class=""><a href="#settings" data-toggle="tab">Settings</a></li>
                         </ul>
                         <br>
                         <div class="tab-content">
@@ -88,71 +87,6 @@
                                     </fieldset>
                                 </form>
                             </div>
-
-                            <div class="tab-pane" id="settings">
-                                <form id="edit-profile2" class="form-horizontal">
-                                    <fieldset>
-
-
-                                        <div class="control-group">
-                                            <label class="control-label" for="accounttype">Account Type</label>
-                                            <div class="controls">
-                                                <label class="radio">
-                                                    <input type="radio" name="accounttype" value="option1" checked="checked" id="accounttype">
-                                                    POP3
-                                                </label>
-                                                <label class="radio">
-                                                    <input type="radio" name="accounttype" value="option2">
-                                                    IMAP
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="accountusername">Account Username</label>
-                                            <div class="controls">
-                                                <input type="text" class="input-large" id="accountusername" value="rod.howard@example.com">
-                                                <p class="help-block">Leave blank to use your profile email address.</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="emailserver">Email Server</label>
-                                            <div class="controls">
-                                                <input type="text" class="input-large" id="emailserver" value="mail.example.com">
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="accountpassword">Password</label>
-                                            <div class="controls">
-                                                <input type="text" class="input-large" id="accountpassword" value="password">
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="control-group">
-                                            <label class="control-label" for="accountadvanced">Advanced Settings</label>
-                                            <div class="controls">
-                                                <label class="checkbox">
-                                                    <input type="checkbox" name="accountadvanced" value="option1" checked="checked" id="accountadvanced">
-                                                    User encrypted connection when accessing this server
-                                                </label>
-                                                <label class="checkbox">
-                                                    <input type="checkbox" name="accounttype" value="option2">
-                                                    Download all message on connection
-                                                </label>
-                                            </div>
-                                        </div>
-
-
-                                        <br>
-
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-primary">Save</button> <button class="btn">Cancel</button>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
                         </div>
                     </div>
                 </div> <!-- /widget-content -->
@@ -175,13 +109,13 @@
                 </div> <!-- /widget-header -->
                 <div class="widget-content">
                     <a href="/odds/admin">
-                    <button class="btn btn-large btn-primary">
-                        Administration
-                    </button>
+                        <button class="btn btn-large btn-primary">
+                            Administration
+                        </button>
                     </a>
                 </div> <!-- /widget-content -->
             </div> <!-- /widget-box -->
-            <% } %>
+            <% }%>
         </div> <!-- /span4 -->
     </div> <!-- /row -->
 </div>
