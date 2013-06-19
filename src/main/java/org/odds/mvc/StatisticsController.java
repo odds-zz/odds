@@ -40,10 +40,11 @@ public class StatisticsController {
     public String orphanages(Model model) {
 
         Integer numberOrphanages = OrphanageDAO.countOrphanages();
+        Integer numberMonthOrphanages = OrphanageDAO.countOrphanagesByMonth();
         Integer numberChildren = ChildrenDAO.countChildren();
         model.addAttribute("numberOrphanages", numberOrphanages);
         model.addAttribute("numberChildren", numberChildren);
-        model.addAttribute("numberMonthOrphanages", numberOrphanages);
+        model.addAttribute("numberMonthOrphanages", numberMonthOrphanages);
         model.addAttribute("numberYearOrphanages", numberChildren);
         return "statistics/orphanages";
     }

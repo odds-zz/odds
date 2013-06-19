@@ -167,4 +167,56 @@ public class ChildrenDAO {
         }
           return count;
     }
+    
+  /*  public static Integer countChildrenByOrphanage() {
+        Transaction tx = null;
+        Session session;
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        int count = 0;
+        try {
+            tx = session.beginTransaction();
+            Query q;
+            q = session.createQuery("select count(*) from Children");
+            count = ((Long) q.uniqueResult()).intValue();
+            tx.commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
+                }
+            }
+
+        }
+          return count;
+    }
+    
+    public static Integer countChildrenByRegion() {
+        Transaction tx = null;
+        Session session;
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+        int count = 0;
+        try {
+            tx = session.beginTransaction();
+            Query q;
+            q = session.createQuery("select count(*) from Children");
+            count = ((Long) q.uniqueResult()).intValue();
+            tx.commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
+                }
+            }
+
+        }
+          return count;
+    }*/
 }
