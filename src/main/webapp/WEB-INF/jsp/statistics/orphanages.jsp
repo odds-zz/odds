@@ -52,7 +52,7 @@
 
                 <div class="widget-header">
                     <i class="icon-star"></i>
-                    <h3>Quick Stats</h3>
+                    <h3>Orphanage center by Region</h3>
                 </div> <!-- /widget-header -->
 
                 <div class="widget-content">
@@ -75,7 +75,7 @@
 
                 <div class="widget-header">
                     <i class="icon-list-alt"></i>
-                    <h3>Recent News</h3>
+                    <h3>Orphanage Center Registration</h3>
                 </div> <!-- /widget-header -->
 
                 <div class="widget-content">
@@ -101,6 +101,80 @@
 <script type="text/javascript" src="/odds/assets/js/flot/jquery.flot.orderBars.js"></script>
 
 <script type="text/javascript" src="/odds/assets/js/charts/pie.js"></script>
-<script type="text/javascript" src="/odds/assets/js/charts/bar.js"></script>
+<script>
+    $(function() {
+        var data = [];
+
+        data[0] = {label: "Dar es Salaam ", data: 5};
+        data[1] = {label: "Arusha ", data: 10};
+        data[2] = {label: "Mwanza ", data: 25};
+        data[3] = {label: "Others ", data: 10};
+
+        $.plot($("#pie-chart"), data,
+                {
+                    colors: ["#F90", "#222", "#666", "#BBB"],
+                    series: {
+                        pie: {
+                            show: true,
+                            label: {
+                                show: false,
+                                formatter: function(label, series) {
+                                    return '<div style="font-size:11px;text-align:center;padding:4px;color:white;">'
+                                            + label +
+                                            '<br/>' +
+                                            Math.round(series.percent) + '%</div>';
+                                },
+                                threshold: 0.1
+                            }
+                        }
+                    },
+                    legend: {
+                        show: true,
+                        noColumns: 1, // number of colums in legend table
+                        labelFormatter: null, // fn: string -> string
+                        labelBoxBorderColor: "#888", // border color for the little label boxes
+                        container: null, // container (as jQuery object) to put legend in, null means default on top of graph
+                        position: "ne", // position of default legend container within plot
+                        margin: [5, 10], // distance from grid edge to default legend container within plot
+                        backgroundOpacity: 0 // set to 0 to avoid background
+                    },
+                    grid: {
+                        hoverable: false,
+                        clickable: false
+                    },
+                });
+
+    });
+    $(function() {
+        var data = new Array();
+        var ds = new Array();
+
+        data.push([[1, 25], [2, 34], [3, 37], [4, 45], [5, 56]]);
+        data.push([[1, 13], [2, 29], [3, 25], [4, 23], [5, 31]]);
+
+        for (var i = 0, j = data.length; i < j; i++) {
+
+            ds.push({
+                data: data[i],
+                grid: {
+                    hoverable: true
+                },
+                bars: {
+                    show: true,
+                    barWidth: 0.2,
+                    order: 1,
+                    lineWidth: 0.5,
+                    fillColor: {colors: [{opacity: 0.65}, {opacity: 1}]}
+                }
+            });
+        }
+
+        $.plot($("#bar-chart"), ds, {
+            colors: ["#F90", "#222", "#666", "#BBB"]
+
+
+        });
+    });
+</script>
 
 <%@include file="../../jspf/layout/footer.jspf" %>
