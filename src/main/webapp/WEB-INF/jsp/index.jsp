@@ -1,26 +1,29 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@include file="../jspf/layout/header.jspf" %>
 
 <%@include file="../jspf/layout/banner/simple.jspf" %>
 
 <div id="myCarousel" class="carousel slide">
     <div class="carousel-inner">
+        <% if (!request.isUserInRole("ROLE_USER")) {%>
         <div class="item active">
             <img src="/odds/assets/img/carousel/slide-01.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>ODDS</h1>
                     <p class="lead">Orphanage Donation Distribution System.</p>
-                    <a class="btn btn-large btn-primary" href="#">Sign up today</a>
+                    <a class="btn btn-large btn-primary" href="/odds/auth/register">Sign up today</a>
                 </div>
             </div>
         </div>
-        <div class="item">
+        <% }%>
+        <div class="item <% if (request.isUserInRole("ROLE_USER")) {%>active<% }%>">
             <img src="/odds/assets/img/carousel/slide-02.jpg" alt="">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Start helping</h1>
                     <p class="lead">Orphans are around us and they need our care, friendship, love, our humanity.</p>
-                    <a class="btn btn-large btn-primary" href="#">Learn more</a>
+                    <a class="btn btn-large btn-primary" href="/odds/donation/money">Start Donating</a>
                 </div>
             </div>
         </div>
@@ -30,7 +33,7 @@
                 <div class="carousel-caption">
                     <h1>Join the Conversation</h1>
                     <p class="lead">Orphans are around us and they need our care, friendship, love, our humanity.</p>
-                    <a class="btn btn-large btn-primary" href="#">Learn more</a>
+                    <a class="btn btn-large btn-primary" href="/odds/orphanage/list">Browse Centers</a>
                 </div>
             </div>
         </div>
