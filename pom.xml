@@ -16,7 +16,6 @@
         <org.aspectj-version>1.6.10</org.aspectj-version>
         <org.slf4j-version>1.6.1</org.slf4j-version>
         <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
-        <netbeans.hint.j2eeVersion>1.6</netbeans.hint.j2eeVersion>
     </properties>
 
     <dependencies>
@@ -273,7 +272,7 @@
             <version>2.1.7</version>
         </dependency>
     </dependencies>
-    
+
     <repositories>
         <!-- For testing against latest Spring snapshots -->
         <repository>
