@@ -15,13 +15,14 @@
                         <h3>${orphanage.name}</h3
                         <p>
                         <h4>Contact:</h4>
-                        ${orphanage}
-                        </p>                        
+                        Email: ${contact.email}<br>
+                        Phone: ${contact.phone}
+                        </p>
                         <p>
                         <h4>About:</h4>
                         ${orphanage.details}
                         </p>
-                        <h4>Location on Map</h4>                        
+                        <h4>Location on Map</h4>
                         <div class="btn-group pull-right" style="position: absolute;top: 40px; right: 15px;">
                             <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Orphanage Center</a>
                             <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
@@ -67,8 +68,8 @@
         $(".chosen").chosen();
     });
     var loadMap = function() {
-        var latitude = "-6.7767206421047990";
-        var longitude = "39.2426061630211650";
+        var latitude = "${address.latitude}";
+        var longitude = "${address.longitude}";
         map = new OpenLayers.Map("mapContainer", {
             controls: [
                 new OpenLayers.Control.Navigation(),
