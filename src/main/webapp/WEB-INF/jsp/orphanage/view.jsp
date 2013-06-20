@@ -27,10 +27,10 @@
                             <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> Orphanage Center</a>
                             <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/odds/admin/orphanage/edit/${orphanage.id}"><i class="icon-pencil"></i> Edit</a></li>
-                                <li><a href="#"><i class="icon-trash"></i> Delete</a></li>
+                                <li><a href="/odds/orphanage/edit/${orphanage.id}"><i class="icon-pencil"></i> Edit</a></li>
+                                <li><a href="/odds/admin/orphanage/delete/${orphanage.id}"><i class="icon-trash"></i> Delete</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#"><i class="i"></i> Assign admin</a></li>
+                                <li><a href="/odds/admin/orphanages"><i class="i"></i> Administer all</a></li>
                             </ul>
                         </div>
                         <div id="mapContainer" class="orphanage-map map-container"></div>

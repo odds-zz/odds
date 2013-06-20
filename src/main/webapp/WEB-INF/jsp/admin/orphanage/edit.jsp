@@ -83,6 +83,7 @@
                                     </form:select>
                                     <form:errors path="admin" cssClass="error" />
                                 </div>
+                                <p>NB: Administrator cannot be changed at them moment</p>
                             </div>
                             <br/>
                             <div class="form-actions">
