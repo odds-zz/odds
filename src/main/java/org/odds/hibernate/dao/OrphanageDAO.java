@@ -169,7 +169,7 @@ public class OrphanageDAO {
         }
         return numberOrphanages;
     }
-    
+
     public static Integer countOrphanagesByMonth() {
 
         Integer numberOrphanages = 0;

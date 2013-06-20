@@ -57,41 +57,41 @@ public class Orphanage  implements java.io.Serializable {
        this.orphanageContacts = orphanageContacts;
        this.childrens = childrens;
     }
-   
+
      @Id @GeneratedValue(strategy=IDENTITY)
-    
+
     @Column(name="id", unique=true, nullable=false)
     public Integer getId() {
         return this.id;
     }
-    
+
     public void setId(Integer id) {
         this.id = id;
     }
-    
+
     @Column(name="name", length=128)
     public String getName() {
         return this.name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     @Column(name="location", length=45)
     public String getLocation() {
         return this.location;
     }
-    
+
     public void setLocation(String location) {
         this.location = location;
     }
-    
+
     @Column(name="details", length=65535)
     public String getDetails() {
         return this.details;
     }
-    
+
     public void setDetails(String details) {
         this.details = details;
     }
@@ -100,7 +100,7 @@ public class Orphanage  implements java.io.Serializable {
     public Date getTime() {
         return this.time;
     }
-    
+
     public void setTime(Date time) {
         this.time = time;
     }
@@ -108,18 +108,18 @@ public class Orphanage  implements java.io.Serializable {
     public Set<OrphanageAddress> getOrphanageAddresses() {
         return this.orphanageAddresses;
     }
-    
+
     public void setOrphanageAddresses(Set<OrphanageAddress> orphanageAddresses) {
         this.orphanageAddresses = orphanageAddresses;
     }
 @ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-    @JoinTable(name="orphanage_admin", catalog="odds_db", joinColumns = { 
-        @JoinColumn(name="orphanage_id", nullable=false, updatable=false) }, inverseJoinColumns = { 
+    @JoinTable(name="orphanage_admin", catalog="odds_db", joinColumns = {
+        @JoinColumn(name="orphanage_id", nullable=false, updatable=false) }, inverseJoinColumns = {
         @JoinColumn(name="user_id", nullable=false, updatable=false) })
     public Set<User> getUsers() {
         return this.users;
     }
-    
+
     public void setUsers(Set<User> users) {
         this.users = users;
     }
@@ -127,7 +127,7 @@ public class Orphanage  implements java.io.Serializable {
     public Set<DonationItem> getDonationItems() {
         return this.donationItems;
     }
-    
+
     public void setDonationItems(Set<DonationItem> donationItems) {
         this.donationItems = donationItems;
     }
@@ -135,15 +135,15 @@ public class Orphanage  implements java.io.Serializable {
     public Set<Record> getRecords() {
         return this.records;
     }
-    
+
     public void setRecords(Set<Record> records) {
         this.records = records;
     }
-@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY, mappedBy="orphanage")
+@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER, mappedBy="orphanage")
     public Set<OrphanageContact> getOrphanageContacts() {
         return this.orphanageContacts;
     }
-    
+
     public void setOrphanageContacts(Set<OrphanageContact> orphanageContacts) {
         this.orphanageContacts = orphanageContacts;
     }
@@ -151,7 +151,7 @@ public class Orphanage  implements java.io.Serializable {
     public Set<Children> getChildrens() {
         return this.childrens;
     }
-    
+
     public void setChildrens(Set<Children> childrens) {
         this.childrens = childrens;
     }

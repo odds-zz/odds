@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import org.odds.hibernate.dao.OrphanageDAO;
+import org.odds.hibernate.dao.OrphanageAddressDAO;
+import org.odds.hibernate.dao.OrphanageContactDAO;
 import org.odds.hibernate.entities.Orphanage;
 
 /**
@@ -43,9 +45,10 @@ public class OrphanageController {
 
         Orphanage o = OrphanageDAO.getOrphanage(id);
         model.addAttribute("orphanage", o);
+        model.addAttribute("address", OrphanageAddressDAO.getByOrphanage(o.getId()));
+        model.addAttribute("contact", OrphanageContactDAO.getByOrphanage(o.getId()));
         return "orphanage/view";
     }
-
 
     @RequestMapping(value = "/orphanage/records")
     public String records(Model model) {
