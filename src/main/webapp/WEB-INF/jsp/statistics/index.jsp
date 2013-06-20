@@ -27,7 +27,7 @@
 
                         <div class="stat">
                             <h4>Donations Today</h4>
-                            <span class="value">${numberDonations}</span>
+                            <span class="value">${numberTodayDonations}</span>
                         </div> <!-- .stat -->
 
                         <div class="stat">
