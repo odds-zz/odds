@@ -112,7 +112,7 @@ public class Orphanage  implements java.io.Serializable {
     public void setOrphanageAddresses(Set<OrphanageAddress> orphanageAddresses) {
         this.orphanageAddresses = orphanageAddresses;
     }
-@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+@ManyToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     @JoinTable(name="orphanage_admin", catalog="odds_db", joinColumns = {
         @JoinColumn(name="orphanage_id", nullable=false, updatable=false) }, inverseJoinColumns = {
         @JoinColumn(name="user_id", nullable=false, updatable=false) })

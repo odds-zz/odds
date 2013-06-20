@@ -7,6 +7,7 @@ package org.odds.mvc.admin.orphanage;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import org.odds.hibernate.dao.OrphanageAddressDAO;
 import org.odds.hibernate.dao.OrphanageContactDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.odds.mvc.admin.form.OrphanageValidator;
 import org.odds.mvc.admin.form.OrphanageBean;
 import org.odds.hibernate.entities.Orphanage;
+import org.odds.hibernate.entities.OrphanageAddress;
 import org.odds.hibernate.entities.OrphanageContact;
 import org.odds.hibernate.dao.OrphanageDAO;
 import org.odds.hibernate.dao.UserDAO;
@@ -30,7 +32,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * Handles requests for the application home page.
  */
 @Controller
-@RequestMapping(value = {"/admin/orphanage/edit/{id}","/orphanage/edit/{id}" })
+@RequestMapping(value = {"/admin/orphanage/edit/{id}", "/orphanage/edit/{id}"})
 public class EditOrphanageController {
 
     OrphanageValidator orphanageValidator;
@@ -59,10 +61,16 @@ public class EditOrphanageController {
     @RequestMapping(method = RequestMethod.GET)
     public String initForm(ModelMap model, @PathVariable("id") int id) {
         Orphanage orphanage = OrphanageDAO.getOrphanage(id);
+        OrphanageAddress address = OrphanageAddressDAO.getByOrphanage(orphanage.getId());
+        OrphanageContact contact = OrphanageContactDAO.getByOrphanage(orphanage.getId());
         OrphanageBean form = new OrphanageBean();
+        User u = OrphanageDAO.getAdmin(orphanage.getId());
         form.setName(orphanage.getName());
         form.setDetails(orphanage.getDetails());
-        form.setRegion("DSM");
+        form.setRegion(address.getRegion());
+        form.setEmail(contact.getEmail());
+        form.setPhone(contact.getPhone());
+        form.setAdmin(u.getId());
         model.put("orphanage", form);
         return "/admin/orphanage/edit";
     }
@@ -70,7 +78,7 @@ public class EditOrphanageController {
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(
             @ModelAttribute("orphanage") OrphanageBean form,
-            BindingResult result, SessionStatus status, ModelMap model) {
+            BindingResult result, SessionStatus status, ModelMap model, @PathVariable("id") int id) {
 
 
         orphanageValidator.validate(form, result);
@@ -82,25 +90,24 @@ public class EditOrphanageController {
             status.setComplete();
             model.addAttribute("success", true);
 
-//            User user = UserDAO.getUser(form.getAdmin());
-//
-//            Orphanage newOrphanage = new Orphanage();
-//            newOrphanage.setName(form.getName());
-//            newOrphanage.setDetails(form.getDetails());
-//            newOrphanage.getUsers().add(user);
-//            Orphanage orphanage = OrphanageDAO.createOrphanage(newOrphanage);
-//
-//            // Todo:
-//            // Save address as well
-//            // OrphanageAddress oa = new OrphanageAddress();
-//
-//            OrphanageContact oc = new OrphanageContact();
-//            oc.setEmail(form.getEmail());
-//            oc.setOrphanage(orphanage);
-//            OrphanageContactDAO. create(oc);
+            User user = UserDAO.getUser(form.getAdmin());
+
+            Orphanage orphanage = OrphanageDAO.getOrphanage(id);
+            OrphanageAddress address = OrphanageAddressDAO.getByOrphanage(orphanage.getId());
+            OrphanageContact contact = OrphanageContactDAO.getByOrphanage(orphanage.getId());
+
+            orphanage.setName(form.getName());
+            orphanage.setDetails(form.getDetails());
+            contact.setEmail(form.getEmail());
+            contact.setPhone(form.getPhone());
+            address.setRegion(form.getRegion());
+
+            OrphanageDAO.updateOrphanage(orphanage);
+            OrphanageAddressDAO.update(address);
+            OrphanageContactDAO.update(contact);
 
             //form success
-            return "redirect:/admin/orphanage/edit/1";
+            return "/admin/orphanage/edit";
         }
     }
 }
