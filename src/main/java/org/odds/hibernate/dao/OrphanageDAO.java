@@ -5,6 +5,8 @@
 package org.odds.hibernate.dao;
 
 import java.sql.Connection;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.HibernateException;
@@ -197,33 +199,4 @@ public class OrphanageDAO {
         }
         return numberOrphanages;
     }
-
-    public static Integer countOrphanagesByMonth() {
-
-        Integer numberOrphanages = 0;
-        Transaction tx = null;
-        Session session;
-        session = HibernateUtil.getSessionFactory().getCurrentSession();
-
-        try {
-            tx = session.beginTransaction();
-            Query q;
-            q = session.createQuery("select count(o.id) from Orphanage o"
-                    + "where month(o.time) = month(current_date())");
-            numberOrphanages = ((Long) q.uniqueResult()).intValue();
-            tx.commit();//end of transaction
-            Connection close; //end of  session
-            close = session.close();
-        } catch (RuntimeException e) {
-            if (tx != null && tx.isActive()) {
-                try {
-                    tx.rollback();
-                } catch (HibernateException he) {
-                    System.out.println("Error rolling back the Transaction " + he.toString());
-                }
-            }
-
-        }
-        return numberOrphanages;
-    }
-}
+   }
