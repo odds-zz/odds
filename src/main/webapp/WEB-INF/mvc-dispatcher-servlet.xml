@@ -13,9 +13,9 @@
     <bean class="org.odds.mvc.admin.form.NewsValidator" />
     <bean class="org.odds.mvc.auth.validator.RegisterValidator" />
     <bean class="org.odds.mvc.admin.form.DonationItemValidator" />
-    <bean class="org.odds.mvc.admin.form.OrphanageChildValidator" />    
+    <bean class="org.odds.mvc.admin.form.OrphanageChildValidator" />
     <bean class="org.odds.mvc.admin.form.OrphanageValidator" />
-    <bean class="org.odds.mvc.admin.form.UserPrivilegesValidator" />    
+    <bean class="org.odds.mvc.admin.form.UserPrivilegesValidator" />
     <bean class="org.odds.mvc.donations.form.CreateCardDonationValidator" />
     <bean class="org.odds.mvc.donations.form.MobileDonationValidator" />
     <bean class="org.odds.mvc.donations.form.DonationValidator" />
@@ -39,7 +39,7 @@
         <property name="location">
             <value>/WEB-INF/spring-views.xml</value>
         </property>
-    </bean>    
+    </bean>
     <!-- Resolve logical view names to .jsp resources in the /WEB-INF/views directory -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
@@ -47,6 +47,14 @@
         <property name="order" value="2" />
     </bean>
 
+    <mvc:interceptors>
+        <bean id="webContentInterceptor" class="org.springframework.web.servlet.mvc.WebContentInterceptor">
+            <property name="cacheSeconds" value="0"/>
+            <property name="useExpiresHeader" value="false"/>
+            <property name="useCacheControlHeader" value="true"/>
+            <property name="useCacheControlNoStore" value="true"/>
+        </bean>
+    </mvc:interceptors>
 
 </beans>
 

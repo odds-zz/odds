@@ -17,7 +17,7 @@ and open the template in the editor.
         <intercept-url pattern="/admin**" access="ROLE_ADMIN" />
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
         <form-login login-page="/auth/signin" authentication-failure-url="/auth/signin?error=1" login-processing-url="/auth/check" />
-        <logout logout-url="/logout"  logout-success-url="/" />
+        <logout invalidate-session="true" logout-url="/logout"  logout-success-url="/" />
         <remember-me />
     </http>
 
