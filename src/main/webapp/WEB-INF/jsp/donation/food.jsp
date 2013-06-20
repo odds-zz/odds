@@ -16,18 +16,18 @@
                     </span>
                     <span class="span6">
                         <p>
-                            We encourage donations on food items to be done directly  to the orphanages. 
-                            This is easier for transport logistics. If you wish, however, feel free to 
+                            We encourage donations on food items to be done directly  to the orphanages.
+                            This is easier for transport logistics. If you wish, however, feel free to
                             bring your kind donation to ODDS warehouse at Mabibo Hostel, block D, room 243.
                         </p>
                         <p>
                             Donating money is much more convenient. You can support orphans through online
-                            donations <a href="donation/transfer"><strong>here</strong></a>
+                            donations <a href="/odds/donation/money"><strong>here</strong></a>
                         </p>
                     </span>
                 </div> <!-- /widget-content -->
             </div> <!-- /widget-box -->
-        </div>        
+        </div>
     </div>
 </div>
 
