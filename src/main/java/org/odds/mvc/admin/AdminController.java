@@ -12,9 +12,11 @@ import java.util.List;
 import org.odds.hibernate.dao.OrphanageDAO;
 import org.odds.hibernate.dao.DonationMoneyDAO;
 import org.odds.hibernate.dao.DonationItemDAO;
+import org.odds.hibernate.dao.NewsDAO;
 import org.odds.hibernate.entities.Orphanage;
 import org.odds.hibernate.entities.DonationMoney;
 import org.odds.hibernate.entities.DonationItem;
+import org.odds.hibernate.entities.News;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +30,10 @@ public class AdminController {
 
     @RequestMapping(value = "/admin")
     public String home(Model model) {
+
+        List<News> nList = NewsDAO.listNews(5);
+        model.addAttribute("news", nList);
+        
         return "admin/index";
     }
 
@@ -62,7 +68,22 @@ public class AdminController {
     @RequestMapping(value = "/admin/news")
     public String news(Model model) {
 
+        List<News> nList = NewsDAO.listNews(5);
+        model.addAttribute("news", nList);
         return "admin/news";
+    }
+
+    @RequestMapping(value = "/admin/news/delete/{id}")
+    public String newsDelete(Model model, @PathVariable("id") int id) {
+
+        News n = NewsDAO.getNews(id);
+        // Check if the Orphanage exists, then delete
+        NewsDAO.deleteNews(n);
+        // Todo:
+        // Else say that news does not exists.
+        model.addAttribute("news", n);
+        return "redirect:/admin/news";
+
     }
 
     @RequestMapping(value = "/admin/reports")

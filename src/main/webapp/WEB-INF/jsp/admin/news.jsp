@@ -12,7 +12,36 @@
                     <i class="icon-list-alt"></i>
                     <h3>Manage News</h3>
                 </div> <!-- /widget-header -->
-                <div class="widget-content">
+                <div class="widget widget-table action-table">
+                    <table class="table table-bordered table-striped table-highlight">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Title</th>
+                                <th>Body</th>
+                                <th>Time</th>
+                                <th>Operations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="item" items="${news}" varStatus="status">
+                                <tr>
+                                    <td>${status.count}</td>
+                                    <td>${item.title}</td>
+                                    <td>${item.body}</td>
+                                    <td>${item.time}</td>
+                                    <td class="td-actions">
+                                        <a href="/odds/admin/news/edit/${item.id}" class="btn btn-small btn-warning">
+                                            <i class="btn-icon-only  icon-edit"></i>
+                                        </a>
+                                        <a href="/odds/admin/news/delete/${item.id}" onclick="return confirm('Are you sure want to delete?');" class="btn btn-small">
+                                            <i class="btn-icon-only icon-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
                 </div>
                 <!-- /widget-content -->
             </div> <!-- /widget -->

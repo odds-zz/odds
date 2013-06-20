@@ -48,7 +48,7 @@ public class NewsDAO {
 
     }
 
-    public void updateNews(News n) {
+    public static void updateNews(News n) {
 
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
@@ -68,7 +68,7 @@ public class NewsDAO {
         }
     }
 
-    public void deleteNews(News n) {
+    public static void deleteNews(News n) {
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try {
@@ -114,7 +114,7 @@ public class NewsDAO {
 
     }
 
-    public static List listNews() {
+    public static List listNews(Integer limit) {
 
         List<News> nList = null;
         Transaction tx = null;
@@ -124,7 +124,7 @@ public class NewsDAO {
         try {
             tx = session.beginTransaction();
             Query q;
-            q = session.createQuery("from News");
+            q = session.createQuery("from News").setMaxResults(limit);
             nList = (List<News>) q.list();
             tx.commit();//end of transaction
             Connection close; //end of  session

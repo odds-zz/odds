@@ -50,7 +50,7 @@ public class OrphanageDAO {
 
     }
 
-    public void updateOrphanage(Orphanage o) {
+    public static void updateOrphanage(Orphanage o) {
 
         Transaction tx = null;
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();

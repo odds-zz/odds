@@ -72,40 +72,20 @@
                         <div class="widget-content">
 
                             <ul class="news-items">
-                                <li>
+                                <c:forEach var="item" items="${news}" varStatus="status">
+                                    <li>
 
-                                    <div class="news-item-detail">
-                                        <a href="/odds/admin/" class="news-item-title">Duis aute irure dolor in reprehenderit</a>
-                                        <p class="news-item-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                                    </div>
+                                        <div class="news-item-detail">
+                                            <a href="/odds/admin/" class="news-item-title">${item.title}</a>
+                                            <p class="news-item-preview">${item.body}</p>
+                                        </div>
 
-                                    <div class="news-item-date">
-                                        <span class="news-item-day">08</span>
-                                        <span class="news-item-month">Mar</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="news-item-detail">
-                                        <a href="/odds/admin/" class="news-item-title">Duis aute irure dolor in reprehenderit</a>
-                                        <p class="news-item-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                                    </div>
-
-                                    <div class="news-item-date">
-                                        <span class="news-item-day">08</span>
-                                        <span class="news-item-month">Mar</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="news-item-detail">
-                                        <a href="/odds/admin/" class="news-item-title">Duis aute irure dolor in reprehenderit</a>
-                                        <p class="news-item-preview">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
-                                    </div>
-
-                                    <div class="news-item-date">
-                                        <span class="news-item-day">08</span>
-                                        <span class="news-item-month">Mar</span>
-                                    </div>
-                                </li>
+                                        <div class="news-item-date">
+                                            <span class="news-item-day">08</span>
+                                            <span class="news-item-month">Mar</span>
+                                        </div>
+                                    </li>
+                                </c:forEach>
                             </ul>
 
                         </div> <!-- /widget-content -->
@@ -153,7 +133,7 @@
                                 <a href="/odds/statistics" class="shortcut">
                                     <i class="shortcut-icon icon-bar-chart"></i>
                                     <span class="shortcut-label">View Statistics</span>
-                                </a>                                
+                                </a>
                                 <a href="/odds/admin/messaging" class="shortcut">
                                     <i class="shortcut-icon icon-coffee"></i>
                                     <span class="shortcut-label">Physical Item</span>

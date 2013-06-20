@@ -24,7 +24,7 @@ public class NewsController {
     @RequestMapping(value = "/news")
     public String index(Model model) {
 
-        List<News> nList = NewsDAO.listNews();
+        List<News> nList = NewsDAO.listNews(5);
         model.addAttribute("news", nList);
         return "news/index";
     }
