@@ -4,6 +4,7 @@ package org.odds.mvc.admin.orphanage;
  *
  * @author kenkataiwa
  */
+import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -88,6 +89,7 @@ public class CreateController {
             newOrphanage.setName(form.getName());
             newOrphanage.setDetails(form.getDetails());
             newOrphanage.getUsers().add(user);
+            newOrphanage.setTime(new Date());
             Orphanage orphanage = OrphanageDAO.createOrphanage(newOrphanage);
 
             // Todo:

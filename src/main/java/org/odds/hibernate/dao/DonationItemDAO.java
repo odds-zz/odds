@@ -169,4 +169,85 @@ public class DonationItemDAO {
         }
         return numberDonations;
     }
+
+    public static Integer countDonationsByDay() {
+        Integer numberDonations = 0;
+        Transaction tx = null;
+        Session session;
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        try {
+            tx = session.beginTransaction();
+            Query q;
+            q = session.createQuery("select count(*) from DonationItem  dm where day(dm.time) = day(now())");
+            numberDonations = ((Long) q.uniqueResult()).intValue();
+            tx.commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
+                }
+            }
+
+        }
+        return numberDonations;
+    }
+
+    public static Integer countDonationsByMonth() {
+        Integer numberDonations = 0;
+        Transaction tx = null;
+        Session session;
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        try {
+            tx = session.beginTransaction();
+            Query q;
+            q = session.createQuery("select count(*) from DonationItem dm where month(dm.time) = month(now())");
+            numberDonations = ((Long) q.uniqueResult()).intValue();
+            tx.commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
+                }
+            }
+
+        }
+        return numberDonations;
+    }
+
+    public static Integer countDonationsByYear() {
+        Integer numberDonations = 0;
+        Transaction tx = null;
+        Session session;
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        try {
+            tx = session.beginTransaction();
+            Query q;
+            q = session.createQuery("select count(*) from DonationItem dm where year(dm.time) = year(now())");
+            numberDonations = ((Long) q.uniqueResult()).intValue();
+            tx.commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
+                }
+            }
+
+        }
+        return numberDonations;
+    }
 }

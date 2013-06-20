@@ -29,8 +29,11 @@ public class StatisticsController {
         Integer numberChildren = ChildrenDAO.countChildren();
         Integer numberMoneyDonations = DonationMoneyDAO.countDonations();
         Integer numberItemDonations = DonationItemDAO.countDonations();
+        Integer numberTodayItemDonations = DonationMoneyDAO.countDonationsByDay();
+        Integer numberTodayMoneyDonations = DonationItemDAO.countDonationsByDay();
         model.addAttribute("numberOrphanages", numberOrphanages);
         model.addAttribute("numberChildren", numberChildren);
+        model.addAttribute("numberTodayDonations", numberTodayItemDonations + numberTodayMoneyDonations);
         model.addAttribute("numberDonations", numberMoneyDonations + numberItemDonations);
         model.addAttribute("numberYearDonations", numberMoneyDonations + numberItemDonations);
         return "statistics/index";
@@ -40,10 +43,12 @@ public class StatisticsController {
     public String orphanages(Model model) {
 
         Integer numberOrphanages = OrphanageDAO.countOrphanages();
+        Integer numberMonthOrphanages = OrphanageDAO.countByMonthOrphanages();
         Integer numberChildren = ChildrenDAO.countChildren();
         model.addAttribute("numberOrphanages", numberOrphanages);
         model.addAttribute("numberChildren", numberChildren);
-        model.addAttribute("numberYearOrphanages", numberChildren);
+        model.addAttribute("numberMonthOrphanages", numberMonthOrphanages );
+        model.addAttribute("numberYearOrphanages", numberOrphanages);
         return "statistics/orphanages";
     }
 
@@ -52,7 +57,10 @@ public class StatisticsController {
 
         Integer numberMoneyDonations = DonationMoneyDAO.countDonations();
         Integer numberItemDonations = DonationItemDAO.countDonations();
+        Integer numberTodayItemDonations = DonationMoneyDAO.countDonationsByDay();
+        Integer numberTodayMoneyDonations = DonationItemDAO.countDonationsByDay();
         model.addAttribute("numberDonations", numberMoneyDonations + numberItemDonations);
+        model.addAttribute("numberTodayDonations", numberTodayItemDonations + numberTodayMoneyDonations);
         model.addAttribute("numberYearDonations", numberMoneyDonations + numberItemDonations);
         model.addAttribute("numberMoneyDonations", numberMoneyDonations);
         model.addAttribute("numberItemDonations", numberItemDonations);

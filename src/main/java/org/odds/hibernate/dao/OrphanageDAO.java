@@ -199,4 +199,32 @@ public class OrphanageDAO {
         }
         return numberOrphanages;
     }
-   }
+
+    public static Integer countByMonthOrphanages() {
+
+        Integer numberOrphanages = 0;
+        Transaction tx = null;
+        Session session;
+        session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+        try {
+            tx = session.beginTransaction();
+            Query q;
+            q = session.createQuery("select count(*) from Orphanage o where month(o.time) = month(now()) ");
+            numberOrphanages = ((Long) q.uniqueResult()).intValue();
+            tx.commit();//end of transaction
+            Connection close; //end of  session
+            close = session.close();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back the Transaction " + he.toString());
+                }
+            }
+
+        }
+        return numberOrphanages;
+    }
+}
