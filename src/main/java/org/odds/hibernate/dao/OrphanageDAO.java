@@ -6,12 +6,14 @@ package org.odds.hibernate.dao;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Set;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.odds.hibernate.HibernateUtil;
 import org.odds.hibernate.entities.Orphanage;
+import org.odds.hibernate.entities.User;
 
 /**
  * Helper Class that wraps database operations safely in transactions
@@ -66,6 +68,32 @@ public class OrphanageDAO {
             }
             throw e;
         }
+    }
+
+    public static User getAdmin(Integer orphanageId) {
+
+        Set<User> users = null;
+        User u = null;
+        Transaction tx = null;
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        try {
+            tx = session.beginTransaction();
+            Query q = session.createQuery("select elements(o.users) from Orphanage o where o.id = :orphanageId");
+            q.setString("orphanageId", orphanageId.toString());
+            u = (User) q.uniqueResult();
+            tx.commit();
+        } catch (RuntimeException e) {
+            if (tx != null && tx.isActive()) {
+                try {
+                    tx.rollback();
+                } catch (HibernateException he) {
+                    System.out.println("Error rolling back this Transaction " + he.toString());
+                }
+            }
+            throw e;
+        }
+        return u;
+
     }
 
     public static void deleteOrphanage(Orphanage o) {
